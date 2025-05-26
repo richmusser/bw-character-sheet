@@ -1,0 +1,32 @@
+{
+    "name": "bw-character-sheet",
+    "title": "Burning Wheel Character Sheets",
+    "description": "A module that adds editable Burning Wheel character sheets to Foundry VTT",
+    "version": "0.1.0",
+    "compatibility": {
+        "minimum": "12",
+        "verified": "12"
+    },
+    "authors": [
+        {
+            "name": "Your Name",
+            "url": ""
+        }
+    ],
+    "esmodules": [
+        "scripts/bw-sheets.js"
+    ],
+    "styles": [
+        "styles/bw-sheets.css"
+    ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        }
+    ],
+    "url": "",
+    "manifest": "",
+    "download": ""
+} 

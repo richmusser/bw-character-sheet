@@ -1,0 +1,142 @@
+.bw-character-sheet {
+    padding: 5px;
+}
+
+.bw-character-sheet .sheet-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #800000;
+    padding: 5px;
+}
+
+.bw-character-sheet .profile-img {
+    flex: 0 0 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.bw-character-sheet .header-fields {
+    flex: 1;
+}
+
+.bw-character-sheet .charname {
+    height: 50px;
+    padding: 0px;
+    margin: 5px 0;
+    border-bottom: none;
+}
+
+.bw-character-sheet .charname input {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.bw-character-sheet .resources {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 5px 0;
+    padding: 0;
+}
+
+.bw-character-sheet .resource {
+    flex: 1;
+    margin: 0 5px;
+}
+
+.bw-character-sheet .resource input {
+    width: 100%;
+    text-align: center;
+}
+
+.bw-character-sheet .sheet-tabs {
+    flex: 0;
+    margin-bottom: 5px;
+    border-top: 1px solid #AAA;
+    border-bottom: 1px solid #AAA;
+}
+
+.bw-character-sheet .sheet-tabs .item {
+    font-weight: bold;
+    padding: 5px;
+    margin: 0 5px;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+}
+
+.bw-character-sheet .sheet-tabs .item.active {
+    border-bottom: 2px solid #800000;
+}
+
+.bw-character-sheet .sheet-body {
+    overflow-y: auto;
+}
+
+.bw-character-sheet .grid-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 10px 0;
+    padding: 0;
+}
+
+.bw-character-sheet .stat,
+.bw-character-sheet .attribute,
+.bw-character-sheet .skill,
+.bw-character-sheet .trait,
+.bw-character-sheet .relationship {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 5px 0;
+    padding: 5px;
+    border-bottom: 1px solid #DDD;
+}
+
+.bw-character-sheet .stat label,
+.bw-character-sheet .attribute label,
+.bw-character-sheet .skill label,
+.bw-character-sheet .trait label,
+.bw-character-sheet .relationship label {
+    flex: 2;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.bw-character-sheet .stat input,
+.bw-character-sheet .attribute input,
+.bw-character-sheet .skill input,
+.bw-character-sheet .trait input,
+.bw-character-sheet .relationship input {
+    flex: 1;
+    text-align: center;
+}
+
+.bw-character-sheet h3 {
+    border-bottom: 2px solid #800000;
+    margin: 5px 0;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.bw-character-sheet input[type="text"],
+.bw-character-sheet input[type="number"] {
+    background: none;
+    border: 1px solid #7a7971;
+    border-radius: 3px;
+    color: #191813;
+    width: 100%;
+    height: 24px;
+}
+
+.bw-character-sheet input[type="text"]:focus,
+.bw-character-sheet input[type="number"]:focus {
+    box-shadow: 0 0 5px #800000;
+    outline: none;
+} 

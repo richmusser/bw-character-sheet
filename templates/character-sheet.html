@@ -1,0 +1,123 @@
+<form class="bw-character-sheet">
+    <header class="sheet-header">
+        <div class="profile-img">
+            <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+        </div>
+        <div class="header-fields">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{actor.name}}" placeholder="Character Name"/>
+            </h1>
+            <div class="resources grid grid-2col">
+                <div class="resource">
+                    <label>Age</label>
+                    <input type="number" name="system.age" value="{{system.age}}" data-dtype="Number"/>
+                </div>
+                <div class="resource">
+                    <label>Lifepaths</label>
+                    <input type="number" name="system.lifepaths" value="{{system.lifepaths}}" data-dtype="Number"/>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="main">Main</a>
+        <a class="item" data-tab="attributes">Attributes</a>
+        <a class="item" data-tab="skills">Skills</a>
+        <a class="item" data-tab="traits">Traits</a>
+        <a class="item" data-tab="relationships">Relationships</a>
+    </nav>
+
+    <section class="sheet-body">
+        <div class="tab main" data-group="primary" data-tab="main">
+            <div class="grid grid-2col">
+                <div class="stats">
+                    <h3>Stats</h3>
+                    <div class="stat">
+                        <label>Will</label>
+                        <input type="number" name="system.stats.will" value="{{system.stats.will}}" data-dtype="Number"/>
+                    </div>
+                    <div class="stat">
+                        <label>Power</label>
+                        <input type="number" name="system.stats.power" value="{{system.stats.power}}" data-dtype="Number"/>
+                    </div>
+                    <div class="stat">
+                        <label>Agility</label>
+                        <input type="number" name="system.stats.agility" value="{{system.stats.agility}}" data-dtype="Number"/>
+                    </div>
+                    <div class="stat">
+                        <label>Perception</label>
+                        <input type="number" name="system.stats.perception" value="{{system.stats.perception}}" data-dtype="Number"/>
+                    </div>
+                    <div class="stat">
+                        <label>Forte</label>
+                        <input type="number" name="system.stats.forte" value="{{system.stats.forte}}" data-dtype="Number"/>
+                    </div>
+                    <div class="stat">
+                        <label>Speed</label>
+                        <input type="number" name="system.stats.speed" value="{{system.stats.speed}}" data-dtype="Number"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab attributes" data-group="primary" data-tab="attributes">
+            <div class="grid grid-2col">
+                <div class="attributes">
+                    <h3>Attributes</h3>
+                    <div class="attribute">
+                        <label>Health</label>
+                        <input type="number" name="system.attributes.health" value="{{system.attributes.health}}" data-dtype="Number"/>
+                    </div>
+                    <div class="attribute">
+                        <label>Steel</label>
+                        <input type="number" name="system.attributes.steel" value="{{system.attributes.steel}}" data-dtype="Number"/>
+                    </div>
+                    <div class="attribute">
+                        <label>Resources</label>
+                        <input type="number" name="system.attributes.resources" value="{{system.attributes.resources}}" data-dtype="Number"/>
+                    </div>
+                    <div class="attribute">
+                        <label>Circles</label>
+                        <input type="number" name="system.attributes.circles" value="{{system.attributes.circles}}" data-dtype="Number"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab skills" data-group="primary" data-tab="skills">
+            <div class="skills-list">
+                <h3>Skills</h3>
+                {{#each system.skills as |skill key|}}
+                <div class="skill">
+                    <label>{{skill.name}}</label>
+                    <input type="number" name="system.skills.{{key}}.value" value="{{skill.value}}" data-dtype="Number"/>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+        <div class="tab traits" data-group="primary" data-tab="traits">
+            <div class="traits-list">
+                <h3>Traits</h3>
+                {{#each system.traits as |trait key|}}
+                <div class="trait">
+                    <label>{{trait.name}}</label>
+                    <input type="text" name="system.traits.{{key}}.description" value="{{trait.description}}"/>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+        <div class="tab relationships" data-group="primary" data-tab="relationships">
+            <div class="relationships-list">
+                <h3>Relationships</h3>
+                {{#each system.relationships as |relationship key|}}
+                <div class="relationship">
+                    <label>{{relationship.name}}</label>
+                    <input type="text" name="system.relationships.{{key}}.description" value="{{relationship.description}}"/>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+</form> 
