@@ -1,6 +1,6 @@
 class BWCharacterSheet extends ActorSheet {
     static get defaultOptions() {
-        return mergeObject(super.defaultOptions, {
+        return foundry.utils.mergeObject(super.defaultOptions, {
             classes: ["bw-sheet", "sheet", "actor"],
             template: "modules/bw-character-sheet/templates/character-sheet.html",
             width: 800,
@@ -30,6 +30,16 @@ class BWCharacterSheet extends ActorSheet {
             }
         });
 
+        // Initialize attributes if they don't exist
+        if (!data.system.attributes) {
+            data.system.attributes = {
+                health: 0,
+                steel: 0,
+                resources: 0,
+                circles: 0
+            };
+        }
+
         // Initialize beliefs if they don't exist
         if (!data.system.beliefs) {
             data.system.beliefs = {};
@@ -55,6 +65,23 @@ class BWCharacterSheet extends ActorSheet {
             };
         }
 
+        // Ensure the data is properly structured
+        if (!this.actor.system.stats) {
+            this.actor.update({
+                'system.stats': data.system.stats
+            });
+        }
+
+        if (!this.actor.system.attributes) {
+            this.actor.update({
+                'system.attributes': data.system.attributes
+            });
+        }
+
+        // Log the current data for debugging
+        console.log('Current stats data:', data.system.stats);
+        console.log('Current attributes data:', data.system.attributes);
+
         return data;
     }
 
@@ -71,10 +98,31 @@ class BWCharacterSheet extends ActorSheet {
         const value = target.value;
         const name = target.name;
 
-        // Update the actor data
-        await this.actor.update({
-            [name]: value
-        });
+        // Handle nested updates for stats
+        if (name.startsWith('system.stats.')) {
+            const parts = name.split('.');
+            const stat = parts[2];
+            const property = parts[3];
+            
+            // Get the current stats data
+            const currentStats = this.actor.system.stats || {};
+            const currentStat = currentStats[stat] || { shade: 'B', exponent: 0 };
+            
+            // Create the update object
+            const updateData = {};
+            updateData[`system.stats.${stat}.${property}`] = value;
+            
+            // Update the actor
+            await this.actor.update(updateData);
+            
+            // Force a re-render of the sheet
+            this.render(true);
+        } else {
+            // Handle regular updates
+            await this.actor.update({
+                [name]: value
+            });
+        }
     }
 }
 
@@ -87,10 +135,6 @@ Actors.registerSheet("bw-sheets", BWCharacterSheet, {
 // Initialize the module
 Hooks.once('init', async function() {
     console.log('Burning Wheel Character Sheets | Initializing');
-    
-    // Register partial templates
-    const statInputTemplate = await fetch("modules/bw-character-sheet/templates/partials/stat-input.html").then(r => r.text());
-    Handlebars.registerPartial("stat-input", statInputTemplate);
 });
 
 // When the module is ready

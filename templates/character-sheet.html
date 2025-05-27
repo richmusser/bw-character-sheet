@@ -83,27 +83,69 @@
                     <h3>Stats</h3>
                     <div class="stat">
                         <label>Will</label>
-                        {{> stat-input stat="will"}}
+                        <div class="stat-inputs">
+                            <select name="system.stats.will.shade" data-dtype="String">
+                                <option value="B" {{#if (eq system.stats.will.shade "B")}}selected{{/if}}>B</option>
+                                <option value="G" {{#if (eq system.stats.will.shade "G")}}selected{{/if}}>G</option>
+                                <option value="W" {{#if (eq system.stats.will.shade "W")}}selected{{/if}}>W</option>
+                            </select>
+                            <input type="number" name="system.stats.will.exponent" value="{{system.stats.will.exponent}}" data-dtype="Number"/>
+                        </div>
                     </div>
                     <div class="stat">
                         <label>Power</label>
-                        {{> stat-input stat="power"}}
+                        <div class="stat-inputs">
+                            <select name="system.stats.power.shade" data-dtype="String">
+                                <option value="B" {{#if (eq system.stats.power.shade "B")}}selected{{/if}}>B</option>
+                                <option value="G" {{#if (eq system.stats.power.shade "G")}}selected{{/if}}>G</option>
+                                <option value="W" {{#if (eq system.stats.power.shade "W")}}selected{{/if}}>W</option>
+                            </select>
+                            <input type="number" name="system.stats.power.exponent" value="{{system.stats.power.exponent}}" data-dtype="Number"/>
+                        </div>
                     </div>
                     <div class="stat">
                         <label>Agility</label>
-                        {{> stat-input stat="agility"}}
+                        <div class="stat-inputs">
+                            <select name="system.stats.agility.shade" data-dtype="String">
+                                <option value="B" {{#if (eq system.stats.agility.shade "B")}}selected{{/if}}>B</option>
+                                <option value="G" {{#if (eq system.stats.agility.shade "G")}}selected{{/if}}>G</option>
+                                <option value="W" {{#if (eq system.stats.agility.shade "W")}}selected{{/if}}>W</option>
+                            </select>
+                            <input type="number" name="system.stats.agility.exponent" value="{{system.stats.agility.exponent}}" data-dtype="Number"/>
+                        </div>
                     </div>
                     <div class="stat">
                         <label>Perception</label>
-                        {{> stat-input stat="perception"}}
+                        <div class="stat-inputs">
+                            <select name="system.stats.perception.shade" data-dtype="String">
+                                <option value="B" {{#if (eq system.stats.perception.shade "B")}}selected{{/if}}>B</option>
+                                <option value="G" {{#if (eq system.stats.perception.shade "G")}}selected{{/if}}>G</option>
+                                <option value="W" {{#if (eq system.stats.perception.shade "W")}}selected{{/if}}>W</option>
+                            </select>
+                            <input type="number" name="system.stats.perception.exponent" value="{{system.stats.perception.exponent}}" data-dtype="Number"/>
+                        </div>
                     </div>
                     <div class="stat">
                         <label>Forte</label>
-                        {{> stat-input stat="forte"}}
+                        <div class="stat-inputs">
+                            <select name="system.stats.forte.shade" data-dtype="String">
+                                <option value="B" {{#if (eq system.stats.forte.shade "B")}}selected{{/if}}>B</option>
+                                <option value="G" {{#if (eq system.stats.forte.shade "G")}}selected{{/if}}>G</option>
+                                <option value="W" {{#if (eq system.stats.forte.shade "W")}}selected{{/if}}>W</option>
+                            </select>
+                            <input type="number" name="system.stats.forte.exponent" value="{{system.stats.forte.exponent}}" data-dtype="Number"/>
+                        </div>
                     </div>
                     <div class="stat">
                         <label>Speed</label>
-                        {{> stat-input stat="speed"}}
+                        <div class="stat-inputs">
+                            <select name="system.stats.speed.shade" data-dtype="String">
+                                <option value="B" {{#if (eq system.stats.speed.shade "B")}}selected{{/if}}>B</option>
+                                <option value="G" {{#if (eq system.stats.speed.shade "G")}}selected{{/if}}>G</option>
+                                <option value="W" {{#if (eq system.stats.speed.shade "W")}}selected{{/if}}>W</option>
+                            </select>
+                            <input type="number" name="system.stats.speed.exponent" value="{{system.stats.speed.exponent}}" data-dtype="Number"/>
+                        </div>
                     </div>
                 </div>
                 <div class="attributes">

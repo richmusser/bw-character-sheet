@@ -1,8 +1,0 @@
-<div class="stat-inputs">
-    <select name="system.stats.{{stat}}.shade" data-dtype="String">
-        <option value="B" {{#if (eq (lookup (lookup ../system.stats stat) "shade") "B")}}selected{{/if}}>B</option>
-        <option value="G" {{#if (eq (lookup (lookup ../system.stats stat) "shade") "G")}}selected{{/if}}>G</option>
-        <option value="W" {{#if (eq (lookup (lookup ../system.stats stat) "shade") "W")}}selected{{/if}}>W</option>
-    </select>
-    <input type="number" name="system.stats.{{stat}}.exponent" value="{{lookup (lookup ../system.stats stat) "exponent"}}" data-dtype="Number"/>
-</div> 
