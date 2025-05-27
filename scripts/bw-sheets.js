@@ -25,8 +25,18 @@ class BWCharacterSheet extends ActorSheet {
             if (!data.system.stats[stat]) {
                 data.system.stats[stat] = {
                     shade: 'B',
-                    exponent: 0
+                    exponent: 0,
+                    difficult: [false, false, false, false],
+                    challenge: [false, false, false]
                 };
+            } else {
+                // Ensure difficult and challenge arrays exist
+                if (!data.system.stats[stat].difficult) {
+                    data.system.stats[stat].difficult = [false, false, false, false];
+                }
+                if (!data.system.stats[stat].challenge) {
+                    data.system.stats[stat].challenge = [false, false, false];
+                }
             }
         });
 
@@ -95,7 +105,7 @@ class BWCharacterSheet extends ActorSheet {
     async _onInputChange(event) {
         event.preventDefault();
         const target = event.target;
-        const value = target.value;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
 
         // Handle nested updates for stats
@@ -103,6 +113,7 @@ class BWCharacterSheet extends ActorSheet {
             const parts = name.split('.');
             const stat = parts[2];
             const property = parts[3];
+            const index = parts[4];
             
             // Get the current stats data
             const currentStats = this.actor.system.stats || {};
@@ -110,7 +121,7 @@ class BWCharacterSheet extends ActorSheet {
             
             // Create the update object
             const updateData = {};
-            updateData[`system.stats.${stat}.${property}`] = value;
+            updateData[`system.stats.${stat}.${property}.${index}`] = value;
             
             // Update the actor
             await this.actor.update(updateData);

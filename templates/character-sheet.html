@@ -91,6 +91,25 @@
                             </select>
                             <input type="number" name="system.stats.will.exponent" value="{{system.stats.will.exponent}}" data-dtype="Number"/>
                         </div>
+                        <div class="stat-checks">
+                            <div class="difficult">
+                                <label>Difficult</label>
+                                <div class="checkboxes">
+                                    <input type="checkbox" name="system.stats.will.difficult.0" {{#if system.stats.will.difficult.[0]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.will.difficult.1" {{#if system.stats.will.difficult.[1]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.will.difficult.2" {{#if system.stats.will.difficult.[2]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.will.difficult.3" {{#if system.stats.will.difficult.[3]}}checked{{/if}}/>
+                                </div>
+                            </div>
+                            <div class="challenge">
+                                <label>Challenge</label>
+                                <div class="checkboxes">
+                                    <input type="checkbox" name="system.stats.will.challenge.0" {{#if system.stats.will.challenge.[0]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.will.challenge.1" {{#if system.stats.will.challenge.[1]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.will.challenge.2" {{#if system.stats.will.challenge.[2]}}checked{{/if}}/>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="stat">
                         <label>Power</label>
@@ -101,6 +120,25 @@
                                 <option value="W" {{#if (eq system.stats.power.shade "W")}}selected{{/if}}>W</option>
                             </select>
                             <input type="number" name="system.stats.power.exponent" value="{{system.stats.power.exponent}}" data-dtype="Number"/>
+                        </div>
+                        <div class="stat-checks">
+                            <div class="difficult">
+                                <label>Difficult</label>
+                                <div class="checkboxes">
+                                    <input type="checkbox" name="system.stats.power.difficult.0" {{#if system.stats.power.difficult.[0]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.power.difficult.1" {{#if system.stats.power.difficult.[1]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.power.difficult.2" {{#if system.stats.power.difficult.[2]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.power.difficult.3" {{#if system.stats.power.difficult.[3]}}checked{{/if}}/>
+                                </div>
+                            </div>
+                            <div class="challenge">
+                                <label>Challenge</label>
+                                <div class="checkboxes">
+                                    <input type="checkbox" name="system.stats.power.challenge.0" {{#if system.stats.power.challenge.[0]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.power.challenge.1" {{#if system.stats.power.challenge.[1]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.power.challenge.2" {{#if system.stats.power.challenge.[2]}}checked{{/if}}/>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="stat">
@@ -113,6 +151,25 @@
                             </select>
                             <input type="number" name="system.stats.agility.exponent" value="{{system.stats.agility.exponent}}" data-dtype="Number"/>
                         </div>
+                        <div class="stat-checks">
+                            <div class="difficult">
+                                <label>Difficult</label>
+                                <div class="checkboxes">
+                                    <input type="checkbox" name="system.stats.agility.difficult.0" {{#if system.stats.agility.difficult.[0]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.agility.difficult.1" {{#if system.stats.agility.difficult.[1]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.agility.difficult.2" {{#if system.stats.agility.difficult.[2]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.agility.difficult.3" {{#if system.stats.agility.difficult.[3]}}checked{{/if}}/>
+                                </div>
+                            </div>
+                            <div class="challenge">
+                                <label>Challenge</label>
+                                <div class="checkboxes">
+                                    <input type="checkbox" name="system.stats.agility.challenge.0" {{#if system.stats.agility.challenge.[0]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.agility.challenge.1" {{#if system.stats.agility.challenge.[1]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.agility.challenge.2" {{#if system.stats.agility.challenge.[2]}}checked{{/if}}/>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="stat">
                         <label>Perception</label>
@@ -123,6 +180,25 @@
                                 <option value="W" {{#if (eq system.stats.perception.shade "W")}}selected{{/if}}>W</option>
                             </select>
                             <input type="number" name="system.stats.perception.exponent" value="{{system.stats.perception.exponent}}" data-dtype="Number"/>
+                        </div>
+                        <div class="stat-checks">
+                            <div class="difficult">
+                                <label>Difficult</label>
+                                <div class="checkboxes">
+                                    <input type="checkbox" name="system.stats.perception.difficult.0" {{#if system.stats.perception.difficult.[0]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.perception.difficult.1" {{#if system.stats.perception.difficult.[1]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.perception.difficult.2" {{#if system.stats.perception.difficult.[2]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.perception.difficult.3" {{#if system.stats.perception.difficult.[3]}}checked{{/if}}/>
+                                </div>
+                            </div>
+                            <div class="challenge">
+                                <label>Challenge</label>
+                                <div class="checkboxes">
+                                    <input type="checkbox" name="system.stats.perception.challenge.0" {{#if system.stats.perception.challenge.[0]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.perception.challenge.1" {{#if system.stats.perception.challenge.[1]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.perception.challenge.2" {{#if system.stats.perception.challenge.[2]}}checked{{/if}}/>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="stat">
@@ -135,6 +211,25 @@
                             </select>
                             <input type="number" name="system.stats.forte.exponent" value="{{system.stats.forte.exponent}}" data-dtype="Number"/>
                         </div>
+                        <div class="stat-checks">
+                            <div class="difficult">
+                                <label>Difficult</label>
+                                <div class="checkboxes">
+                                    <input type="checkbox" name="system.stats.forte.difficult.0" {{#if system.stats.forte.difficult.[0]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.forte.difficult.1" {{#if system.stats.forte.difficult.[1]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.forte.difficult.2" {{#if system.stats.forte.difficult.[2]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.forte.difficult.3" {{#if system.stats.forte.difficult.[3]}}checked{{/if}}/>
+                                </div>
+                            </div>
+                            <div class="challenge">
+                                <label>Challenge</label>
+                                <div class="checkboxes">
+                                    <input type="checkbox" name="system.stats.forte.challenge.0" {{#if system.stats.forte.challenge.[0]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.forte.challenge.1" {{#if system.stats.forte.challenge.[1]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.forte.challenge.2" {{#if system.stats.forte.challenge.[2]}}checked{{/if}}/>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="stat">
                         <label>Speed</label>
@@ -145,6 +240,25 @@
                                 <option value="W" {{#if (eq system.stats.speed.shade "W")}}selected{{/if}}>W</option>
                             </select>
                             <input type="number" name="system.stats.speed.exponent" value="{{system.stats.speed.exponent}}" data-dtype="Number"/>
+                        </div>
+                        <div class="stat-checks">
+                            <div class="difficult">
+                                <label>Difficult</label>
+                                <div class="checkboxes">
+                                    <input type="checkbox" name="system.stats.speed.difficult.0" {{#if system.stats.speed.difficult.[0]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.speed.difficult.1" {{#if system.stats.speed.difficult.[1]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.speed.difficult.2" {{#if system.stats.speed.difficult.[2]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.speed.difficult.3" {{#if system.stats.speed.difficult.[3]}}checked{{/if}}/>
+                                </div>
+                            </div>
+                            <div class="challenge">
+                                <label>Challenge</label>
+                                <div class="checkboxes">
+                                    <input type="checkbox" name="system.stats.speed.challenge.0" {{#if system.stats.speed.challenge.[0]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.speed.challenge.1" {{#if system.stats.speed.challenge.[1]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.stats.speed.challenge.2" {{#if system.stats.speed.challenge.[2]}}checked{{/if}}/>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

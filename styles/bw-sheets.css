@@ -93,37 +93,86 @@
     padding: 0;
 }
 
-.bw-character-sheet .stat,
-.bw-character-sheet .attribute,
-.bw-character-sheet .skill,
-.bw-character-sheet .trait,
-.bw-character-sheet .relationship {
+.bw-character-sheet .stat {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 5px;
     margin: 5px 0;
     padding: 5px;
     border-bottom: 1px solid #DDD;
 }
 
-.bw-character-sheet .stat label,
-.bw-character-sheet .attribute label,
-.bw-character-sheet .skill label,
-.bw-character-sheet .trait label,
-.bw-character-sheet .relationship label {
-    flex: 2;
+.bw-character-sheet .stat label {
     font-weight: bold;
     margin-right: 10px;
 }
 
-.bw-character-sheet .stat input,
-.bw-character-sheet .attribute input,
-.bw-character-sheet .skill input,
-.bw-character-sheet .trait input,
-.bw-character-sheet .relationship input {
-    flex: 1;
-    text-align: center;
+.bw-character-sheet .stat-inputs {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.bw-character-sheet .stat-checks {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.bw-character-sheet .difficult,
+.bw-character-sheet .challenge {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.bw-character-sheet .difficult label,
+.bw-character-sheet .challenge label {
+    font-size: 0.8em;
+    font-weight: bold;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.bw-character-sheet .checkboxes {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.bw-character-sheet .checkboxes input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 20px;
+    min-width: 16px;
+    min-height: 20px;
+    border: 1px solid #7a7971;
+    border-radius: 50%;
+    background: #f0f0f0;
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    transform: scale(.5);
+    margin-left: -11px;
+}
+
+.bw-character-sheet .checkboxes input[type="checkbox"]:checked {
+    background: #800000;
+}
+
+.bw-character-sheet .checkboxes input[type="checkbox"]:focus {
+    outline: none;
+    box-shadow: 0 0 3px #800000;
+}
+
+.bw-character-sheet .checkboxes input[type="checkbox"]:hover {
+    border-color: #800000;
 }
 
 .bw-character-sheet h3 {
@@ -147,12 +196,6 @@
 .bw-character-sheet input[type="number"]:focus {
     box-shadow: 0 0 5px #800000;
     outline: none;
-}
-
-.bw-character-sheet .stat-inputs {
-    display: flex;
-    gap: 5px;
-    align-items: center;
 }
 
 .bw-character-sheet .stat-inputs select {
