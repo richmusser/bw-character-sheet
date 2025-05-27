@@ -17,6 +17,29 @@
                     <input type="text" name="system.lifepaths" value="{{system.lifepaths}}" data-dtype="Number"/>
                 </div>
             </div>
+            <div class="arthas">
+                <h3>Artha</h3>
+                <div class="artha-grid">
+                    <div class="artha">
+                        <label>Fate</label>
+                        <div class="circle-input">
+                            <input type="number" name="system.artha.fate" value="{{system.artha.fate}}" data-dtype="Number"/>
+                        </div>
+                    </div>
+                    <div class="artha">
+                        <label>Persona</label>
+                        <div class="circle-input">
+                            <input type="number" name="system.artha.persona" value="{{system.artha.persona}}" data-dtype="Number"/>
+                        </div>
+                    </div>
+                    <div class="artha">
+                        <label>Deeds</label>
+                        <div class="circle-input">
+                            <input type="number" name="system.artha.deeds" value="{{system.artha.deeds}}" data-dtype="Number"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -51,29 +74,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="arthas">
-                    <h3>Artha</h3>
-                    <div class="artha-grid">
-                        <div class="artha">
-                            <label>Fate</label>
-                            <div class="circle-input">
-                                <input type="number" name="system.artha.fate" value="{{system.artha.fate}}" data-dtype="Number"/>
-                            </div>
-                        </div>
-                        <div class="artha">
-                            <label>Persona</label>
-                            <div class="circle-input">
-                                <input type="number" name="system.artha.persona" value="{{system.artha.persona}}" data-dtype="Number"/>
-                            </div>
-                        </div>
-                        <div class="artha">
-                            <label>Deeds</label>
-                            <div class="circle-input">
-                                <input type="number" name="system.artha.deeds" value="{{system.artha.deeds}}" data-dtype="Number"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -82,14 +82,16 @@
                 <div class="stats">
                     <h3>Stats</h3>
                     <div class="stat">
-                        <label>Will</label>
-                        <div class="stat-inputs">
-                            <select name="system.stats.will.shade" data-dtype="String">
-                                <option value="B" {{#if (eq system.stats.will.shade "B")}}selected{{/if}}>B</option>
-                                <option value="G" {{#if (eq system.stats.will.shade "G")}}selected{{/if}}>G</option>
-                                <option value="W" {{#if (eq system.stats.will.shade "W")}}selected{{/if}}>W</option>
-                            </select>
-                            <input type="number" name="system.stats.will.exponent" value="{{system.stats.will.exponent}}" data-dtype="Number"/>
+                        <div class="stat-header">
+                            <label>Will</label>
+                            <div class="stat-inputs">
+                                <select name="system.stats.will.shade" data-dtype="String">
+                                    <option value="B" {{#if (eq system.stats.will.shade "B")}}selected{{/if}}>B</option>
+                                    <option value="G" {{#if (eq system.stats.will.shade "G")}}selected{{/if}}>G</option>
+                                    <option value="W" {{#if (eq system.stats.will.shade "W")}}selected{{/if}}>W</option>
+                                </select>
+                                <input type="number" name="system.stats.will.exponent" value="{{system.stats.will.exponent}}" data-dtype="Number"/>
+                            </div>
                         </div>
                         <div class="stat-checks">
                             <div class="difficult">
@@ -112,14 +114,16 @@
                         </div>
                     </div>
                     <div class="stat">
-                        <label>Power</label>
-                        <div class="stat-inputs">
-                            <select name="system.stats.power.shade" data-dtype="String">
-                                <option value="B" {{#if (eq system.stats.power.shade "B")}}selected{{/if}}>B</option>
-                                <option value="G" {{#if (eq system.stats.power.shade "G")}}selected{{/if}}>G</option>
-                                <option value="W" {{#if (eq system.stats.power.shade "W")}}selected{{/if}}>W</option>
-                            </select>
-                            <input type="number" name="system.stats.power.exponent" value="{{system.stats.power.exponent}}" data-dtype="Number"/>
+                        <div class="stat-header">
+                            <label>Power</label>
+                            <div class="stat-inputs">
+                                <select name="system.stats.power.shade" data-dtype="String">
+                                    <option value="B" {{#if (eq system.stats.power.shade "B")}}selected{{/if}}>B</option>
+                                    <option value="G" {{#if (eq system.stats.power.shade "G")}}selected{{/if}}>G</option>
+                                    <option value="W" {{#if (eq system.stats.power.shade "W")}}selected{{/if}}>W</option>
+                                </select>
+                                <input type="number" name="system.stats.power.exponent" value="{{system.stats.power.exponent}}" data-dtype="Number"/>
+                            </div>
                         </div>
                         <div class="stat-checks">
                             <div class="difficult">
@@ -142,14 +146,16 @@
                         </div>
                     </div>
                     <div class="stat">
-                        <label>Agility</label>
-                        <div class="stat-inputs">
-                            <select name="system.stats.agility.shade" data-dtype="String">
-                                <option value="B" {{#if (eq system.stats.agility.shade "B")}}selected{{/if}}>B</option>
-                                <option value="G" {{#if (eq system.stats.agility.shade "G")}}selected{{/if}}>G</option>
-                                <option value="W" {{#if (eq system.stats.agility.shade "W")}}selected{{/if}}>W</option>
-                            </select>
-                            <input type="number" name="system.stats.agility.exponent" value="{{system.stats.agility.exponent}}" data-dtype="Number"/>
+                        <div class="stat-header">
+                            <label>Agility</label>
+                            <div class="stat-inputs">
+                                <select name="system.stats.agility.shade" data-dtype="String">
+                                    <option value="B" {{#if (eq system.stats.agility.shade "B")}}selected{{/if}}>B</option>
+                                    <option value="G" {{#if (eq system.stats.agility.shade "G")}}selected{{/if}}>G</option>
+                                    <option value="W" {{#if (eq system.stats.agility.shade "W")}}selected{{/if}}>W</option>
+                                </select>
+                                <input type="number" name="system.stats.agility.exponent" value="{{system.stats.agility.exponent}}" data-dtype="Number"/>
+                            </div>
                         </div>
                         <div class="stat-checks">
                             <div class="difficult">
@@ -172,14 +178,16 @@
                         </div>
                     </div>
                     <div class="stat">
-                        <label>Perception</label>
-                        <div class="stat-inputs">
-                            <select name="system.stats.perception.shade" data-dtype="String">
-                                <option value="B" {{#if (eq system.stats.perception.shade "B")}}selected{{/if}}>B</option>
-                                <option value="G" {{#if (eq system.stats.perception.shade "G")}}selected{{/if}}>G</option>
-                                <option value="W" {{#if (eq system.stats.perception.shade "W")}}selected{{/if}}>W</option>
-                            </select>
-                            <input type="number" name="system.stats.perception.exponent" value="{{system.stats.perception.exponent}}" data-dtype="Number"/>
+                        <div class="stat-header">
+                            <label>Perception</label>
+                            <div class="stat-inputs">
+                                <select name="system.stats.perception.shade" data-dtype="String">
+                                    <option value="B" {{#if (eq system.stats.perception.shade "B")}}selected{{/if}}>B</option>
+                                    <option value="G" {{#if (eq system.stats.perception.shade "G")}}selected{{/if}}>G</option>
+                                    <option value="W" {{#if (eq system.stats.perception.shade "W")}}selected{{/if}}>W</option>
+                                </select>
+                                <input type="number" name="system.stats.perception.exponent" value="{{system.stats.perception.exponent}}" data-dtype="Number"/>
+                            </div>
                         </div>
                         <div class="stat-checks">
                             <div class="difficult">
@@ -202,14 +210,16 @@
                         </div>
                     </div>
                     <div class="stat">
-                        <label>Forte</label>
-                        <div class="stat-inputs">
-                            <select name="system.stats.forte.shade" data-dtype="String">
-                                <option value="B" {{#if (eq system.stats.forte.shade "B")}}selected{{/if}}>B</option>
-                                <option value="G" {{#if (eq system.stats.forte.shade "G")}}selected{{/if}}>G</option>
-                                <option value="W" {{#if (eq system.stats.forte.shade "W")}}selected{{/if}}>W</option>
-                            </select>
-                            <input type="number" name="system.stats.forte.exponent" value="{{system.stats.forte.exponent}}" data-dtype="Number"/>
+                        <div class="stat-header">
+                            <label>Forte</label>
+                            <div class="stat-inputs">
+                                <select name="system.stats.forte.shade" data-dtype="String">
+                                    <option value="B" {{#if (eq system.stats.forte.shade "B")}}selected{{/if}}>B</option>
+                                    <option value="G" {{#if (eq system.stats.forte.shade "G")}}selected{{/if}}>G</option>
+                                    <option value="W" {{#if (eq system.stats.forte.shade "W")}}selected{{/if}}>W</option>
+                                </select>
+                                <input type="number" name="system.stats.forte.exponent" value="{{system.stats.forte.exponent}}" data-dtype="Number"/>
+                            </div>
                         </div>
                         <div class="stat-checks">
                             <div class="difficult">
@@ -232,15 +242,18 @@
                         </div>
                     </div>
                     <div class="stat">
-                        <label>Speed</label>
-                        <div class="stat-inputs">
-                            <select name="system.stats.speed.shade" data-dtype="String">
-                                <option value="B" {{#if (eq system.stats.speed.shade "B")}}selected{{/if}}>B</option>
-                                <option value="G" {{#if (eq system.stats.speed.shade "G")}}selected{{/if}}>G</option>
-                                <option value="W" {{#if (eq system.stats.speed.shade "W")}}selected{{/if}}>W</option>
-                            </select>
-                            <input type="number" name="system.stats.speed.exponent" value="{{system.stats.speed.exponent}}" data-dtype="Number"/>
+                        <div class="stat-header">
+                            <label>Speed</label>
+                            <div class="stat-inputs">
+                                <select name="system.stats.speed.shade" data-dtype="String">
+                                    <option value="B" {{#if (eq system.stats.speed.shade "B")}}selected{{/if}}>B</option>
+                                    <option value="G" {{#if (eq system.stats.speed.shade "G")}}selected{{/if}}>G</option>
+                                    <option value="W" {{#if (eq system.stats.speed.shade "W")}}selected{{/if}}>W</option>
+                                </select>
+                                <input type="number" name="system.stats.speed.exponent" value="{{system.stats.speed.exponent}}" data-dtype="Number"/>
+                            </div>
                         </div>
+                       
                         <div class="stat-checks">
                             <div class="difficult">
                                 <label>Difficult</label>
@@ -257,6 +270,17 @@
                                     <input type="checkbox" name="system.stats.speed.challenge.0" {{#if system.stats.speed.challenge.[0]}}checked{{/if}}/>
                                     <input type="checkbox" name="system.stats.speed.challenge.1" {{#if system.stats.speed.challenge.[1]}}checked{{/if}}/>
                                     <input type="checkbox" name="system.stats.speed.challenge.2" {{#if system.stats.speed.challenge.[2]}}checked{{/if}}/>
+                                </div>
+                            </div>
+
+                            <div class="stride-inputs">
+                                <div class="stride">
+                                    <label>Stride</label>
+                                    <input type="number" name="system.stats.speed.stride" value="{{system.stats.speed.stride}}" data-dtype="Number"/>
+                                </div>
+                                <div class="stride">
+                                    <label>Mounted</label>
+                                    <input type="number" name="system.stats.speed.mounted" value="{{system.stats.speed.mounted}}" data-dtype="Number"/>
                                 </div>
                             </div>
                         </div>
@@ -285,14 +309,101 @@
         </div>
 
         <div class="tab skills" data-group="primary" data-tab="skills">
-            <div class="skills-list">
-                <h3>Skills</h3>
-                {{#each system.skills as |skill key|}}
-                <div class="skill">
-                    <label>{{skill.name}}</label>
-                    <input type="number" name="system.skills.{{key}}.value" value="{{skill.value}}" data-dtype="Number"/>
+            <div class="skills-grid">
+                <div class="skills-column">
+                    {{#each system.skills as |skill key|}}
+                    {{#if (lt key 20)}}
+                    <div class="skill">
+                        <div class="skill-header">
+                            <input type="text" name="system.skills.{{key}}.name" value="{{skill.name}}"/>
+                            <div class="skill-inputs">
+                                <select name="system.skills.{{key}}.shade" data-dtype="String">
+                                    <option value="B" {{#if (eq skill.shade "B")}}selected{{/if}}>B</option>
+                                    <option value="G" {{#if (eq skill.shade "G")}}selected{{/if}}>G</option>
+                                    <option value="W" {{#if (eq skill.shade "W")}}selected{{/if}}>W</option>
+                                </select>
+                                <input type="number" name="system.skills.{{key}}.exponent" value="{{skill.exponent}}" data-dtype="Number"/>
+                            </div>
+                        </div>
+                        <div class="skill-checks">
+                            <div class="routine">
+                                <label>Routine</label>
+                                <div class="checkboxes">
+                                    <input type="checkbox" name="system.skills.{{key}}.routine.0" {{#if skill.routine.[0]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.skills.{{key}}.routine.1" {{#if skill.routine.[1]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.skills.{{key}}.routine.2" {{#if skill.routine.[2]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.skills.{{key}}.routine.3" {{#if skill.routine.[3]}}checked{{/if}}/>
+                                </div>
+                            </div>
+                            <div class="difficult">
+                                <label>Difficult</label>
+                                <div class="checkboxes">
+                                    <input type="checkbox" name="system.skills.{{key}}.difficult.0" {{#if skill.difficult.[0]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.skills.{{key}}.difficult.1" {{#if skill.difficult.[1]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.skills.{{key}}.difficult.2" {{#if skill.difficult.[2]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.skills.{{key}}.difficult.3" {{#if skill.difficult.[3]}}checked{{/if}}/>
+                                </div>
+                            </div>
+                            <div class="challenge">
+                                <label>Challenge</label>
+                                <div class="checkboxes">
+                                    <input type="checkbox" name="system.skills.{{key}}.challenge.0" {{#if skill.challenge.[0]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.skills.{{key}}.challenge.1" {{#if skill.challenge.[1]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.skills.{{key}}.challenge.2" {{#if skill.challenge.[2]}}checked{{/if}}/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/if}}
+                    {{/each}}
                 </div>
-                {{/each}}
+                <div class="skills-column">
+                    {{#each system.skills as |skill key|}}
+                    {{#if (gte key 20)}}
+                    <div class="skill">
+                        <div class="skill-header">
+                            <input type="text" name="system.skills.{{key}}.name" value="{{skill.name}}"/>
+                            <div class="skill-inputs">
+                                <select name="system.skills.{{key}}.shade" data-dtype="String">
+                                    <option value="B" {{#if (eq skill.shade "B")}}selected{{/if}}>B</option>
+                                    <option value="G" {{#if (eq skill.shade "G")}}selected{{/if}}>G</option>
+                                    <option value="W" {{#if (eq skill.shade "W")}}selected{{/if}}>W</option>
+                                </select>
+                                <input type="number" name="system.skills.{{key}}.exponent" value="{{skill.exponent}}" data-dtype="Number"/>
+                            </div>
+                        </div>
+                        <div class="skill-checks">
+                            <div class="routine">
+                                <label>Routine</label>
+                                <div class="checkboxes">
+                                    <input type="checkbox" name="system.skills.{{key}}.routine.0" {{#if skill.routine.[0]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.skills.{{key}}.routine.1" {{#if skill.routine.[1]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.skills.{{key}}.routine.2" {{#if skill.routine.[2]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.skills.{{key}}.routine.3" {{#if skill.routine.[3]}}checked{{/if}}/>
+                                </div>
+                            </div>
+                            <div class="difficult">
+                                <label>Difficult</label>
+                                <div class="checkboxes">
+                                    <input type="checkbox" name="system.skills.{{key}}.difficult.0" {{#if skill.difficult.[0]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.skills.{{key}}.difficult.1" {{#if skill.difficult.[1]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.skills.{{key}}.difficult.2" {{#if skill.difficult.[2]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.skills.{{key}}.difficult.3" {{#if skill.difficult.[3]}}checked{{/if}}/>
+                                </div>
+                            </div>
+                            <div class="challenge">
+                                <label>Challenge</label>
+                                <div class="checkboxes">
+                                    <input type="checkbox" name="system.skills.{{key}}.challenge.0" {{#if skill.challenge.[0]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.skills.{{key}}.challenge.1" {{#if skill.challenge.[1]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.skills.{{key}}.challenge.2" {{#if skill.challenge.[2]}}checked{{/if}}/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/if}}
+                    {{/each}}
+                </div>
             </div>
         </div>
 

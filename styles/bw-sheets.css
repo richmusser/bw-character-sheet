@@ -10,12 +10,18 @@
     margin-bottom: 10px;
     border-bottom: 2px solid #800000;
     padding: 5px;
+    gap: 10px;
+}
+
+.bw-character-sheet .profile-img img {
+    height: 100px !important;
+    margin-right: 6px !important;
 }
 
 .bw-character-sheet .profile-img {
-    flex: 0 0 50px;
-    height: 50px;
-    width: 50px;
+    flex: 0 0 100px;
+    height: 100px;
+    width: 100px;
     margin-right: 10px;
     overflow: hidden;
     border-radius: 4px;
@@ -28,6 +34,9 @@
 
 .bw-character-sheet .header-fields {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .bw-character-sheet .charname {
@@ -102,9 +111,17 @@
     border-bottom: 1px solid #DDD;
 }
 
+.bw-character-sheet .stat-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
 .bw-character-sheet .stat label {
     font-weight: bold;
-    margin-right: 10px;
+    white-space: nowrap;
+    min-width: 80px;
 }
 
 .bw-character-sheet .stat-inputs {
@@ -132,7 +149,6 @@
 .bw-character-sheet .difficult label,
 .bw-character-sheet .challenge label {
     font-size: 0.8em;
-    font-weight: bold;
     margin: 0;
     white-space: nowrap;
 }
@@ -271,32 +287,36 @@
 
 .bw-character-sheet .arthas {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 0;
+    margin-right: 0;
 }
 
 .bw-character-sheet .artha-grid {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
     gap: 20px;
-    margin-top: 10px;
+    margin-top: 0;
+    align-items: center;
+    padding: 0 20px;
 }
 
 .bw-character-sheet .artha {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
 }
 
 .bw-character-sheet .artha label {
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1em;
+    white-space: nowrap;
 }
 
 .bw-character-sheet .circle-input {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     border: 2px solid #800000;
     display: flex;
@@ -306,12 +326,12 @@
 }
 
 .bw-character-sheet .circle-input input {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border: none;
     background: none;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: bold;
     color: #191813;
     padding: 0;
@@ -330,4 +350,107 @@
 
 .bw-character-sheet .circle-input input[type=number] {
     -moz-appearance: textfield;
+}
+
+.bw-character-sheet .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 10px;
+}
+
+.bw-character-sheet .skills-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bw-character-sheet .skill {
+    border: 1px solid #DDD;
+    border-radius: 4px;
+    padding: 8px;
+    background: #f8f8f8;
+}
+
+.bw-character-sheet .skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.bw-character-sheet .skill-header input[type="text"] {
+    flex: 1;
+    margin-right: 8px;
+}
+
+.bw-character-sheet .skill-inputs {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.bw-character-sheet .skill-inputs select {
+    width: 40px;
+    background: none;
+    border: 1px solid #7a7971;
+    border-radius: 3px;
+    color: #191813;
+    height: 24px;
+}
+
+.bw-character-sheet .skill-inputs input {
+    width: 50px;
+    text-align: center;
+}
+
+.bw-character-sheet .skill-checks {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.bw-character-sheet .skill-checks .difficult,
+.bw-character-sheet .skill-checks .challenge,
+.bw-character-sheet .skill-checks .routine {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.bw-character-sheet .skill-checks label {
+    font-size: 0.8em;
+    margin: 0;
+    white-space: nowrap;
+    min-width: 60px;
+}
+
+.bw-character-sheet .skill-checks .checkboxes {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.bw-character-sheet .stride-inputs {
+    display: flex;
+    gap: 20px;
+    margin: 5px 0;
+    padding-left: 10px;
+}
+
+.bw-character-sheet .stride {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.bw-character-sheet .stride label {
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+
+.bw-character-sheet .stride input {
+    width: 50px;
+    text-align: center;
 } 

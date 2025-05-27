@@ -75,6 +75,35 @@ class BWCharacterSheet extends ActorSheet {
             };
         }
 
+        // Initialize skills if they don't exist
+        if (!data.system.skills) {
+            data.system.skills = {};
+        }
+        // Ensure 40 skills exist (20 per column)
+        for (let i = 0; i < 40; i++) {
+            if (!data.system.skills[i]) {
+                data.system.skills[i] = {
+                    name: "",
+                    shade: 'B',
+                    exponent: 0,
+                    difficult: [false, false, false, false],
+                    challenge: [false, false, false],
+                    routine: [false, false, false, false]
+                };
+            } else {
+                // Ensure all arrays exist
+                if (!data.system.skills[i].difficult) {
+                    data.system.skills[i].difficult = [false, false, false, false];
+                }
+                if (!data.system.skills[i].challenge) {
+                    data.system.skills[i].challenge = [false, false, false];
+                }
+                if (!data.system.skills[i].routine) {
+                    data.system.skills[i].routine = [false, false, false, false];
+                }
+            }
+        }
+
         // Ensure the data is properly structured
         if (!this.actor.system.stats) {
             this.actor.update({
@@ -88,9 +117,16 @@ class BWCharacterSheet extends ActorSheet {
             });
         }
 
+        if (!this.actor.system.skills) {
+            this.actor.update({
+                'system.skills': data.system.skills
+            });
+        }
+
         // Log the current data for debugging
         console.log('Current stats data:', data.system.stats);
         console.log('Current attributes data:', data.system.attributes);
+        console.log('Current skills data:', data.system.skills);
 
         return data;
     }
