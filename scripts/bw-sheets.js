@@ -13,6 +13,48 @@ class BWCharacterSheet extends ActorSheet {
         const data = super.getData();
         data.actor = this.actor;
         data.system = this.actor.system;
+
+        // Initialize stats if they don't exist
+        if (!data.system.stats) {
+            data.system.stats = {};
+        }
+
+        // Initialize each stat with default values if they don't exist
+        const stats = ['will', 'power', 'agility', 'perception', 'forte', 'speed'];
+        stats.forEach(stat => {
+            if (!data.system.stats[stat]) {
+                data.system.stats[stat] = {
+                    shade: 'B',
+                    exponent: 0
+                };
+            }
+        });
+
+        // Initialize beliefs if they don't exist
+        if (!data.system.beliefs) {
+            data.system.beliefs = {};
+        }
+        // Ensure 4 beliefs exist
+        for (let i = 0; i < 4; i++) {
+            if (!data.system.beliefs[i]) {
+                data.system.beliefs[i] = { text: "" };
+            }
+        }
+
+        // Initialize instincts if they don't exist
+        if (!data.system.instincts) {
+            data.system.instincts = { text: "" };
+        }
+
+        // Initialize artha if it doesn't exist
+        if (!data.system.artha) {
+            data.system.artha = {
+                fate: 0,
+                persona: 0,
+                deeds: 0
+            };
+        }
+
         return data;
     }
 
@@ -45,6 +87,10 @@ Actors.registerSheet("bw-sheets", BWCharacterSheet, {
 // Initialize the module
 Hooks.once('init', async function() {
     console.log('Burning Wheel Character Sheets | Initializing');
+    
+    // Register partial templates
+    const statInputTemplate = await fetch("modules/bw-character-sheet/templates/partials/stat-input.html").then(r => r.text());
+    Handlebars.registerPartial("stat-input", statInputTemplate);
 });
 
 // When the module is ready

@@ -14,7 +14,7 @@
                 </div>
                 <div class="resource">
                     <label>Lifepaths</label>
-                    <input type="number" name="system.lifepaths" value="{{system.lifepaths}}" data-dtype="Number"/>
+                    <input type="text" name="system.lifepaths" value="{{system.lifepaths}}" data-dtype="Number"/>
                 </div>
             </div>
         </div>
@@ -22,7 +22,7 @@
 
     <nav class="sheet-tabs tabs" data-group="primary">
         <a class="item" data-tab="main">Main</a>
-        <a class="item" data-tab="attributes">Attributes</a>
+        <a class="item" data-tab="attributes">Stats & Attributes</a>
         <a class="item" data-tab="skills">Skills</a>
         <a class="item" data-tab="traits">Traits</a>
         <a class="item" data-tab="relationships">Relationships</a>
@@ -30,38 +30,82 @@
 
     <section class="sheet-body">
         <div class="tab main" data-group="primary" data-tab="main">
-            <div class="grid grid-2col">
-                <div class="stats">
-                    <h3>Stats</h3>
-                    <div class="stat">
-                        <label>Will</label>
-                        <input type="number" name="system.stats.will" value="{{system.stats.will}}" data-dtype="Number"/>
+            <div class="beliefs-instincts">
+                <div class="beliefs">
+                    <h3>Beliefs</h3>
+                    <div class="beliefs-list">
+                        {{#each system.beliefs as |belief key|}}
+                        {{#if (lt key 4)}}
+                        <div class="belief">
+                            <textarea name="system.beliefs.{{key}}.text" rows="2">{{belief.text}}</textarea>
+                        </div>
+                        {{/if}}
+                        {{/each}}
                     </div>
-                    <div class="stat">
-                        <label>Power</label>
-                        <input type="number" name="system.stats.power" value="{{system.stats.power}}" data-dtype="Number"/>
+                </div>
+                <div class="instincts">
+                    <h3>Instincts</h3>
+                    <div class="instincts-list">
+                        <div class="instinct">
+                            <textarea name="system.instincts.text" rows="8">{{system.instincts.text}}</textarea>
+                        </div>
                     </div>
-                    <div class="stat">
-                        <label>Agility</label>
-                        <input type="number" name="system.stats.agility" value="{{system.stats.agility}}" data-dtype="Number"/>
+                </div>
+                <div class="arthas">
+                    <h3>Artha</h3>
+                    <div class="artha-grid">
+                        <div class="artha">
+                            <label>Fate</label>
+                            <div class="circle-input">
+                                <input type="number" name="system.artha.fate" value="{{system.artha.fate}}" data-dtype="Number"/>
+                            </div>
+                        </div>
+                        <div class="artha">
+                            <label>Persona</label>
+                            <div class="circle-input">
+                                <input type="number" name="system.artha.persona" value="{{system.artha.persona}}" data-dtype="Number"/>
+                            </div>
+                        </div>
+                        <div class="artha">
+                            <label>Deeds</label>
+                            <div class="circle-input">
+                                <input type="number" name="system.artha.deeds" value="{{system.artha.deeds}}" data-dtype="Number"/>
+                            </div>
+                        </div>
                     </div>
-                    <div class="stat">
-                        <label>Perception</label>
-                        <input type="number" name="system.stats.perception" value="{{system.stats.perception}}" data-dtype="Number"/>
-                    </div>
-                    <div class="stat">
-                        <label>Forte</label>
-                        <input type="number" name="system.stats.forte" value="{{system.stats.forte}}" data-dtype="Number"/>
-                    </div>
-                    <div class="stat">
-                        <label>Speed</label>
-                        <input type="number" name="system.stats.speed" value="{{system.stats.speed}}" data-dtype="Number"/>
                 </div>
             </div>
         </div>
 
         <div class="tab attributes" data-group="primary" data-tab="attributes">
             <div class="grid grid-2col">
+                <div class="stats">
+                    <h3>Stats</h3>
+                    <div class="stat">
+                        <label>Will</label>
+                        {{> stat-input stat="will"}}
+                    </div>
+                    <div class="stat">
+                        <label>Power</label>
+                        {{> stat-input stat="power"}}
+                    </div>
+                    <div class="stat">
+                        <label>Agility</label>
+                        {{> stat-input stat="agility"}}
+                    </div>
+                    <div class="stat">
+                        <label>Perception</label>
+                        {{> stat-input stat="perception"}}
+                    </div>
+                    <div class="stat">
+                        <label>Forte</label>
+                        {{> stat-input stat="forte"}}
+                    </div>
+                    <div class="stat">
+                        <label>Speed</label>
+                        {{> stat-input stat="speed"}}
+                    </div>
+                </div>
                 <div class="attributes">
                     <h3>Attributes</h3>
                     <div class="attribute">
