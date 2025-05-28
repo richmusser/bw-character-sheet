@@ -47,7 +47,6 @@
         <a class="item" data-tab="main">Main</a>
         <a class="item" data-tab="attributes">Stats & Attributes</a>
         <a class="item" data-tab="skills">Skills</a>
-        <a class="item" data-tab="traits">Traits</a>
         <a class="item" data-tab="relationships">Relationships</a>
     </nav>
 
@@ -404,18 +403,6 @@
                     {{/if}}
                     {{/each}}
                 </div>
-            </div>
-        </div>
-
-        <div class="tab traits" data-group="primary" data-tab="traits">
-            <div class="traits-list">
-                <h3>Traits</h3>
-                {{#each system.traits as |trait key|}}
-                <div class="trait">
-                    <label>{{trait.name}}</label>
-                    <input type="text" name="system.traits.{{key}}.description" value="{{trait.description}}"/>
-                </div>
-                {{/each}}
             </div>
         </div>
 
