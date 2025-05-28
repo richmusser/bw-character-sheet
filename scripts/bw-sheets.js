@@ -26,16 +26,67 @@ class BWCharacterSheet extends ActorSheet {
 
         // Initialize attributes if they don't exist
         if (!actor.system.attributes) {
-            actor.update({
-                "system.attributes": {
-                    health: { shade: 'B', exponent: 0, routine: [false, false, false, false], difficult: [false, false, false, false], challenge: [false, false, false] },
-                    steel: { shade: 'B', exponent: 0, routine: [false, false, false, false], difficult: [false, false, false, false], challenge: [false, false, false] },
-                    reflexes: { shade: 'B', exponent: 0 },
-                    mortalWounds: { shade: 'B', exponent: 0 },
-                    custom1: { name: "", shade: 'B', exponent: 0, routine: [false, false, false, false], difficult: [false, false, false, false], challenge: [false, false, false] },
-                    custom2: { name: "", shade: 'B', exponent: 0, routine: [false, false, false, false], difficult: [false, false, false, false], challenge: [false, false, false] }
+            actor.system.attributes = {
+                health: {
+                    shade: "B",
+                    exponent: 5,
+                    routine: [false, false, false, false],
+                    difficult: [false, false, false, false],
+                    challenge: [false, false, false]
+                },
+                steel: {
+                    shade: "B",
+                    exponent: 5,
+                    routine: [false, false, false, false],
+                    difficult: [false, false, false, false],
+                    challenge: [false, false, false]
+                },
+                reflexes: {
+                    shade: "B",
+                    exponent: 0
+                },
+                mortalWounds: {
+                    shade: "B",
+                    exponent: 0
+                },
+                circles: {
+                    shade: "B",
+                    exponent: 0,
+                    routine: [false, false, false, false],
+                    difficult: [false, false, false, false],
+                    challenge: [false, false, false]
+                },
+                resources: {
+                    shade: "B",
+                    exponent: 0,
+                    routine: [false, false, false, false],
+                    difficult: [false, false, false, false],
+                    challenge: [false, false, false],
+                    tax: 0,
+                    cash: "",
+                    funds: "",
+                    loans: ""
+                },
+                reputations: {
+                    text: ""
+                },
+                custom1: {
+                    name: "",
+                    shade: "B",
+                    exponent: 0,
+                    routine: [false, false, false, false],
+                    difficult: [false, false, false, false],
+                    challenge: [false, false, false]
+                },
+                custom2: {
+                    name: "",
+                    shade: "B",
+                    exponent: 0,
+                    routine: [false, false, false, false],
+                    difficult: [false, false, false, false],
+                    challenge: [false, false, false]
                 }
-            });
+            };
         }
 
         // Initialize traits if they don't exist

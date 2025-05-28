@@ -608,4 +608,78 @@
 .bw-character-sheet .stride input {
     width: 50px;
     text-align: center;
+}
+
+.bw-character-sheet .attribute-content textarea {
+    width: 100%;
+    background: none;
+    border: 1px solid #7a7971;
+    border-radius: 3px;
+    color: #191813;
+    padding: 5px;
+    resize: vertical;
+    min-height: 40px;
+}
+
+.bw-character-sheet .attribute-content textarea:focus {
+    box-shadow: 0 0 5px #800000;
+    outline: none;
+}
+
+.bw-character-sheet .attribute[data-type="reputations"] {
+    grid-column: span 3;
+}
+
+.bw-character-sheet .tax-input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.bw-character-sheet .tax-input label {
+    font-size: 0.8em;
+    margin: 0;
+    white-space: nowrap;
+    min-width: 30px;
+    font-weight: normal;
+}
+
+.bw-character-sheet .tax-input .circle-input {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #800000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0;
+}
+
+.bw-character-sheet .tax-input .circle-input input {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background: none;
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #191813;
+    padding: 0;
+}
+
+.bw-character-sheet .tax-input .circle-input input:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.bw-character-sheet .tax-input .circle-input input::-webkit-inner-spin-button,
+.bw-character-sheet .tax-input .circle-input input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.bw-character-sheet .tax-input .circle-input input[type=number] {
+    -moz-appearance: textfield;
 } 

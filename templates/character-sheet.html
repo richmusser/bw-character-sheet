@@ -107,12 +107,12 @@
         </div>
 
         <div class="tab attributes" data-group="primary" data-tab="attributes">
-            <div class="stats">
-                <h3>Stats</h3>
+                <div class="stats">
+                    <h3>Stats</h3>
                 <div class="stats-grid">
                     <div class="stat">
                         <div class="stat-header">
-                            <label>Will</label>
+                        <label>Will</label>
                             <div class="stat-inputs">
                                 <select name="system.stats.will.shade" data-dtype="String">
                                     <option value="B" {{#if (eq system.stats.will.shade "B")}}selected{{/if}}>B</option>
@@ -144,7 +144,7 @@
                     </div>
                     <div class="stat">
                         <div class="stat-header">
-                            <label>Power</label>
+                        <label>Power</label>
                             <div class="stat-inputs">
                                 <select name="system.stats.power.shade" data-dtype="String">
                                     <option value="B" {{#if (eq system.stats.power.shade "B")}}selected{{/if}}>B</option>
@@ -176,7 +176,7 @@
                     </div>
                     <div class="stat">
                         <div class="stat-header">
-                            <label>Agility</label>
+                        <label>Agility</label>
                             <div class="stat-inputs">
                                 <select name="system.stats.agility.shade" data-dtype="String">
                                     <option value="B" {{#if (eq system.stats.agility.shade "B")}}selected{{/if}}>B</option>
@@ -208,7 +208,7 @@
                     </div>
                     <div class="stat">
                         <div class="stat-header">
-                            <label>Perception</label>
+                        <label>Perception</label>
                             <div class="stat-inputs">
                                 <select name="system.stats.perception.shade" data-dtype="String">
                                     <option value="B" {{#if (eq system.stats.perception.shade "B")}}selected{{/if}}>B</option>
@@ -240,7 +240,7 @@
                     </div>
                     <div class="stat">
                         <div class="stat-header">
-                            <label>Forte</label>
+                        <label>Forte</label>
                             <div class="stat-inputs">
                                 <select name="system.stats.forte.shade" data-dtype="String">
                                     <option value="B" {{#if (eq system.stats.forte.shade "B")}}selected{{/if}}>B</option>
@@ -272,7 +272,7 @@
                     </div>
                     <div class="stat">
                         <div class="stat-header">
-                            <label>Speed</label>
+                        <label>Speed</label>
                             <div class="stat-inputs">
                                 <select name="system.stats.speed.shade" data-dtype="String">
                                     <option value="B" {{#if (eq system.stats.speed.shade "B")}}selected{{/if}}>B</option>
@@ -396,15 +396,15 @@
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
+        </div>
 
-            <div class="attributes">
-                <h3>Attributes</h3>
+                <div class="attributes">
+                    <h3>Attributes</h3>
                 <div class="attributes-grid">
                     <div class="attribute">
                         <div class="attribute-header">
-                            <label>Health</label>
+                        <label>Health</label>
                             <div class="attribute-inputs">
                                 <select name="system.attributes.health.shade" data-dtype="String">
                                     <option value="B" {{#if (eq system.attributes.health.shade "B")}}selected{{/if}}>B</option>
@@ -445,7 +445,7 @@
                     </div>
                     <div class="attribute">
                         <div class="attribute-header">
-                            <label>Steel</label>
+                        <label>Steel</label>
                             <div class="attribute-inputs">
                                 <select name="system.attributes.steel.shade" data-dtype="String">
                                     <option value="B" {{#if (eq system.attributes.steel.shade "B")}}selected{{/if}}>B</option>
@@ -557,7 +557,7 @@
                     </div>
                     <div class="attribute">
                         <div class="attribute-header">
-                            <input type="text" name="system.attributes.custom2.name" value="{{system.attributes.custom2.name}}" />
+                            <input type="text" name="system.attributes.custom2.name" value="{{system.attributes.custom2.name}}" placeholder=""/>
                             <div class="attribute-inputs">
                                 <select name="system.attributes.custom2.shade" data-dtype="String">
                                     <option value="B" {{#if (eq system.attributes.custom2.shade "B")}}selected{{/if}}>B</option>
@@ -597,15 +597,139 @@
                         </div>
                     </div>
                 </div>
+                <div class="attributes-grid">
+                    <div class="attribute">
+                        <div class="attribute-header">
+                        <label>Circles</label>
+                            <div class="attribute-inputs">
+                                <select name="system.attributes.circles.shade" data-dtype="String">
+                                    <option value="B" {{#if (eq system.attributes.circles.shade "B")}}selected{{/if}}>B</option>
+                                    <option value="G" {{#if (eq system.attributes.circles.shade "G")}}selected{{/if}}>G</option>
+                                    <option value="W" {{#if (eq system.attributes.circles.shade "W")}}selected{{/if}}>W</option>
+                                </select>
+                                <input type="number" name="system.attributes.circles.exponent" value="{{system.attributes.circles.exponent}}" data-dtype="Number"/>
+                            </div>
+                        </div>
+                        <div class="attribute-checks">
+                            <div class="routine">
+                                <label>Routine</label>
+                                <div class="checkboxes">
+                                    <input type="checkbox" name="system.attributes.circles.routine.0" {{#if system.attributes.circles.routine.[0]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.attributes.circles.routine.1" {{#if system.attributes.circles.routine.[1]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.attributes.circles.routine.2" {{#if system.attributes.circles.routine.[2]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.attributes.circles.routine.3" {{#if system.attributes.circles.routine.[3]}}checked{{/if}}/>
+                                </div>
+                            </div>
+                            <div class="difficult">
+                                <label>Difficult</label>
+                                <div class="checkboxes">
+                                    <input type="checkbox" name="system.attributes.circles.difficult.0" {{#if system.attributes.circles.difficult.[0]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.attributes.circles.difficult.1" {{#if system.attributes.circles.difficult.[1]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.attributes.circles.difficult.2" {{#if system.attributes.circles.difficult.[2]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.attributes.circles.difficult.3" {{#if system.attributes.circles.difficult.[3]}}checked{{/if}}/>
+                                </div>
+                            </div>
+                            <div class="challenge">
+                                <label>Challenge</label>
+                                <div class="checkboxes">
+                                    <input type="checkbox" name="system.attributes.circles.challenge.0" {{#if system.attributes.circles.challenge.[0]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.attributes.circles.challenge.1" {{#if system.attributes.circles.challenge.[1]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.attributes.circles.challenge.2" {{#if system.attributes.circles.challenge.[2]}}checked{{/if}}/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="attribute" data-type="reputations">
+                        <div class="attribute-header">
+                            <label>Reputations and Affiliations</label>
+                        </div>
+                        <div class="attribute-content">
+                            <textarea name="system.attributes.reputations.text" rows="4">{{system.attributes.reputations.text}}</textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="attributes-grid">
+                    <div class="attribute">
+                        <div class="attribute-header">
+                            <label>Resources</label>
+                            <div class="attribute-inputs">
+                                <select name="system.attributes.resources.shade" data-dtype="String">
+                                    <option value="B" {{#if (eq system.attributes.resources.shade "B")}}selected{{/if}}>B</option>
+                                    <option value="G" {{#if (eq system.attributes.resources.shade "G")}}selected{{/if}}>G</option>
+                                    <option value="W" {{#if (eq system.attributes.resources.shade "W")}}selected{{/if}}>W</option>
+                                </select>
+                                <input type="number" name="system.attributes.resources.exponent" value="{{system.attributes.resources.exponent}}" data-dtype="Number"/>
+                            </div>
+                        </div>
+                        <div class="attribute-checks">
+                            <div class="routine">
+                                <label>Routine</label>
+                                <div class="checkboxes">
+                                    <input type="checkbox" name="system.attributes.resources.routine.0" {{#if system.attributes.resources.routine.[0]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.attributes.resources.routine.1" {{#if system.attributes.resources.routine.[1]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.attributes.resources.routine.2" {{#if system.attributes.resources.routine.[2]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.attributes.resources.routine.3" {{#if system.attributes.resources.routine.[3]}}checked{{/if}}/>
+                                </div>
+                            </div>
+                            <div class="difficult">
+                                <label>Difficult</label>
+                                <div class="checkboxes">
+                                    <input type="checkbox" name="system.attributes.resources.difficult.0" {{#if system.attributes.resources.difficult.[0]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.attributes.resources.difficult.1" {{#if system.attributes.resources.difficult.[1]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.attributes.resources.difficult.2" {{#if system.attributes.resources.difficult.[2]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.attributes.resources.difficult.3" {{#if system.attributes.resources.difficult.[3]}}checked{{/if}}/>
+                                </div>
+                            </div>
+                            <div class="challenge">
+                                <label>Challenge</label>
+                                <div class="checkboxes">
+                                    <input type="checkbox" name="system.attributes.resources.challenge.0" {{#if system.attributes.resources.challenge.[0]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.attributes.resources.challenge.1" {{#if system.attributes.resources.challenge.[1]}}checked{{/if}}/>
+                                    <input type="checkbox" name="system.attributes.resources.challenge.2" {{#if system.attributes.resources.challenge.[2]}}checked{{/if}}/>
+                                </div>
+                            </div>
+                            <div class="tax-input">
+                                <label>Tax</label>
+                                <div class="circle-input">
+                                    <input type="number" name="system.attributes.resources.tax" value="{{system.attributes.resources.tax}}" data-dtype="Number"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="attribute">
+                        <div class="attribute-header">
+                            <label>Cash</label>
+                        </div>
+                        <div class="attribute-content">
+                            <input type="text" name="system.attributes.resources.cash" value="{{system.attributes.resources.cash}}"/>
+                        </div>
+                    </div>
+                    <div class="attribute">
+                        <div class="attribute-header">
+                            <label>Funds/Property</label>
+                        </div>
+                        <div class="attribute-content">
+                            <input type="text" name="system.attributes.resources.funds" value="{{system.attributes.resources.funds}}"/>
+                        </div>
+                    </div>
+                    <div class="attribute">
+                        <div class="attribute-header">
+                            <label>Loans/Debt</label>
+                        </div>
+                        <div class="attribute-content">
+                            <input type="text" name="system.attributes.resources.loans" value="{{system.attributes.resources.loans}}"/>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="tab skills" data-group="primary" data-tab="skills">
             <div class="skills-grid">
                 <div class="skills-column">
-                    {{#each system.skills as |skill key|}}
+                {{#each system.skills as |skill key|}}
                     {{#if (lt key 20)}}
-                    <div class="skill">
+                <div class="skill">
                         <div class="skill-header">
                             <input type="text" name="system.skills.{{key}}.name" value="{{skill.name}}"/>
                             <div class="skill-inputs">
@@ -691,8 +815,8 @@
                                     <input type="checkbox" name="system.skills.{{key}}.challenge.2" {{#if skill.challenge.[2]}}checked{{/if}}/>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+            </div>
+        </div>
                     {{/if}}
                     {{/each}}
                 </div>
