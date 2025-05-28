@@ -104,6 +104,15 @@ class BWCharacterSheet extends ActorSheet {
             }
         }
 
+        // Initialize traits if they don't exist
+        if (!data.system.traits) {
+            data.system.traits = {
+                character: { text: "" },
+                die: { text: "" },
+                callOn: { text: "" }
+            };
+        }
+
         // Ensure the data is properly structured
         if (!this.actor.system.stats) {
             this.actor.update({
