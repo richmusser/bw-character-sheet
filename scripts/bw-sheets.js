@@ -11,133 +11,118 @@ class BWCharacterSheet extends ActorSheet {
 
     getData() {
         const data = super.getData();
-        data.actor = this.actor;
-        data.system = this.actor.system;
+        const actor = this.actor;
+
+        // Initialize Artha values if they don't exist
+        if (!actor.system.artha) {
+            actor.update({
+                "system.artha": {
+                    fate: 0,
+                    persona: 0,
+                    deeds: 0
+                }
+            });
+        }
+
+        // Initialize attributes if they don't exist
+        if (!actor.system.attributes) {
+            actor.update({
+                "system.attributes": {
+                    health: { shade: 'B', exponent: 0, routine: [false, false, false, false], difficult: [false, false, false, false], challenge: [false, false, false] },
+                    steel: { shade: 'B', exponent: 0, routine: [false, false, false, false], difficult: [false, false, false, false], challenge: [false, false, false] },
+                    reflexes: { shade: 'B', exponent: 0 },
+                    mortalWounds: { shade: 'B', exponent: 0 },
+                    custom1: { name: "", shade: 'B', exponent: 0, routine: [false, false, false, false], difficult: [false, false, false, false], challenge: [false, false, false] },
+                    custom2: { name: "", shade: 'B', exponent: 0, routine: [false, false, false, false], difficult: [false, false, false, false], challenge: [false, false, false] }
+                }
+            });
+        }
+
+        // Initialize traits if they don't exist
+        if (!actor.system.traits) {
+            actor.update({
+                "system.traits": {
+                    character: { text: "" },
+                    die: { text: "" },
+                    callOn: { text: "" }
+                }
+            });
+        }
 
         // Initialize stats if they don't exist
-        if (!data.system.stats) {
-            data.system.stats = {};
+        if (!actor.system.stats) {
+            actor.update({
+                "system.stats": {}
+            });
         }
 
         // Initialize each stat with default values if they don't exist
         const stats = ['will', 'power', 'agility', 'perception', 'forte', 'speed'];
         stats.forEach(stat => {
-            if (!data.system.stats[stat]) {
-                data.system.stats[stat] = {
-                    shade: 'B',
-                    exponent: 0,
-                    difficult: [false, false, false, false],
-                    challenge: [false, false, false]
-                };
-            } else {
-                // Ensure difficult and challenge arrays exist
-                if (!data.system.stats[stat].difficult) {
-                    data.system.stats[stat].difficult = [false, false, false, false];
-                }
-                if (!data.system.stats[stat].challenge) {
-                    data.system.stats[stat].challenge = [false, false, false];
-                }
+            if (!actor.system.stats[stat]) {
+                actor.update({
+                    [`system.stats.${stat}`]: {
+                        shade: 'B',
+                        exponent: 0,
+                        difficult: [false, false, false, false],
+                        challenge: [false, false, false]
+                    }
+                });
             }
         });
 
-        // Initialize attributes if they don't exist
-        if (!data.system.attributes) {
-            data.system.attributes = {
-                health: 0,
-                steel: 0,
-                resources: 0,
-                circles: 0
-            };
-        }
-
         // Initialize beliefs if they don't exist
-        if (!data.system.beliefs) {
-            data.system.beliefs = {};
+        if (!actor.system.beliefs) {
+            actor.update({
+                "system.beliefs": {}
+            });
         }
         // Ensure 4 beliefs exist
         for (let i = 0; i < 4; i++) {
-            if (!data.system.beliefs[i]) {
-                data.system.beliefs[i] = { text: "" };
+            if (!actor.system.beliefs[i]) {
+                actor.update({
+                    [`system.beliefs.${i}`]: { text: "" }
+                });
             }
         }
 
         // Initialize instincts if they don't exist
-        if (!data.system.instincts) {
-            data.system.instincts = { text: "" };
-        }
-
-        // Initialize artha if it doesn't exist
-        if (!data.system.artha) {
-            data.system.artha = {
-                fate: 0,
-                persona: 0,
-                deeds: 0
-            };
+        if (!actor.system.instincts) {
+            actor.update({
+                "system.instincts": { text: "" }
+            });
         }
 
         // Initialize skills if they don't exist
-        if (!data.system.skills) {
-            data.system.skills = {};
+        if (!actor.system.skills) {
+            actor.update({
+                "system.skills": {}
+            });
         }
         // Ensure 40 skills exist (20 per column)
         for (let i = 0; i < 40; i++) {
-            if (!data.system.skills[i]) {
-                data.system.skills[i] = {
-                    name: "",
-                    shade: 'B',
-                    exponent: 0,
-                    difficult: [false, false, false, false],
-                    challenge: [false, false, false],
-                    routine: [false, false, false, false]
-                };
-            } else {
-                // Ensure all arrays exist
-                if (!data.system.skills[i].difficult) {
-                    data.system.skills[i].difficult = [false, false, false, false];
-                }
-                if (!data.system.skills[i].challenge) {
-                    data.system.skills[i].challenge = [false, false, false];
-                }
-                if (!data.system.skills[i].routine) {
-                    data.system.skills[i].routine = [false, false, false, false];
-                }
+            if (!actor.system.skills[i]) {
+                actor.update({
+                    [`system.skills.${i}`]: {
+                        name: "",
+                        shade: 'B',
+                        exponent: 0,
+                        difficult: [false, false, false, false],
+                        challenge: [false, false, false],
+                        routine: [false, false, false, false]
+                    }
+                });
             }
         }
 
-        // Initialize traits if they don't exist
-        if (!data.system.traits) {
-            data.system.traits = {
-                character: { text: "" },
-                die: { text: "" },
-                callOn: { text: "" }
-            };
-        }
+        // Ensure we have valid data objects before merging
+        const actorData = {
+            actor: this.actor,
+            system: this.actor.system || {}
+        };
 
-        // Ensure the data is properly structured
-        if (!this.actor.system.stats) {
-            this.actor.update({
-                'system.stats': data.system.stats
-            });
-        }
-
-        if (!this.actor.system.attributes) {
-            this.actor.update({
-                'system.attributes': data.system.attributes
-            });
-        }
-
-        if (!this.actor.system.skills) {
-            this.actor.update({
-                'system.skills': data.system.skills
-            });
-        }
-
-        // Log the current data for debugging
-        console.log('Current stats data:', data.system.stats);
-        console.log('Current attributes data:', data.system.attributes);
-        console.log('Current skills data:', data.system.skills);
-
-        return data;
+        // Return the merged data
+        return foundry.utils.mergeObject(data, actorData);
     }
 
     activateListeners(html) {
@@ -191,6 +176,19 @@ Actors.registerSheet("bw-sheets", BWCharacterSheet, {
 // Initialize the module
 Hooks.once('init', async function() {
     console.log('Burning Wheel Character Sheets | Initializing');
+    
+    // Register Handlebars helpers
+    Handlebars.registerHelper('subtract', function(a, b) {
+        return a - b;
+    });
+
+    Handlebars.registerHelper('calculateMortalWounds', function(power, forte) {
+        return Math.floor((power + forte) / 2) + 6;
+    });
+
+    Handlebars.registerHelper('calculateReflexes', function(perception, agility, speed) {
+        return Math.floor((perception + agility + speed) / 3);
+    });
 });
 
 // When the module is ready

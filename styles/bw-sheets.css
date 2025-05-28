@@ -130,19 +130,127 @@
     flex-direction: column;
     gap: 5px;
     padding: 5px;
-    border: 1px solid #DDD;
+    border: none;
     border-radius: 4px;
-    background: #f8f8f8;
+    background: none;
 }
 
-.bw-character-sheet .attribute label {
+.bw-character-sheet .attribute-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.bw-character-sheet .attribute-header label {
     font-weight: bold;
+    white-space: nowrap;
+    min-width: 80px;
+}
+
+.bw-character-sheet .attribute-inputs {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.bw-character-sheet .attribute-inputs select {
+    width: 40px;
+    background: none;
+    border: 1px solid #7a7971;
+    border-radius: 3px;
+    color: #191813;
+    height: 24px;
+}
+
+.bw-character-sheet .attribute-inputs input {
+    width: 50px;
     text-align: center;
 }
 
-.bw-character-sheet .attribute input {
-    width: 100%;
+.bw-character-sheet .attribute-inputs .calculated-value {
+    width: 50px;
     text-align: center;
+    padding: 2px 8px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    min-width: 30px;
+    font-size: 1em;
+}
+
+.bw-character-sheet .attribute-checks {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.bw-character-sheet .attribute-checks .routine,
+.bw-character-sheet .attribute-checks .difficult,
+.bw-character-sheet .attribute-checks .challenge {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3px;
+    height: 10px;
+}
+
+.bw-character-sheet .attribute-checks label {
+    font-size: 0.8em;
+    margin: 0;
+    white-space: nowrap;
+    min-width: 60px;
+    font-weight: normal;
+}
+
+.bw-character-sheet .attribute-checks .checkboxes {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.bw-character-sheet .attribute-checks .routine {
+    margin-bottom: 4px;
+}
+
+.bw-character-sheet .attribute-checks .difficult {
+    margin-bottom: 4px;
+}
+
+.bw-character-sheet .attribute-checks .routine label,
+.bw-character-sheet .attribute-checks .difficult label,
+.bw-character-sheet .attribute-checks .challenge label {
+    font-weight: normal;
+    font-size: 0.8em;
+    margin: 0;
+    white-space: nowrap;
+    min-width: 60px;
+}
+
+.bw-character-sheet .attribute-checks .hesitation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.bw-character-sheet .attribute-checks .hesitation label {
+    font-size: 0.8em;
+    margin: 0;
+    white-space: nowrap;
+    min-width: 60px;
+    font-weight: normal;
+}
+
+.bw-character-sheet .attribute-checks .hesitation-value {
+    font-size: 1em;
+    text-align: center;
+    padding: 2px 8px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    min-width: 30px;
 }
 
 .bw-character-sheet .stat {
@@ -181,14 +289,16 @@
     width: 100%;
 }
 
+.bw-character-sheet .routine,
 .bw-character-sheet .difficult,
 .bw-character-sheet .challenge {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 8px;
+    height: 10px;
 }
-
+.bw-character-sheet .routine label,
 .bw-character-sheet .difficult label,
 .bw-character-sheet .challenge label {
     font-size: 0.8em;
@@ -199,7 +309,7 @@
 
 .bw-character-sheet .checkboxes {
     display: flex;
-    gap: 8px;
+    gap: 3px;
     justify-content: flex-start;
     align-items: center;
 }
@@ -460,7 +570,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 8px;
+    gap: 3px;
+    height: 10px;
 }
 
 .bw-character-sheet .skill-checks label {
