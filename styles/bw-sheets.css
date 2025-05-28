@@ -102,6 +102,49 @@
     padding: 0;
 }
 
+.bw-character-sheet .stats {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.bw-character-sheet .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.bw-character-sheet .attributes {
+    width: 100%;
+}
+
+.bw-character-sheet .attributes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.bw-character-sheet .attribute {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px;
+    border: 1px solid #DDD;
+    border-radius: 4px;
+    background: #f8f8f8;
+}
+
+.bw-character-sheet .attribute label {
+    font-weight: bold;
+    text-align: center;
+}
+
+.bw-character-sheet .attribute input {
+    width: 100%;
+    text-align: center;
+}
+
 .bw-character-sheet .stat {
     display: flex;
     flex-direction: column;
@@ -151,6 +194,7 @@
     font-size: 0.8em;
     margin: 0;
     white-space: nowrap;
+    font-weight: normal;
 }
 
 .bw-character-sheet .checkboxes {
