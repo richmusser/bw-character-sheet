@@ -166,6 +166,26 @@ class BWCharacterSheet extends ActorSheet {
             }
         }
 
+        // Initialize PGTS if it doesn't exist
+        if (!actor.system.pgts) {
+            const pgtsData = {
+                tolerance: {},
+                coordinate: {},
+                injury: {}
+            };
+            
+            // Initialize each type with 16 empty fields
+            for (let i = 1; i <= 16; i++) {
+                pgtsData.tolerance[i] = "";
+                pgtsData.coordinate[i] = "";
+                pgtsData.injury[i] = "";
+            }
+            
+            actor.update({
+                "system.pgts": pgtsData
+            });
+        }
+
         // Ensure we have valid data objects before merging
         const actorData = {
             actor: this.actor,

@@ -682,4 +682,56 @@
 
 .bw-character-sheet .tax-input .circle-input input[type=number] {
     -moz-appearance: textfield;
+}
+
+.bw-character-sheet .pgts-content {
+    padding: 10px;
+}
+
+.bw-character-sheet .pgts-grid {
+    display: grid;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.bw-character-sheet .pgts-table {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.bw-character-sheet .pgts-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.bw-character-sheet .pgts-table th,
+.bw-character-sheet .pgts-table td {
+    padding: 5px;
+    border: 1px solid #7a7971;
+    text-align: center;
+}
+
+.bw-character-sheet .pgts-table th {
+    background: #f0f0f0;
+    font-weight: bold;
+}
+
+.bw-character-sheet .pgts-table td:first-child {
+    font-weight: bold;
+    text-align: left;
+    background: #f0f0f0;
+}
+
+.bw-character-sheet .pgts-table input {
+    width: 100%;
+    text-align: center;
+    border: none;
+    background: none;
+    padding: 2px;
+}
+
+.bw-character-sheet .pgts-table input:focus {
+    box-shadow: 0 0 5px #800000;
+    outline: none;
 } 

@@ -48,6 +48,7 @@
         <a class="item" data-tab="attributes">Stats & Attributes</a>
         <a class="item" data-tab="skills">Skills</a>
         <a class="item" data-tab="relationships">Relationships</a>
+        <a class="item" data-tab="pgts">PGTS</a>
     </nav>
 
     <section class="sheet-body">
@@ -832,6 +833,76 @@
                     <input type="text" name="system.relationships.{{key}}.description" value="{{relationship.description}}"/>
                 </div>
                 {{/each}}
+            </div>
+        </div>
+
+        <div class="tab pgts" data-group="primary" data-tab="pgts">
+            <div class="pgts-content">
+                <h3>PGTS</h3>
+                <div class="pgts-grid">
+                    <div class="pgts-table">
+                        <table>
+                           
+                            <tr>
+                                <td>Tolerance</td>
+                                <td><input type="text" name="system.pgts.tolerance.1" value="{{lookup system.pgts.tolerance "1"}}"/></td>
+                                <td><input type="text" name="system.pgts.tolerance.2" value="{{lookup system.pgts.tolerance "2"}}"/></td>
+                                <td><input type="text" name="system.pgts.tolerance.3" value="{{lookup system.pgts.tolerance "3"}}"/></td>
+                                <td><input type="text" name="system.pgts.tolerance.4" value="{{lookup system.pgts.tolerance "4"}}"/></td>
+                                <td><input type="text" name="system.pgts.tolerance.5" value="{{lookup system.pgts.tolerance "5"}}"/></td>
+                                <td><input type="text" name="system.pgts.tolerance.6" value="{{lookup system.pgts.tolerance "6"}}"/></td>
+                                <td><input type="text" name="system.pgts.tolerance.7" value="{{lookup system.pgts.tolerance "7"}}"/></td>
+                                <td><input type="text" name="system.pgts.tolerance.8" value="{{lookup system.pgts.tolerance "8"}}"/></td>
+                                <td><input type="text" name="system.pgts.tolerance.9" value="{{lookup system.pgts.tolerance "9"}}"/></td>
+                                <td><input type="text" name="system.pgts.tolerance.10" value="{{lookup system.pgts.tolerance "10"}}"/></td>
+                                <td><input type="text" name="system.pgts.tolerance.11" value="{{lookup system.pgts.tolerance "11"}}"/></td>
+                                <td><input type="text" name="system.pgts.tolerance.12" value="{{lookup system.pgts.tolerance "12"}}"/></td>
+                                <td><input type="text" name="system.pgts.tolerance.13" value="{{lookup system.pgts.tolerance "13"}}"/></td>
+                                <td><input type="text" name="system.pgts.tolerance.14" value="{{lookup system.pgts.tolerance "14"}}"/></td>
+                                <td><input type="text" name="system.pgts.tolerance.15" value="{{lookup system.pgts.tolerance "15"}}"/></td>
+                                <td><input type="text" name="system.pgts.tolerance.16" value="{{lookup system.pgts.tolerance "16"}}"/></td>
+                            </tr>
+                            <tr>
+                                <td>Coordinate</td>
+                                <td>B1</td>
+                                <td>B2</td>
+                                <td>B3</td>
+                                <td>B4</td>
+                                <td>B5</td>
+                                <td>B6</td>
+                                <td>B7</td>
+                                <td>B8</td>
+                                <td>B9</td>
+                                <td>B10</td>
+                                <td>B11</td>
+                                <td>B12</td>
+                                <td>B13</td>
+                                <td>B14</td>
+                                <td>B15</td>
+                                <td>B16</td>
+                            </tr>
+                            <tr>
+                                <td>Injury</td>
+                                <td><input type="text" name="system.pgts.injury.1" value="{{lookup system.pgts.injury "1"}}"/></td>
+                                <td><input type="text" name="system.pgts.injury.2" value="{{lookup system.pgts.injury "2"}}"/></td>
+                                <td><input type="text" name="system.pgts.injury.3" value="{{lookup system.pgts.injury "3"}}"/></td>
+                                <td><input type="text" name="system.pgts.injury.4" value="{{lookup system.pgts.injury "4"}}"/></td>
+                                <td><input type="text" name="system.pgts.injury.5" value="{{lookup system.pgts.injury "5"}}"/></td>
+                                <td><input type="text" name="system.pgts.injury.6" value="{{lookup system.pgts.injury "6"}}"/></td>
+                                <td><input type="text" name="system.pgts.injury.7" value="{{lookup system.pgts.injury "7"}}"/></td>
+                                <td><input type="text" name="system.pgts.injury.8" value="{{lookup system.pgts.injury "8"}}"/></td>
+                                <td><input type="text" name="system.pgts.injury.9" value="{{lookup system.pgts.injury "9"}}"/></td>
+                                <td><input type="text" name="system.pgts.injury.10" value="{{lookup system.pgts.injury "10"}}"/></td>
+                                <td><input type="text" name="system.pgts.injury.11" value="{{lookup system.pgts.injury "11"}}"/></td>
+                                <td><input type="text" name="system.pgts.injury.12" value="{{lookup system.pgts.injury "12"}}"/></td>
+                                <td><input type="text" name="system.pgts.injury.13" value="{{lookup system.pgts.injury "13"}}"/></td>
+                                <td><input type="text" name="system.pgts.injury.14" value="{{lookup system.pgts.injury "14"}}"/></td>
+                                <td><input type="text" name="system.pgts.injury.15" value="{{lookup system.pgts.injury "15"}}"/></td>
+                                <td><input type="text" name="system.pgts.injury.16" value="{{lookup system.pgts.injury "16"}}"/></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
