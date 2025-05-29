@@ -1011,22 +1011,118 @@
                             </tr>
                             <tr>
                                 <td>Injury</td>
-                                <td><input type="text" name="system.pgts.injury.1" value="{{lookup system.pgts.injury "1"}}"/></td>
-                                <td><input type="text" name="system.pgts.injury.2" value="{{lookup system.pgts.injury "2"}}"/></td>
-                                <td><input type="text" name="system.pgts.injury.3" value="{{lookup system.pgts.injury "3"}}"/></td>
-                                <td><input type="text" name="system.pgts.injury.4" value="{{lookup system.pgts.injury "4"}}"/></td>
-                                <td><input type="text" name="system.pgts.injury.5" value="{{lookup system.pgts.injury "5"}}"/></td>
-                                <td><input type="text" name="system.pgts.injury.6" value="{{lookup system.pgts.injury "6"}}"/></td>
-                                <td><input type="text" name="system.pgts.injury.7" value="{{lookup system.pgts.injury "7"}}"/></td>
-                                <td><input type="text" name="system.pgts.injury.8" value="{{lookup system.pgts.injury "8"}}"/></td>
-                                <td><input type="text" name="system.pgts.injury.9" value="{{lookup system.pgts.injury "9"}}"/></td>
-                                <td><input type="text" name="system.pgts.injury.10" value="{{lookup system.pgts.injury "10"}}"/></td>
-                                <td><input type="text" name="system.pgts.injury.11" value="{{lookup system.pgts.injury "11"}}"/></td>
-                                <td><input type="text" name="system.pgts.injury.12" value="{{lookup system.pgts.injury "12"}}"/></td>
-                                <td><input type="text" name="system.pgts.injury.13" value="{{lookup system.pgts.injury "13"}}"/></td>
-                                <td><input type="text" name="system.pgts.injury.14" value="{{lookup system.pgts.injury "14"}}"/></td>
-                                <td><input type="text" name="system.pgts.injury.15" value="{{lookup system.pgts.injury "15"}}"/></td>
-                                <td><input type="text" name="system.pgts.injury.16" value="{{lookup system.pgts.injury "16"}}"/></td>
+                                <td>
+                                    <div class="injury-checkboxes">
+                                        <input type="checkbox" name="system.pgts.injury.1.0" {{#if (lookup (lookup system.pgts.injury "1") "0")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.1.1" {{#if (lookup (lookup system.pgts.injury "1") "1")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.1.2" {{#if (lookup (lookup system.pgts.injury "1") "2")}}checked{{/if}}/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="injury-checkboxes">
+                                        <input type="checkbox" name="system.pgts.injury.2.0" {{#if (lookup (lookup system.pgts.injury "2") "0")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.2.1" {{#if (lookup (lookup system.pgts.injury "2") "1")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.2.2" {{#if (lookup (lookup system.pgts.injury "2") "2")}}checked{{/if}}/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="injury-checkboxes">
+                                        <input type="checkbox" name="system.pgts.injury.3.0" {{#if (lookup (lookup system.pgts.injury "3") "0")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.3.1" {{#if (lookup (lookup system.pgts.injury "3") "1")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.3.2" {{#if (lookup (lookup system.pgts.injury "3") "2")}}checked{{/if}}/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="injury-checkboxes">
+                                        <input type="checkbox" name="system.pgts.injury.4.0" {{#if (lookup (lookup system.pgts.injury "4") "0")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.4.1" {{#if (lookup (lookup system.pgts.injury "4") "1")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.4.2" {{#if (lookup (lookup system.pgts.injury "4") "2")}}checked{{/if}}/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="injury-checkboxes">
+                                        <input type="checkbox" name="system.pgts.injury.5.0" {{#if (lookup (lookup system.pgts.injury "5") "0")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.5.1" {{#if (lookup (lookup system.pgts.injury "5") "1")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.5.2" {{#if (lookup (lookup system.pgts.injury "5") "2")}}checked{{/if}}/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="injury-checkboxes">
+                                        <input type="checkbox" name="system.pgts.injury.6.0" {{#if (lookup (lookup system.pgts.injury "6") "0")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.6.1" {{#if (lookup (lookup system.pgts.injury "6") "1")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.6.2" {{#if (lookup (lookup system.pgts.injury "6") "2")}}checked{{/if}}/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="injury-checkboxes">
+                                        <input type="checkbox" name="system.pgts.injury.7.0" {{#if (lookup (lookup system.pgts.injury "7") "0")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.7.1" {{#if (lookup (lookup system.pgts.injury "7") "1")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.7.2" {{#if (lookup (lookup system.pgts.injury "7") "2")}}checked{{/if}}/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="injury-checkboxes">
+                                        <input type="checkbox" name="system.pgts.injury.8.0" {{#if (lookup (lookup system.pgts.injury "8") "0")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.8.1" {{#if (lookup (lookup system.pgts.injury "8") "1")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.8.2" {{#if (lookup (lookup system.pgts.injury "8") "2")}}checked{{/if}}/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="injury-checkboxes">
+                                        <input type="checkbox" name="system.pgts.injury.9.0" {{#if (lookup (lookup system.pgts.injury "9") "0")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.9.1" {{#if (lookup (lookup system.pgts.injury "9") "1")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.9.2" {{#if (lookup (lookup system.pgts.injury "9") "2")}}checked{{/if}}/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="injury-checkboxes">
+                                        <input type="checkbox" name="system.pgts.injury.10.0" {{#if (lookup (lookup system.pgts.injury "10") "0")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.10.1" {{#if (lookup (lookup system.pgts.injury "10") "1")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.10.2" {{#if (lookup (lookup system.pgts.injury "10") "2")}}checked{{/if}}/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="injury-checkboxes">
+                                        <input type="checkbox" name="system.pgts.injury.11.0" {{#if (lookup (lookup system.pgts.injury "11") "0")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.11.1" {{#if (lookup (lookup system.pgts.injury "11") "1")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.11.2" {{#if (lookup (lookup system.pgts.injury "11") "2")}}checked{{/if}}/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="injury-checkboxes">
+                                        <input type="checkbox" name="system.pgts.injury.12.0" {{#if (lookup (lookup system.pgts.injury "12") "0")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.12.1" {{#if (lookup (lookup system.pgts.injury "12") "1")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.12.2" {{#if (lookup (lookup system.pgts.injury "12") "2")}}checked{{/if}}/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="injury-checkboxes">
+                                        <input type="checkbox" name="system.pgts.injury.13.0" {{#if (lookup (lookup system.pgts.injury "13") "0")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.13.1" {{#if (lookup (lookup system.pgts.injury "13") "1")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.13.2" {{#if (lookup (lookup system.pgts.injury "13") "2")}}checked{{/if}}/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="injury-checkboxes">
+                                        <input type="checkbox" name="system.pgts.injury.14.0" {{#if (lookup (lookup system.pgts.injury "14") "0")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.14.1" {{#if (lookup (lookup system.pgts.injury "14") "1")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.14.2" {{#if (lookup (lookup system.pgts.injury "14") "2")}}checked{{/if}}/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="injury-checkboxes">
+                                        <input type="checkbox" name="system.pgts.injury.15.0" {{#if (lookup (lookup system.pgts.injury "15") "0")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.15.1" {{#if (lookup (lookup system.pgts.injury "15") "1")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.15.2" {{#if (lookup (lookup system.pgts.injury "15") "2")}}checked{{/if}}/>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="injury-checkboxes">
+                                        <input type="checkbox" name="system.pgts.injury.16.0" {{#if (lookup (lookup system.pgts.injury "16") "0")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.16.1" {{#if (lookup (lookup system.pgts.injury "16") "1")}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.pgts.injury.16.2" {{#if (lookup (lookup system.pgts.injury "16") "2")}}checked{{/if}}/>
+                                    </div>
+                                </td>
                             </tr>
                         </table>
                     </div>
