@@ -49,6 +49,8 @@
         <a class="item" data-tab="skills">Skills</a>
         <a class="item" data-tab="relationships">Relationships</a>
         <a class="item" data-tab="pgts">PGTS</a>
+        <a class="item" data-tab="gear">Gear</a>
+        <a class="item" data-tab="notes">Notes</a>
     </nav>
 
     <section class="sheet-body">
@@ -1125,6 +1127,102 @@
                                 </td>
                             </tr>
                         </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab gear" data-group="primary" data-tab="gear">
+            <div class="gear-content">
+                <h3>Gear</h3>
+                <div class="gear-grid">
+                    <div class="gear-section">
+                        <h4>Weapons</h4>
+                        <div class="gear-list">
+                            {{#each system.gear.weapons as |weapon key|}}
+                            <div class="gear-item">
+                                <input type="text" name="system.gear.weapons.{{key}}.name" value="{{weapon.name}}" placeholder="Weapon Name"/>
+                                <input type="text" name="system.gear.weapons.{{key}}.damage" value="{{weapon.damage}}" placeholder="Damage"/>
+                                <input type="text" name="system.gear.weapons.{{key}}.notes" value="{{weapon.notes}}" placeholder="Notes"/>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                    <div class="gear-section">
+                        <h4>Armor</h4>
+                        <div class="gear-list">
+                            {{#each system.gear.armor as |armor key|}}
+                            <div class="gear-item">
+                                <input type="text" name="system.gear.armor.{{key}}.name" value="{{armor.name}}" placeholder="Armor Name"/>
+                                <input type="text" name="system.gear.armor.{{key}}.protection" value="{{armor.protection}}" placeholder="Protection"/>
+                                <input type="text" name="system.gear.armor.{{key}}.notes" value="{{armor.notes}}" placeholder="Notes"/>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                    <div class="gear-section">
+                        <h4>Equipment</h4>
+                        <div class="gear-list">
+                            {{#each system.gear.equipment as |item key|}}
+                            <div class="gear-item">
+                                <input type="text" name="system.gear.equipment.{{key}}.name" value="{{item.name}}" placeholder="Item Name"/>
+                                <input type="text" name="system.gear.equipment.{{key}}.quantity" value="{{item.quantity}}" placeholder="Qty"/>
+                                <input type="text" name="system.gear.equipment.{{key}}.notes" value="{{item.notes}}" placeholder="Notes"/>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                    <div class="gear-section">
+                        <h4>Possessions</h4>
+                        <div class="gear-list">
+                            {{#each system.gear.possessions as |item key|}}
+                            <div class="gear-item">
+                                <input type="text" name="system.gear.possessions.{{key}}.name" value="{{item.name}}" placeholder="Item Name"/>
+                                <input type="text" name="system.gear.possessions.{{key}}.quantity" value="{{item.quantity}}" placeholder="Qty"/>
+                                <input type="text" name="system.gear.possessions.{{key}}.notes" value="{{item.notes}}" placeholder="Notes"/>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab notes" data-group="primary" data-tab="notes">
+            <div class="notes-content">
+                <h3>Notes</h3>
+                <div class="notes-grid">
+                    <div class="notes-section">
+                        <h4>Character Notes</h4>
+                        <div class="notes-list">
+                            <div class="note-item">
+                                <textarea name="system.notes.character" rows="10" placeholder="Enter character notes here...">{{system.notes.character}}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="notes-section">
+                        <h4>Campaign Notes</h4>
+                        <div class="notes-list">
+                            <div class="note-item">
+                                <textarea name="system.notes.campaign" rows="10" placeholder="Enter campaign notes here...">{{system.notes.campaign}}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="notes-section">
+                        <h4>Session Notes</h4>
+                        <div class="notes-list">
+                            <div class="note-item">
+                                <textarea name="system.notes.session" rows="10" placeholder="Enter session notes here...">{{system.notes.session}}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="notes-section">
+                        <h4>Other Notes</h4>
+                        <div class="notes-list">
+                            <div class="note-item">
+                                <textarea name="system.notes.other" rows="10" placeholder="Enter other notes here...">{{system.notes.other}}</textarea>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
