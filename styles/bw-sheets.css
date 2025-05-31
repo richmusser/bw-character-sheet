@@ -860,4 +860,58 @@
 .injury-checkboxes input[type="checkbox"]:focus {
     box-shadow: none !important;
     outline: none !important;
+}
+
+.bw-character-sheet .injury-recovery {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.bw-character-sheet .injury-recovery h4 {
+    margin: 0 0 10px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #7a7971;
+    font-size: 1.1em;
+}
+
+.bw-character-sheet .injury-recovery textarea {
+    width: 100%;
+    background: white;
+    border: 1px solid #7a7971;
+    border-radius: 3px;
+    padding: 5px;
+    resize: vertical;
+    min-height: 150px;
+}
+
+.bw-character-sheet .injury-recovery textarea:focus {
+    box-shadow: 0 0 5px #800000;
+    outline: none;
+}
+
+.bw-character-sheet .injury-reference {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 15px 0;
+    padding: 10px;
+    background: #f8f8f8;
+    border-radius: 3px;
+}
+
+.bw-character-sheet .injury-effect {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #444;
+    white-space: nowrap;
+}
+
+.bw-character-sheet .injury-note {
+    font-size: 0.9em;
+    color: #666;
+    margin: 10px 0;
+    padding: 8px;
+    background: #f8f8f8;
+    border-radius: 3px;
+    line-height: 1.4;
 } 
