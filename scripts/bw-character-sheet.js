@@ -2,8 +2,8 @@ class BWCharacterSheet extends ActorSheet {
     static get defaultOptions() {
         return foundry.utils.mergeObject(super.defaultOptions, {
             classes: ["bw-sheet", "sheet", "actor"],
-            template: "modules/bw-character-sheet/templates/character-sheet.html",
-            width: 800,
+            template: "modules/bw-character-sheet/templates/bw-character-sheet.html",
+            width: 1000,
             height: 900,
             tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "main" }]
         });
@@ -202,11 +202,32 @@ class BWCharacterSheet extends ActorSheet {
         return mergedData;
     }
 
+    async _onResetInjuries(event) {
+        event.preventDefault();
+        
+        // Create an object to hold all PGTS injury updates
+        const updates = {
+            'system.pgts.obstaclePenalties': 0,
+            'system.pgts.woundedDice': 0
+        };
+
+        // Reset all PGTS injury checkboxes (16 body locations, 3 checkboxes each)
+        for (let i = 1; i <= 16; i++) {
+            for (let j = 0; j < 3; j++) {
+                updates[`system.pgts.injury.${i}.${j}`] = false;
+            }
+        }
+        
+        await this.actor.update(updates);
+    }
+
     activateListeners(html) {
         super.activateListeners(html);
 
         // Handle all input changes
         html.find('input, select, textarea').on('change', this._onInputChange.bind(this));
+        // Reset injuries button
+        html.find('.reset-injuries').click(this._onResetInjuries.bind(this));
     }
 
     async _onInputChange(event) {

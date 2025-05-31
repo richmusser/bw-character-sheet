@@ -14,10 +14,10 @@
         }
     ],
     "esmodules": [
-        "scripts/bw-sheets.js"
+        "scripts/bw-character-sheet.js"
     ],
     "styles": [
-        "styles/bw-sheets.css"
+        "styles/bw-character-sheet.css"
     ],
     "languages": [
         {

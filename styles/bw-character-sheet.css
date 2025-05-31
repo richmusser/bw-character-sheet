@@ -970,4 +970,25 @@
     font-weight: bold;
     font-size: 0.9em;
     white-space: nowrap;
+}
+
+.bw-character-sheet .pgts-reset {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.bw-character-sheet .reset-injuries {
+    background: #f0f0f0;
+    border: 1px solid #7a7971;
+    border-radius: 3px;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    cursor: pointer;
+    color: #444;
+}
+
+.bw-character-sheet .reset-injuries:hover {
+    background: #e0e0e0;
+    border-color: #800000;
 } 
