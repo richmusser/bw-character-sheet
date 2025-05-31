@@ -171,7 +171,9 @@ class BWCharacterSheet extends ActorSheet {
             const pgtsData = {
                 tolerance: {},
                 coordinate: {},
-                injury: {}
+                injury: {},
+                obstaclePenalties: 0,
+                woundedDice: 0
             };
             
             // Initialize each type with 16 empty fields
