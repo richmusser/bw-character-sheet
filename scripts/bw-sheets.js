@@ -9,7 +9,7 @@ class BWCharacterSheet extends ActorSheet {
         });
     }
 
-    getData() {
+    async getData() {
         const data = super.getData();
         const actor = this.actor;
 
@@ -181,7 +181,7 @@ class BWCharacterSheet extends ActorSheet {
                 pgtsData.injury[i] = "";
             }
             
-            actor.update({
+            await actor.update({
                 "system.pgts": pgtsData
             });
         }
@@ -192,8 +192,12 @@ class BWCharacterSheet extends ActorSheet {
             system: this.actor.system || {}
         };
 
+        // Ensure both data and actorData are objects
+        const baseData = typeof data === 'object' ? data : {};
+        const mergedData = foundry.utils.mergeObject(baseData, actorData);
+
         // Return the merged data
-        return foundry.utils.mergeObject(data, actorData);
+        return mergedData;
     }
 
     activateListeners(html) {
