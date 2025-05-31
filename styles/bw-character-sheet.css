@@ -704,7 +704,7 @@
 
 .bw-character-sheet .pgts-inputs {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin-bottom: 20px;
 }
@@ -986,6 +986,7 @@
     font-size: 0.9em;
     cursor: pointer;
     color: #444;
+    width: 120px;
 }
 
 .bw-character-sheet .reset-injuries:hover {

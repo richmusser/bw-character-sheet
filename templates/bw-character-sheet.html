@@ -34,13 +34,17 @@
             </h1>
             <div class="resources grid grid-2col">
                 <div class="resource">
+                    <label>Stock</label>
+                    <input type="text" name="system.stock" value="{{system.stock}}" data-dtype="String"/>
+                </div>
+                <div class="resource">
                     <label>Age</label>
                     <input type="number" name="system.age" value="{{system.age}}" data-dtype="Number"/>
                 </div>
-                <div class="resource">
-                    <label>Lifepaths</label>
-                    <input type="text" name="system.lifepaths" value="{{system.lifepaths}}" data-dtype="Number"/>
-                </div>
+            </div>
+            <div class="resource">
+                <label>Lifepaths</label>
+                <textarea name="system.lifepaths" rows="3" data-dtype="String">{{system.lifepaths}}</textarea>
             </div>
             <div class="wounds-section">
                 <h3>Wounds</h3>
@@ -860,9 +864,6 @@
         <div class="tab pgts" data-group="primary" data-tab="pgts">
             <div class="pgts-content">
                 <div class="pgts-grid">
-                    <div class="pgts-reset">
-                        <button type="button" class="reset-injuries">Reset Injuries</button>
-                    </div>
                     <div class="pgts-inputs">
                         <div class="pgts-input">
                             <label>Obstacle Penalties: +</label>
@@ -874,6 +875,10 @@
                             <input type="number" name="system.pgts.woundedDice" value="{{system.pgts.woundedDice}}" data-dtype="Number"/>
                             <span class="unit">D</span>
                         </div>
+                        <div class="pgts-reset">
+                            <button type="button" class="reset-injuries">Reset Injuries</button>
+                        </div>
+    
                     </div>
                     <div class="pgts-table">
                         <table>
