@@ -785,4 +785,39 @@
 .bw-character-sheet .gear-item input:focus {
     box-shadow: 0 0 5px #800000;
     outline: none;
+}
+
+.injury-checkboxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.injury-checkboxes input[type="checkbox"] {
+    width: 20px !important;
+    border-radius: 50% !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    border: 1px solid #999 !important;
+    cursor: pointer !important;
+    position: relative !important;
+    background: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+    box-shadow: none !important;
+}
+
+.injury-checkboxes input[type="checkbox"]:checked {
+    background-color: #000 !important;
+}
+
+.injury-checkboxes input[type="checkbox"]:hover {
+    border-color: #000 !important;
+}
+
+.injury-checkboxes input[type="checkbox"]:focus {
+    box-shadow: none !important;
+    outline: none !important;
 } 
