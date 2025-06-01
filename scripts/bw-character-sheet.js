@@ -206,6 +206,43 @@ class BWCharacterSheet extends ActorSheet {
             }
         }
 
+        // Initialize gear if it doesn't exist
+        if (!actor.system.gear) {
+            actor.system.gear = {
+                weapons: {},
+                armor: {},
+                equipment: {},
+                possessions: {}
+            };
+        }
+
+        // Initialize weapons if they don't exist
+        if (!actor.system.gear.weapons) {
+            actor.system.gear.weapons = {};
+        }
+
+        // Initialize 5 weapon slots
+        for (let i = 0; i < 5; i++) {
+            if (!actor.system.gear.weapons[i]) {
+                actor.system.gear.weapons[i] = {
+                    name: i === 0 ? "Bare Fist" : "",
+                    i: 0,
+                    m: 0,
+                    s: 0,
+                    add: 0,
+                    va: 0,
+                    ws: 0,
+                    length: "",
+                    pow: 0
+                };
+            }
+        }
+
+        // Update the actor with the initialized data
+        await actor.update({
+            "system.gear": actor.system.gear
+        });
+
         // Ensure we have valid data objects before merging
         const actorData = {
             actor: this.actor,

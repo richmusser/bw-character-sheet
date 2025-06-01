@@ -1202,15 +1202,45 @@
                 <div class="gear-grid">
                     <div class="gear-section">
                         <h4>Weapons</h4>
-                        <div class="gear-list">
-                            {{#each system.gear.weapons as |weapon key|}}
-                            <div class="gear-item">
-                                <input type="text" name="system.gear.weapons.{{key}}.name" value="{{weapon.name}}" placeholder="Weapon Name"/>
-                                <input type="text" name="system.gear.weapons.{{key}}.damage" value="{{weapon.damage}}" placeholder="Damage"/>
-                                <input type="text" name="system.gear.weapons.{{key}}.notes" value="{{weapon.notes}}" placeholder="Notes"/>
-                            </div>
-                            {{/each}}
-                        </div>
+                        <table class="weapons-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>I</th>
+                                    <th>M</th>
+                                    <th>S</th>
+                                    <th>Add</th>
+                                    <th>VA</th>
+                                    <th>WS</th>
+                                    <th>Length</th>
+                                    <th>Pow</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each system.gear.weapons as |weapon key|}}
+                                <tr>
+                                    <td><input type="text" name="system.gear.weapons.{{key}}.name" value="{{weapon.name}}" /></td>
+                                    <td><input type="number" name="system.gear.weapons.{{key}}.i" value="{{weapon.i}}" data-dtype="Number"/></td>
+                                    <td><input type="number" name="system.gear.weapons.{{key}}.m" value="{{weapon.m}}" data-dtype="Number"/></td>
+                                    <td><input type="number" name="system.gear.weapons.{{key}}.s" value="{{weapon.s}}" data-dtype="Number"/></td>
+                                    <td><input type="number" name="system.gear.weapons.{{key}}.add" value="{{weapon.add}}" data-dtype="Number"/></td>
+                                    <td><input type="number" name="system.gear.weapons.{{key}}.va" value="{{weapon.va}}" data-dtype="Number"/></td>
+                                    <td><input type="number" name="system.gear.weapons.{{key}}.ws" value="{{weapon.ws}}" data-dtype="Number"/></td>
+                                    <td>
+                                        <select name="system.gear.weapons.{{key}}.length" data-dtype="String">
+                                            <option value=""></option>
+                                            <option value="Shortest" {{#if (eq weapon.length "Shortest")}}selected{{/if}}>Shortest</option>
+                                            <option value="Short" {{#if (eq weapon.length "Short")}}selected{{/if}}>Short</option>
+                                            <option value="Long" {{#if (eq weapon.length "Long")}}selected{{/if}}>Long</option>
+                                            <option value="Longer" {{#if (eq weapon.length "Longer")}}selected{{/if}}>Longer</option>
+                                            <option value="Longest" {{#if (eq weapon.length "Longest")}}selected{{/if}}>Longest</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="number" name="system.gear.weapons.{{key}}.pow" value="{{weapon.pow}}" data-dtype="Number"/></td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
                     </div>
                     <div class="gear-section">
                         <h4>Armor</h4>
