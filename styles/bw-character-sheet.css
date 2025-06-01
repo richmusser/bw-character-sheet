@@ -992,7 +992,7 @@
 .bw-character-sheet .reset-injuries:hover {
     background: #e0e0e0;
     border-color: #800000;
-} 
+}
 
 .spells-table th:nth-child(3),
 .spells-table td:nth-child(3) {
@@ -1002,4 +1002,63 @@
 .spells-table th:nth-child(6),
 .spells-table td:nth-child(6) {
     width: 30px;
+}
+
+.spells-table td:nth-child(4),
+.spells-table td:nth-child(5) {
+    text-align: center;
+}
+
+.spells-table input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #7a7971;
+    border-radius: 50%;
+    background: #f0f0f0;
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.spells-table input[type="checkbox"]:checked {
+    background: #800000;
+}
+
+.spells-table input[type="checkbox"]:focus {
+    outline: none;
+    box-shadow: 0 0 3px #800000;
+}
+
+.spells-table input[type="checkbox"]:hover {
+    border-color: #800000;
+}
+
+.spells-table input[type="text"],
+.spells-table input[type="number"] {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #7a7971;
+    border-radius: 0;
+    padding: 2px 4px;
+    width: 100%;
+    text-align: left;
+}
+
+.spells-table input[type="text"]:focus,
+.spells-table input[type="number"]:focus {
+    outline: none;
+    border-bottom-color: #800000;
+    box-shadow: none;
+}
+
+.spells-table input[type="number"] {
+    text-align: center;
+    width: 40px;
+}
+
+.spells-table td {
+    padding: 4px;
 } 
