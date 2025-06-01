@@ -993,3 +993,13 @@
     background: #e0e0e0;
     border-color: #800000;
 } 
+
+.spells-table th:nth-child(3),
+.spells-table td:nth-child(3) {
+    width: 20px;
+}
+
+.spells-table th:nth-child(6),
+.spells-table td:nth-child(6) {
+    width: 30px;
+} 

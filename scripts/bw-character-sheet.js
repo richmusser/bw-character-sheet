@@ -188,6 +188,24 @@ class BWCharacterSheet extends ActorSheet {
             });
         }
 
+        // Initialize spells if they don't exist
+        if (!actor.system.spells) {
+            actor.system.spells = {};
+        }
+        // Ensure 20 spells exist
+        for (let i = 0; i < 20; i++) {
+            if (!actor.system.spells[i]) {
+                actor.system.spells[i] = {
+                    name: "",
+                    effect: "",
+                    ob: 0,
+                    timesCast: 0,
+                    woven: false,
+                    incantation: ""
+                };
+            }
+        }
+
         // Ensure we have valid data objects before merging
         const actorData = {
             actor: this.actor,

@@ -74,6 +74,7 @@
         <a class="item" data-tab="pgts">Injury</a>
         <a class="item" data-tab="gear">Gear</a>
         <a class="item" data-tab="notes">Notes</a>
+        <a class="item" data-tab="spells">Spells</a>
     </nav>
 
     <section class="sheet-body">
@@ -852,12 +853,22 @@
         <div class="tab relationships" data-group="primary" data-tab="relationships">
             <div class="relationships-list">
                 <h3>Relationships</h3>
-                {{#each system.relationships as |relationship key|}}
-                <div class="relationship">
-                    <label>{{relationship.name}}</label>
-                    <input type="text" name="system.relationships.{{key}}.description" value="{{relationship.description}}"/>
+                <div class="text-area">
+                    <label>Relationships</label>
+                    <textarea name="system.relationships.text" rows="4">{{system.relationships.text}}</textarea>
                 </div>
-                {{/each}}
+                <div class="text-area">
+                    <label>Circles</label>
+                    <textarea name="system.circles.text" rows="4">{{system.circles.text}}</textarea>
+                </div>
+                <div class="text-area">
+                    <label>Named Circles</label>
+                    <textarea name="system.namedCircles.text" rows="4">{{system.namedCircles.text}}</textarea>
+                </div>
+                <div class="text-area">
+                    <label>Enemy Circles</label>
+                    <textarea name="system.enemyCircles.text" rows="4">{{system.enemyCircles.text}}</textarea>
+                </div>
             </div>
         </div>
 
@@ -1238,6 +1249,42 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="tab spells" data-group="primary" data-tab="spells">
+            <div class="named-spells-content">
+                <h3>Spells</h3>
+                <table class="spells-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Effect</th>
+                            <th>Ob</th>
+                            <th colspan="3">Art Magic</th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th>Woven</th>
+                            <th>Incantation</th>
+                            <th>Times Cast</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each system.spells as |spell key|}}
+                        <tr>
+                            <td><input type="text" name="system.spells.{{key}}.name" value="{{spell.name}}"  class="underline-input"/></td>
+                            <td><input type="text" name="system.spells.{{key}}.effect" value="{{spell.effect}}" class="underline-input"/></td>
+                            <td><input type="number" name="system.spells.{{key}}.ob" value="{{spell.ob}}" data-dtype="Number" class="underline-input"/></td>
+                            <td><input type="checkbox" name="system.spells.{{key}}.woven" {{#if spell.woven}}checked{{/if}} class="circle-checkbox"/></td>
+                            <td><input type="checkbox" name="system.spells.{{key}}.incantation" {{#if spell.incantation}}checked{{/if}} class="circle-checkbox"/></td>
+                            <td><input type="number" name="system.spells.{{key}}.timesCast" value="{{spell.timesCast}}" data-dtype="Number" class="underline-input"/></td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
             </div>
         </div>
 
