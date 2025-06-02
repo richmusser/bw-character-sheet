@@ -769,30 +769,46 @@
                             </div>
                         </div>
                         <div class="skill-checks">
-                            <div class="routine">
-                                <label>Routine</label>
-                                <div class="checkboxes">
-                                    <input type="checkbox" name="system.skills.{{key}}.routine.0" {{#if skill.routine.[0]}}checked{{/if}}/>
-                                    <input type="checkbox" name="system.skills.{{key}}.routine.1" {{#if skill.routine.[1]}}checked{{/if}}/>
-                                    <input type="checkbox" name="system.skills.{{key}}.routine.2" {{#if skill.routine.[2]}}checked{{/if}}/>
-                                    <input type="checkbox" name="system.skills.{{key}}.routine.3" {{#if skill.routine.[3]}}checked{{/if}}/>
+                            <div class="difficulty-checks">
+                                <div class="routine">
+                                    <label>Routine</label>
+                                    <div class="checkboxes">
+                                        <input type="checkbox" name="system.skills.{{key}}.routine.0" {{#if skill.routine.[0]}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.skills.{{key}}.routine.1" {{#if skill.routine.[1]}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.skills.{{key}}.routine.2" {{#if skill.routine.[2]}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.skills.{{key}}.routine.3" {{#if skill.routine.[3]}}checked{{/if}}/>
+                                    </div>
+                                </div>
+                                <div class="difficult">
+                                    <label>Difficult</label>
+                                    <div class="checkboxes">
+                                        <input type="checkbox" name="system.skills.{{key}}.difficult.0" {{#if skill.difficult.[0]}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.skills.{{key}}.difficult.1" {{#if skill.difficult.[1]}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.skills.{{key}}.difficult.2" {{#if skill.difficult.[2]}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.skills.{{key}}.difficult.3" {{#if skill.difficult.[3]}}checked{{/if}}/>
+                                    </div>
+                                </div>
+                                <div class="challenge">
+                                    <label>Challenge</label>
+                                    <div class="checkboxes">
+                                        <input type="checkbox" name="system.skills.{{key}}.challenge.0" {{#if skill.challenge.[0]}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.skills.{{key}}.challenge.1" {{#if skill.challenge.[1]}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.skills.{{key}}.challenge.2" {{#if skill.challenge.[2]}}checked{{/if}}/>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="difficult">
-                                <label>Difficult</label>
-                                <div class="checkboxes">
-                                    <input type="checkbox" name="system.skills.{{key}}.difficult.0" {{#if skill.difficult.[0]}}checked{{/if}}/>
-                                    <input type="checkbox" name="system.skills.{{key}}.difficult.1" {{#if skill.difficult.[1]}}checked{{/if}}/>
-                                    <input type="checkbox" name="system.skills.{{key}}.difficult.2" {{#if skill.difficult.[2]}}checked{{/if}}/>
-                                    <input type="checkbox" name="system.skills.{{key}}.difficult.3" {{#if skill.difficult.[3]}}checked{{/if}}/>
+                            <div class="artha-inputs">
+                                <div class="artha-input">
+                                    <label>Fate</label>
+                                    <input type="number" name="system.skills.{{key}}.fate" value="{{skill.fate}}" min="0" max="99" data-dtype="Number"/>
                                 </div>
-                            </div>
-                            <div class="challenge">
-                                <label>Challenge</label>
-                                <div class="checkboxes">
-                                    <input type="checkbox" name="system.skills.{{key}}.challenge.0" {{#if skill.challenge.[0]}}checked{{/if}}/>
-                                    <input type="checkbox" name="system.skills.{{key}}.challenge.1" {{#if skill.challenge.[1]}}checked{{/if}}/>
-                                    <input type="checkbox" name="system.skills.{{key}}.challenge.2" {{#if skill.challenge.[2]}}checked{{/if}}/>
+                                <div class="artha-input">
+                                    <label>Persona</label>
+                                    <input type="number" name="system.skills.{{key}}.persona" value="{{skill.persona}}" min="0" max="99" data-dtype="Number"/>
+                                </div>
+                                <div class="artha-input">
+                                    <label>Deeds</label>
+                                    <input type="number" name="system.skills.{{key}}.deeds" value="{{skill.deeds}}" min="0" max="99" data-dtype="Number"/>
                                 </div>
                             </div>
                         </div>
@@ -816,30 +832,46 @@
                             </div>
                         </div>
                         <div class="skill-checks">
-                            <div class="routine">
-                                <label>Routine</label>
-                                <div class="checkboxes">
-                                    <input type="checkbox" name="system.skills.{{key}}.routine.0" {{#if skill.routine.[0]}}checked{{/if}}/>
-                                    <input type="checkbox" name="system.skills.{{key}}.routine.1" {{#if skill.routine.[1]}}checked{{/if}}/>
-                                    <input type="checkbox" name="system.skills.{{key}}.routine.2" {{#if skill.routine.[2]}}checked{{/if}}/>
-                                    <input type="checkbox" name="system.skills.{{key}}.routine.3" {{#if skill.routine.[3]}}checked{{/if}}/>
+                            <div class="difficulty-checks">
+                                <div class="routine">
+                                    <label>Routine</label>
+                                    <div class="checkboxes">
+                                        <input type="checkbox" name="system.skills.{{key}}.routine.0" {{#if skill.routine.[0]}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.skills.{{key}}.routine.1" {{#if skill.routine.[1]}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.skills.{{key}}.routine.2" {{#if skill.routine.[2]}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.skills.{{key}}.routine.3" {{#if skill.routine.[3]}}checked{{/if}}/>
+                                    </div>
+                                </div>
+                                <div class="difficult">
+                                    <label>Difficult</label>
+                                    <div class="checkboxes">
+                                        <input type="checkbox" name="system.skills.{{key}}.difficult.0" {{#if skill.difficult.[0]}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.skills.{{key}}.difficult.1" {{#if skill.difficult.[1]}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.skills.{{key}}.difficult.2" {{#if skill.difficult.[2]}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.skills.{{key}}.difficult.3" {{#if skill.difficult.[3]}}checked{{/if}}/>
+                                    </div>
+                                </div>
+                                <div class="challenge">
+                                    <label>Challenge</label>
+                                    <div class="checkboxes">
+                                        <input type="checkbox" name="system.skills.{{key}}.challenge.0" {{#if skill.challenge.[0]}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.skills.{{key}}.challenge.1" {{#if skill.challenge.[1]}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.skills.{{key}}.challenge.2" {{#if skill.challenge.[2]}}checked{{/if}}/>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="difficult">
-                                <label>Difficult</label>
-                                <div class="checkboxes">
-                                    <input type="checkbox" name="system.skills.{{key}}.difficult.0" {{#if skill.difficult.[0]}}checked{{/if}}/>
-                                    <input type="checkbox" name="system.skills.{{key}}.difficult.1" {{#if skill.difficult.[1]}}checked{{/if}}/>
-                                    <input type="checkbox" name="system.skills.{{key}}.difficult.2" {{#if skill.difficult.[2]}}checked{{/if}}/>
-                                    <input type="checkbox" name="system.skills.{{key}}.difficult.3" {{#if skill.difficult.[3]}}checked{{/if}}/>
+                            <div class="artha-inputs">
+                                <div class="artha-input">
+                                    <label>Fate</label>
+                                    <input type="number" name="system.skills.{{key}}.fate" value="{{skill.fate}}" min="0" max="99" data-dtype="Number"/>
                                 </div>
-                            </div>
-                            <div class="challenge">
-                                <label>Challenge</label>
-                                <div class="checkboxes">
-                                    <input type="checkbox" name="system.skills.{{key}}.challenge.0" {{#if skill.challenge.[0]}}checked{{/if}}/>
-                                    <input type="checkbox" name="system.skills.{{key}}.challenge.1" {{#if skill.challenge.[1]}}checked{{/if}}/>
-                                    <input type="checkbox" name="system.skills.{{key}}.challenge.2" {{#if skill.challenge.[2]}}checked{{/if}}/>
+                                <div class="artha-input">
+                                    <label>Persona</label>
+                                    <input type="number" name="system.skills.{{key}}.persona" value="{{skill.persona}}" min="0" max="99" data-dtype="Number"/>
+                                </div>
+                                <div class="artha-input">
+                                    <label>Deeds</label>
+                                    <input type="number" name="system.skills.{{key}}.deeds" value="{{skill.deeds}}" min="0" max="99" data-dtype="Number"/>
                                 </div>
                             </div>
             </div>

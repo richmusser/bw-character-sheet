@@ -567,32 +567,58 @@
 }
 
 .bw-character-sheet .skill-checks {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.skill-checks .difficulty-checks {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 0.5rem;
 }
 
-.bw-character-sheet .skill-checks .difficult,
-.bw-character-sheet .skill-checks .challenge,
-.bw-character-sheet .skill-checks .routine {
+.skill-checks .artha-inputs {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    gap: 3px;
-    height: 10px;
+    gap: 0.5rem;
+    padding-left: 1rem;
+    border-left: 1px solid #999;
 }
 
-.bw-character-sheet .skill-checks label {
-    font-size: 0.8em;
-    margin: 0;
-    white-space: nowrap;
-    min-width: 60px;
-}
-
-.bw-character-sheet .skill-checks .checkboxes {
+.skill-checks .artha-input {
     display: flex;
-    gap: 8px;
     align-items: center;
+    gap: 0.5rem;
+}
+
+.skill-checks .artha-input label {
+    font-size: 0.9em;
+}
+
+.skill-checks .artha-input input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    border: 2px solid #999;
+    padding: 0;
+    font-size: 1.2em;
+    background: white;
+    -moz-appearance: textfield;
+}
+
+.skill-checks .artha-input input::-webkit-outer-spin-button,
+.skill-checks .artha-input input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.skill-checks .artha-input input:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+    outline: none;
 }
 
 .bw-character-sheet .stride-inputs {
