@@ -1220,9 +1220,9 @@
                                 {{#each system.gear.weapons as |weapon key|}}
                                 <tr>
                                     <td><input type="text" name="system.gear.weapons.{{key}}.name" value="{{weapon.name}}" /></td>
-                                    <td><input type="number" name="system.gear.weapons.{{key}}.i" value="{{weapon.i}}" data-dtype="Number"/></td>
-                                    <td><input type="number" name="system.gear.weapons.{{key}}.m" value="{{weapon.m}}" data-dtype="Number"/></td>
-                                    <td><input type="number" name="system.gear.weapons.{{key}}.s" value="{{weapon.s}}" data-dtype="Number"/></td>
+                                    <td><div class="calculated-value">{{ceil (divide (add ../system.stats.power.exponent weapon.pow) 2)}}</div></td>
+                                    <td><div class="calculated-value">{{add ../system.stats.power.exponent weapon.pow}}</div></td>
+                                    <td><div class="calculated-value">{{floor (multiply (add ../system.stats.power.exponent weapon.pow) 1.5)}}</div></td>
                                     <td><input type="number" name="system.gear.weapons.{{key}}.add" value="{{weapon.add}}" data-dtype="Number"/></td>
                                     <td><input type="number" name="system.gear.weapons.{{key}}.va" value="{{weapon.va}}" data-dtype="Number"/></td>
                                     <td><input type="number" name="system.gear.weapons.{{key}}.ws" value="{{weapon.ws}}" data-dtype="Number"/></td>

@@ -1062,19 +1062,20 @@
 .weapons-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .weapons-table th,
 .weapons-table td {
     padding: 4px;
-    border: 1px solid #7a7971;
     text-align: center;
+    border: none;
 }
 
 .weapons-table th {
-    background: #f0f0f0;
-    font-weight: bold;
+    background-color: #e0e0e0;
+    color: #000000;
+    text-shadow: none;
 }
 
 .weapons-table td:first-child {
@@ -1087,6 +1088,11 @@
     width: 100%;
     background: none;
     border: none;
+    text-align: center;
+    padding: 2px 4px;
+}
+
+.weapons-table .calculated-value {
     text-align: center;
     padding: 2px 4px;
 }

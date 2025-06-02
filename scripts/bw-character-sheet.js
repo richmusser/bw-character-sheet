@@ -335,6 +335,32 @@ Hooks.once('init', async function() {
         return a - b;
     });
 
+    Handlebars.registerHelper('add', function(a, b) {
+        const numA = Number(a) || 0;
+        const numB = Number(b) || 0;
+        return numA + numB;
+    });
+
+    Handlebars.registerHelper('divide', function(a, b) {
+        const numA = Number(a) || 0;
+        const numB = Number(b) || 1;
+        return numA / numB;
+    });
+
+    Handlebars.registerHelper('multiply', function(a, b) {
+        const numA = Number(a) || 0;
+        const numB = Number(b) || 0;
+        return numA * numB;
+    });
+
+    Handlebars.registerHelper('ceil', function(a) {
+        return Math.ceil(Number(a) || 0);
+    });
+
+    Handlebars.registerHelper('floor', function(a) {
+        return Math.floor(Number(a) || 0);
+    });
+
     Handlebars.registerHelper('calculateMortalWounds', function(power, forte) {
         return Math.floor((power + forte) / 2) + 6;
     });
