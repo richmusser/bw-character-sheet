@@ -1143,4 +1143,88 @@
 .gear-notes textarea:focus {
     box-shadow: 0 0 5px red;
     outline: none;
+}
+
+.armor-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+.armor-table th,
+.armor-table td {
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.armor-table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    color: #000;
+    text-shadow: none;
+}
+
+.armor-table th:last-child,
+.armor-table td:last-child {
+    text-align: left;
+}
+
+.armor-table td:first-child {
+    width: 120px;
+    text-align: left;
+}
+
+.armor-table td:nth-child(2) {
+    width: 200px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.armor-table td:nth-child(3) {
+    width: auto;
+}
+
+.dice-checkboxes {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.25rem;
+}
+
+.dice-checkboxes input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+
+    border: 1px solid #999;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    position: relative;
+    vertical-align: middle;
+}
+
+.dice-checkboxes input[type="checkbox"]:checked {
+    background-color: #000;
+}
+
+.dice-checkboxes input[type="checkbox"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.dice-checkboxes input[type="checkbox"]:hover {
+    border-color: #000;
+}
+
+.armor-table input[type="text"] {
+    width: 100%;
+    padding: 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.armor-table input[type="text"]:focus {
+    outline: 2px solid #4a4a4a;
+    outline-offset: 1px;
+    border-color: #4a4a4a;
 } 

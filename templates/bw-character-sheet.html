@@ -1278,15 +1278,115 @@
                     </div>
                     <div class="gear-section">
                         <h4>Armor</h4>
-                        <div class="gear-list">
-                            {{#each system.gear.armor as |armor key|}}
-                            <div class="gear-item">
-                                <input type="text" name="system.gear.armor.{{key}}.name" value="{{armor.name}}" placeholder="Armor Name"/>
-                                <input type="text" name="system.gear.armor.{{key}}.protection" value="{{armor.protection}}" placeholder="Protection"/>
-                                <input type="text" name="system.gear.armor.{{key}}.notes" value="{{armor.notes}}" placeholder="Notes"/>
-                            </div>
-                            {{/each}}
-                        </div>
+                        <table class="armor-table">
+                            <thead>
+                                <tr>
+                                    <th>Dice</th>
+                                    <th>Location</th>
+                                    <th>Type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="dice-checkboxes">
+                                            <input type="checkbox" name="system.gear.armor.head.dice.0" {{#if system.gear.armor.head.dice.[0]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.head.dice.1" {{#if system.gear.armor.head.dice.[1]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.head.dice.2" {{#if system.gear.armor.head.dice.[2]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.head.dice.3" {{#if system.gear.armor.head.dice.[3]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.head.dice.4" {{#if system.gear.armor.head.dice.[4]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.head.dice.5" {{#if system.gear.armor.head.dice.[5]}}checked{{/if}}/>
+                                        </div>
+                                    </td>
+                                    <td>Head</td>
+                                    <td><input type="text" name="system.gear.armor.head.type" value="{{system.gear.armor.head.type}}" /></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="dice-checkboxes">
+                                            <input type="checkbox" name="system.gear.armor.torso.dice.0" {{#if system.gear.armor.torso.dice.[0]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.torso.dice.1" {{#if system.gear.armor.torso.dice.[1]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.torso.dice.2" {{#if system.gear.armor.torso.dice.[2]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.torso.dice.3" {{#if system.gear.armor.torso.dice.[3]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.torso.dice.4" {{#if system.gear.armor.torso.dice.[4]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.torso.dice.5" {{#if system.gear.armor.torso.dice.[5]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.torso.dice.6" {{#if system.gear.armor.torso.dice.[6]}}checked{{/if}}/>
+                                        </div>
+                                    </td>
+                                    <td>Torso</td>
+                                    <td><input type="text" name="system.gear.armor.torso.type" value="{{system.gear.armor.torso.type}}"/></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="dice-checkboxes">
+                                            <input type="checkbox" name="system.gear.armor.rightArm.dice.0" {{#if system.gear.armor.rightArm.dice.[0]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.rightArm.dice.1" {{#if system.gear.armor.rightArm.dice.[1]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.rightArm.dice.2" {{#if system.gear.armor.rightArm.dice.[2]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.rightArm.dice.3" {{#if system.gear.armor.rightArm.dice.[3]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.rightArm.dice.4" {{#if system.gear.armor.rightArm.dice.[4]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.rightArm.dice.5" {{#if system.gear.armor.rightArm.dice.[5]}}checked{{/if}}/>
+                                        </div>
+                                    </td>
+                                    <td>Right Arm</td>
+                                    <td><input type="text" name="system.gear.armor.rightArm.type" value="{{system.gear.armor.rightArm.type}}" /></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="dice-checkboxes">
+                                            <input type="checkbox" name="system.gear.armor.leftArm.dice.0" {{#if system.gear.armor.leftArm.dice.[0]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.leftArm.dice.1" {{#if system.gear.armor.leftArm.dice.[1]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.leftArm.dice.2" {{#if system.gear.armor.leftArm.dice.[2]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.leftArm.dice.3" {{#if system.gear.armor.leftArm.dice.[3]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.leftArm.dice.4" {{#if system.gear.armor.leftArm.dice.[4]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.leftArm.dice.5" {{#if system.gear.armor.leftArm.dice.[5]}}checked{{/if}}/>
+                                        </div>
+                                    </td>
+                                    <td>Left Arm</td>
+                                    <td><input type="text" name="system.gear.armor.leftArm.type" value="{{system.gear.armor.leftArm.type}}" /></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="dice-checkboxes">
+                                            <input type="checkbox" name="system.gear.armor.rightLeg.dice.0" {{#if system.gear.armor.rightLeg.dice.[0]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.rightLeg.dice.1" {{#if system.gear.armor.rightLeg.dice.[1]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.rightLeg.dice.2" {{#if system.gear.armor.rightLeg.dice.[2]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.rightLeg.dice.3" {{#if system.gear.armor.rightLeg.dice.[3]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.rightLeg.dice.4" {{#if system.gear.armor.rightLeg.dice.[4]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.rightLeg.dice.5" {{#if system.gear.armor.rightLeg.dice.[5]}}checked{{/if}}/>
+                                        </div>
+                                    </td>
+                                    <td>Right Leg</td>
+                                    <td><input type="text" name="system.gear.armor.rightLeg.type" value="{{system.gear.armor.rightLeg.type}}"/></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="dice-checkboxes">
+                                            <input type="checkbox" name="system.gear.armor.leftLeg.dice.0" {{#if system.gear.armor.leftLeg.dice.[0]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.leftLeg.dice.1" {{#if system.gear.armor.leftLeg.dice.[1]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.leftLeg.dice.2" {{#if system.gear.armor.leftLeg.dice.[2]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.leftLeg.dice.3" {{#if system.gear.armor.leftLeg.dice.[3]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.leftLeg.dice.4" {{#if system.gear.armor.leftLeg.dice.[4]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.leftLeg.dice.5" {{#if system.gear.armor.leftLeg.dice.[5]}}checked{{/if}}/>
+                                        </div>
+                                    </td>
+                                    <td>Left Leg</td>
+                                    <td><input type="text" name="system.gear.armor.leftLeg.type" value="{{system.gear.armor.leftLeg.type}}" /></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="dice-checkboxes">
+                                            <input type="checkbox" name="system.gear.armor.shield.dice.0" {{#if system.gear.armor.shield.dice.[0]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.shield.dice.1" {{#if system.gear.armor.shield.dice.[1]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.shield.dice.2" {{#if system.gear.armor.shield.dice.[2]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.shield.dice.3" {{#if system.gear.armor.shield.dice.[3]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.shield.dice.4" {{#if system.gear.armor.shield.dice.[4]}}checked{{/if}}/>
+                                        </div>
+                                    </td>
+                                    <td>Shield</td>
+                                    <td><input type="text" name="system.gear.armor.shield.type" value="{{system.gear.armor.shield.type}}" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <div class="gear-section">
                         <h4>Equipment</h4>

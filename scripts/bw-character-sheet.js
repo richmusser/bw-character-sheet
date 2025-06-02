@@ -262,6 +262,19 @@ class BWCharacterSheet extends ActorSheet {
             }
         }
 
+        // Initialize armor if it doesn't exist
+        if (!actor.system.gear.armor) {
+            actor.system.gear.armor = {
+                head: { dice: [false, false, false, false, false, false], type: "" },
+                torso: { dice: [false, false, false, false, false, false, false], type: "" },
+                rightArm: { dice: [false, false, false, false, false, false], type: "" },
+                leftArm: { dice: [false, false, false, false, false, false], type: "" },
+                rightLeg: { dice: [false, false, false, false, false, false], type: "" },
+                leftLeg: { dice: [false, false, false, false, false, false], type: "" },
+                shield: { dice: [false, false, false, false, false, false], type: "" }
+            };
+        }
+
         // Update the actor with the initialized data
         await actor.update({
             "system.gear": actor.system.gear
