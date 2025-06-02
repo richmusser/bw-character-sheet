@@ -210,15 +210,21 @@ class BWCharacterSheet extends ActorSheet {
         if (!actor.system.gear) {
             actor.system.gear = {
                 weapons: {},
+                rangedWeapons: {},
                 armor: {},
-                equipment: {},
-                possessions: {}
+                equipmentNotes: "",
+                possessionNotes: ""
             };
         }
 
         // Initialize weapons if they don't exist
         if (!actor.system.gear.weapons) {
             actor.system.gear.weapons = {};
+        }
+
+        // Initialize ranged weapons if they don't exist
+        if (!actor.system.gear.rangedWeapons) {
+            actor.system.gear.rangedWeapons = {};
         }
 
         // Initialize 5 weapon slots
@@ -234,6 +240,24 @@ class BWCharacterSheet extends ActorSheet {
                     ws: 0,
                     length: "",
                     pow: 0
+                };
+            }
+        }
+
+        // Initialize 5 ranged weapon slots
+        for (let i = 0; i < 5; i++) {
+            if (!actor.system.gear.rangedWeapons[i]) {
+                actor.system.gear.rangedWeapons[i] = {
+                    name: "",
+                    i: 0,
+                    m: 0,
+                    s: 0,
+                    pow: 0,
+                    dofI: "",
+                    dofM: "",
+                    dofS: "",
+                    optimalRange: "",
+                    extremeRange: ""
                 };
             }
         }

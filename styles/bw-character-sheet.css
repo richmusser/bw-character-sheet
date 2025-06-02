@@ -1078,6 +1078,11 @@
     text-shadow: none;
 }
 
+.weapons-table th:first-child,
+.weapons-table td:first-child {
+    min-width: 275px;
+}
+
 .weapons-table td:first-child {
     text-align: left;
 }
@@ -1118,6 +1123,24 @@
 
 .weapons-table select {
     width: 80px;
-    border-bottom: 1px solid #7a7971;
-    border-radius: 0;
+}
+
+.gear-notes {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.gear-notes textarea {
+    width: 100%;
+    min-height: 120px;
+    resize: vertical;
+    padding: 5px;
+    border: 1px solid #7a7971;
+    background: rgba(0, 0, 0, 0.05);
+    color: #191813;
+}
+
+.gear-notes textarea:focus {
+    box-shadow: 0 0 5px red;
+    outline: none;
 } 
