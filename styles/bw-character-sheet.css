@@ -318,6 +318,7 @@
     align-items: center;
 }
 
+.bw-character-sheet .stat-inputs
 .bw-character-sheet .stat-checks {
     display: flex;
     flex-direction: column;
@@ -572,32 +573,36 @@
 
 .skill-checks .artha-inputs {
     display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    margin-top: 4px;
+    padding: 2px;
+    border-radius: 4px;
 }
 
 .skill-checks .artha-input {
-    display: flex;
+    display: row;
     flex-direction: column;
     align-items: center;
-    gap: 0.25rem;
+    flex: 1;
 }
 
 .skill-checks .artha-input label {
-    font-size: 0.9em;
+    font-size: 0.8em;
+    margin-bottom: 2px;
+    font-weight: normal;    
 }
 
 .skill-checks .artha-input input {
-    width: 40px;
-    height: 40px;
+    height: 21px;
+    width: 21px;
     text-align: center;
+    border: 1px solid #7a7971;
     border-radius: 50%;
-    border: 2px solid #999;
-    padding: 0;
-    font-size: 1.2em;
-    -moz-appearance: textfield;
+}
+
+.skill-checks .artha-input input:focus {
+    box-shadow: 0 0 5px #ff6400;
+    outline: none;
 }
 
 .skill-checks .artha-input input::-webkit-outer-spin-button,
@@ -606,10 +611,8 @@
     margin: 0;
 }
 
-.skill-checks .artha-input input:focus {
-    border-color: #4a90e2;
-    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
-    outline: none;
+.skill-checks .artha-input input[type=number] {
+    -moz-appearance: textfield;
 }
 
 .bw-character-sheet .stride-inputs {
@@ -1449,6 +1452,7 @@
     text-align: center;
 }
 
+.bw-character-sheet .attribute-checks .artha-inputs,
 .bw-character-sheet .stat-checks .artha-inputs {
     display: flex;
     justify-content: space-between;
@@ -1457,6 +1461,7 @@
     border-radius: 4px;
 }
 
+.bw-character-sheet .attribute-checks .artha-input,
 .bw-character-sheet .stat-checks .artha-input {
     display: row;
     flex-direction: column;
@@ -1464,12 +1469,14 @@
     flex: 1;
 }
 
+.bw-character-sheet .attribute-checks .artha-input label,
 .bw-character-sheet .stat-checks .artha-input label {
     font-size: 0.8em;
     margin-bottom: 2px;
     font-weight: normal;    
 }
 
+.bw-character-sheet .attribute-checks .artha-input input,
 .bw-character-sheet .stat-checks .artha-input input {
     height: 21px;
     width: 21px;
@@ -1478,17 +1485,65 @@
     border-radius: 50%;
 }
 
+.bw-character-sheet .attribute-checks .artha-input input:focus,
 .bw-character-sheet .stat-checks .artha-input input:focus {
     box-shadow: 0 0 5px #ff6400;
     outline: none;
 }
 
+.bw-character-sheet .attribute-checks .artha-input input::-webkit-outer-spin-button,
+.bw-character-sheet .attribute-checks .artha-input input::-webkit-inner-spin-button,
 .bw-character-sheet .stat-checks .artha-input input::-webkit-outer-spin-button,
 .bw-character-sheet .stat-checks .artha-input input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
+.bw-character-sheet .attribute-checks .artha-input input[type=number],
 .bw-character-sheet .stat-checks .artha-input input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.bw-character-sheet .attribute-checks .artha-inputs {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4px;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.bw-character-sheet .attribute-checks .artha-input {
+    display: row;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.bw-character-sheet .attribute-checks .artha-input label {
+    font-size: 0.8em;
+    margin-bottom: 2px;
+    font-weight: normal;    
+}
+
+.bw-character-sheet .attribute-checks .artha-input input {
+    height: 21px;
+    width: 21px;
+    text-align: center;
+    border: 1px solid #7a7971;
+    border-radius: 50%;
+}
+
+.bw-character-sheet .attribute-checks .artha-input input:focus {
+    box-shadow: 0 0 5px #ff6400;
+    outline: none;
+}
+
+.bw-character-sheet .attribute-checks .artha-input input::-webkit-outer-spin-button,
+.bw-character-sheet .attribute-checks .artha-input input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.bw-character-sheet .attribute-checks .artha-input input[type=number] {
     -moz-appearance: textfield;
 } 
