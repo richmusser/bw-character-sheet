@@ -1274,4 +1274,177 @@
 .clumsy-weight-input input:focus {
     outline: none;
     border-color: #000;
+}
+
+.bw-character-sheet .learning-content {
+    padding: 0.5rem;
+}
+
+.bw-character-sheet .learning-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.bw-character-sheet .learning-section {
+   
+    border-radius: 4px;
+    padding: 1rem;
+}
+
+.bw-character-sheet .learning-section h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1em;
+    color: #4a4a4a;
+}
+
+.bw-character-sheet .learning-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.bw-character-sheet .learning-header-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    gap: 1rem;
+    padding: 0.5rem;
+    font-weight: bold;
+    color: #4a4a4a;
+    border-bottom: 2px solid #4a4a4a;
+    margin-bottom: 0.5rem;
+}
+
+.bw-character-sheet .learning-header-row .learning-header,
+.bw-character-sheet .learning-header-row .learning-aptitude,
+.bw-character-sheet .learning-header-row .learning-tests {
+    text-align: center;
+}
+
+.bw-character-sheet .learning-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.bw-character-sheet .learning-header input[type="text"] {
+    width: 100%;
+    min-width: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.25rem;
+    font-size: 0.9em;
+}
+
+.bw-character-sheet .learning-aptitude input {
+    width: 60px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.25rem;
+    font-size: 0.9em;
+}
+
+.bw-character-sheet .learning-tests {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.bw-character-sheet .test-checks {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.bw-character-sheet .test-checks input[type="checkbox"] {
+
+    margin: 0;
+    border: 1px solid #4a4a4a;
+    border-radius: 50%;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    position: relative;
+    background-color: white;
+}
+
+.bw-character-sheet .test-checks input[type="checkbox"]:checked {
+    background-color: #4a4a4a;
+}
+
+.bw-character-sheet .test-checks input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.bw-character-sheet .test-checks input[type="checkbox"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #4a4a4a;
+}
+
+.bw-character-sheet .learning-notes {
+    margin-top: 1rem;
+}
+
+.bw-character-sheet .learning-notes textarea {
+    width: 100%;
+    min-height: 200px;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.bw-character-sheet .learning-notes textarea:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.bw-character-sheet .aptitude-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+.bw-character-sheet .aptitude-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.bw-character-sheet .aptitude-item label {
+    font-weight: bold;
+    color: #4a4a4a;
+}
+
+.bw-character-sheet .aptitude-value {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2c3e50;
+    padding: 0.25rem 0.5rem;
+    background-color: white;
+    border: 1px solid #4a4a4a;
+    border-radius: 4px;
+    min-width: 2em;
+    text-align: center;
 } 

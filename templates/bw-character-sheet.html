@@ -70,6 +70,7 @@
         <a class="item" data-tab="main">BITs</a>
         <a class="item" data-tab="attributes">Stats & Attributes</a>
         <a class="item" data-tab="skills">Skills</a>
+        <a class="item" data-tab="learning">Learning</a>
         <a class="item" data-tab="relationships">Relationships</a>
         <a class="item" data-tab="pgts">Injury</a>
         <a class="item" data-tab="gear">Gear</a>
@@ -878,6 +879,82 @@
         </div>
                     {{/if}}
                     {{/each}}
+                </div>
+            </div>
+        </div>
+
+        <div class="tab learning" data-group="primary" data-tab="learning">
+            <div class="learning-content">
+
+                <div class="learning-grid">
+                    <div class="learning-section">
+                        <h4>Aptitude</h4>
+                        <div class="aptitude-grid">
+                            <div class="aptitude-item">
+                                <label>Perception</label>
+                                <div class="aptitude-value">{{subtract 10 system.stats.perception.exponent}}</div>
+                            </div>
+                            <div class="aptitude-item">
+                                <label>Will</label>
+                                <div class="aptitude-value">{{subtract 10 system.stats.will.exponent}}</div>
+                            </div>
+                            <div class="aptitude-item">
+                                <label>Agility</label>
+                                <div class="aptitude-value">{{subtract 10 system.stats.agility.exponent}}</div>
+                            </div>
+                            <div class="aptitude-item">
+                                <label>Speed</label>
+                                <div class="aptitude-value">{{subtract 10 system.stats.speed.exponent}}</div>
+                            </div>
+                            <div class="aptitude-item">
+                                <label>Power</label>
+                                <div class="aptitude-value">{{subtract 10 system.stats.power.exponent}}</div>
+                            </div>
+                            <div class="aptitude-item">
+                                <label>Forte</label>
+                                <div class="aptitude-value">{{subtract 10 system.stats.forte.exponent}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="learning-section">
+                        <h4>Skills Being Learned</h4>
+                        <div class="learning-list">
+                            <div class="learning-header-row">
+                                <div class="learning-header">Name</div>
+                                <div class="learning-aptitude">Aptitude</div>
+                                <div class="learning-tests">Tests</div>
+                            </div>
+                            {{#each system.learning.skills as |skill key|}}
+                            <div class="learning-item">
+                                <div class="learning-header">
+                                    <input type="text" name="system.learning.skills.{{key}}.name" value="{{skill.name}}" />
+                                </div>
+                                <div class="learning-aptitude">
+                                    <input type="number" name="system.learning.skills.{{key}}.aptitude" value="{{skill.aptitude}}" data-dtype="Number"/>
+                                </div>
+                                <div class="learning-tests">
+                                    <div class="test-checks">
+                                        <input type="checkbox" name="system.learning.skills.{{key}}.tests.0" {{#if skill.tests.[0]}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.learning.skills.{{key}}.tests.1" {{#if skill.tests.[1]}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.learning.skills.{{key}}.tests.2" {{#if skill.tests.[2]}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.learning.skills.{{key}}.tests.3" {{#if skill.tests.[3]}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.learning.skills.{{key}}.tests.4" {{#if skill.tests.[4]}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.learning.skills.{{key}}.tests.5" {{#if skill.tests.[5]}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.learning.skills.{{key}}.tests.6" {{#if skill.tests.[6]}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.learning.skills.{{key}}.tests.7" {{#if skill.tests.[7]}}checked{{/if}}/>
+                                        <input type="checkbox" name="system.learning.skills.{{key}}.tests.8" {{#if skill.tests.[8]}}checked{{/if}}/>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                    <div class="learning-section">
+                        <h4>Practice Notes</h4>
+                        <div class="learning-notes">
+                            <textarea name="system.learning.notes" rows="10" placeholder="Enter practice notes here...">{{system.learning.notes}}</textarea>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

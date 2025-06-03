@@ -10,12 +10,47 @@ class BWCharacterSheet extends ActorSheet {
     }
 
     async getData() {
-        const data = super.getData();
+        const data = await super.getData();
         const actor = this.actor;
+
+        // Ensure system object exists
+        if (!actor.system) {
+            await actor.update({ system: {} });
+        }
+
+        // Initialize learning if it doesn't exist
+        if (!actor.system.learning) {
+            await actor.update({
+                "system.learning": {
+                    skills: {},
+                    notes: ""
+                }
+            });
+        }
+
+        // Ensure learning.skills exists
+        if (!actor.system.learning.skills) {
+            await actor.update({
+                "system.learning.skills": {}
+            });
+        }
+
+        // Ensure 10 learning skill slots exist
+        for (let i = 0; i < 10; i++) {
+            if (!actor.system.learning.skills[i]) {
+                await actor.update({
+                    [`system.learning.skills.${i}`]: {
+                        name: "",
+                        aptitude: 0,
+                        tests: [false, false, false, false, false, false, false, false, false]
+                    }
+                });
+            }
+        }
 
         // Initialize Artha values if they don't exist
         if (!actor.system.artha) {
-            actor.update({
+            await actor.update({
                 "system.artha": {
                     fate: 0,
                     persona: 0,
@@ -26,72 +61,74 @@ class BWCharacterSheet extends ActorSheet {
 
         // Initialize attributes if they don't exist
         if (!actor.system.attributes) {
-            actor.system.attributes = {
-                health: {
-                    shade: "B",
-                    exponent: 5,
-                    routine: [false, false, false, false],
-                    difficult: [false, false, false, false],
-                    challenge: [false, false, false]
-                },
-                steel: {
-                    shade: "B",
-                    exponent: 5,
-                    routine: [false, false, false, false],
-                    difficult: [false, false, false, false],
-                    challenge: [false, false, false]
-                },
-                reflexes: {
-                    shade: "B",
-                    exponent: 0
-                },
-                mortalWounds: {
-                    shade: "B",
-                    exponent: 0
-                },
-                circles: {
-                    shade: "B",
-                    exponent: 0,
-                    routine: [false, false, false, false],
-                    difficult: [false, false, false, false],
-                    challenge: [false, false, false]
-                },
-                resources: {
-                    shade: "B",
-                    exponent: 0,
-                    routine: [false, false, false, false],
-                    difficult: [false, false, false, false],
-                    challenge: [false, false, false],
-                    tax: 0,
-                    cash: "",
-                    funds: "",
-                    loans: ""
-                },
-                reputations: {
-                    text: ""
-                },
-                custom1: {
-                    name: "",
-                    shade: "B",
-                    exponent: 0,
-                    routine: [false, false, false, false],
-                    difficult: [false, false, false, false],
-                    challenge: [false, false, false]
-                },
-                custom2: {
-                    name: "",
-                    shade: "B",
-                    exponent: 0,
-                    routine: [false, false, false, false],
-                    difficult: [false, false, false, false],
-                    challenge: [false, false, false]
+            await actor.update({
+                "system.attributes": {
+                    health: {
+                        shade: "B",
+                        exponent: 5,
+                        routine: [false, false, false, false],
+                        difficult: [false, false, false, false],
+                        challenge: [false, false, false]
+                    },
+                    steel: {
+                        shade: "B",
+                        exponent: 5,
+                        routine: [false, false, false, false],
+                        difficult: [false, false, false, false],
+                        challenge: [false, false, false]
+                    },
+                    reflexes: {
+                        shade: "B",
+                        exponent: 0
+                    },
+                    mortalWounds: {
+                        shade: "B",
+                        exponent: 0
+                    },
+                    circles: {
+                        shade: "B",
+                        exponent: 0,
+                        routine: [false, false, false, false],
+                        difficult: [false, false, false, false],
+                        challenge: [false, false, false]
+                    },
+                    resources: {
+                        shade: "B",
+                        exponent: 0,
+                        routine: [false, false, false, false],
+                        difficult: [false, false, false, false],
+                        challenge: [false, false, false],
+                        tax: 0,
+                        cash: "",
+                        funds: "",
+                        loans: ""
+                    },
+                    reputations: {
+                        text: ""
+                    },
+                    custom1: {
+                        name: "",
+                        shade: "B",
+                        exponent: 0,
+                        routine: [false, false, false, false],
+                        difficult: [false, false, false, false],
+                        challenge: [false, false, false]
+                    },
+                    custom2: {
+                        name: "",
+                        shade: "B",
+                        exponent: 0,
+                        routine: [false, false, false, false],
+                        difficult: [false, false, false, false],
+                        challenge: [false, false, false]
+                    }
                 }
-            };
+            });
         }
 
         // Initialize traits if they don't exist
         if (!actor.system.traits) {
-            actor.update({
+            await actor.update({
                 "system.traits": {
                     character: { text: "" },
                     die: { text: "" },
@@ -102,16 +139,16 @@ class BWCharacterSheet extends ActorSheet {
 
         // Initialize stats if they don't exist
         if (!actor.system.stats) {
-            actor.update({
+            await actor.update({
                 "system.stats": {}
             });
         }
 
         // Initialize each stat with default values if they don't exist
         const stats = ['will', 'power', 'agility', 'perception', 'forte', 'speed'];
-        stats.forEach(stat => {
+        for (const stat of stats) {
             if (!actor.system.stats[stat]) {
-                actor.update({
+                await actor.update({
                     [`system.stats.${stat}`]: {
                         shade: 'B',
                         exponent: 0,
@@ -120,18 +157,18 @@ class BWCharacterSheet extends ActorSheet {
                     }
                 });
             }
-        });
+        }
 
         // Initialize beliefs if they don't exist
         if (!actor.system.beliefs) {
-            actor.update({
+            await actor.update({
                 "system.beliefs": {}
             });
         }
         // Ensure 4 beliefs exist
         for (let i = 0; i < 4; i++) {
             if (!actor.system.beliefs[i]) {
-                actor.update({
+                await actor.update({
                     [`system.beliefs.${i}`]: { text: "" }
                 });
             }
@@ -139,21 +176,21 @@ class BWCharacterSheet extends ActorSheet {
 
         // Initialize instincts if they don't exist
         if (!actor.system.instincts) {
-            actor.update({
+            await actor.update({
                 "system.instincts": { text: "" }
             });
         }
 
         // Initialize skills if they don't exist
         if (!actor.system.skills) {
-            actor.update({
+            await actor.update({
                 "system.skills": {}
             });
         }
         // Ensure 40 skills exist (20 per column)
         for (let i = 0; i < 40; i++) {
             if (!actor.system.skills[i]) {
-                actor.update({
+                await actor.update({
                     [`system.skills.${i}`]: {
                         name: "",
                         shade: 'B',
@@ -180,7 +217,7 @@ class BWCharacterSheet extends ActorSheet {
             for (let i = 1; i <= 16; i++) {
                 pgtsData.tolerance[i] = "";
                 pgtsData.coordinate[i] = "";
-                pgtsData.injury[i] = "";
+                pgtsData.injury[i] = [false, false, false];
             }
             
             await actor.update({
@@ -190,108 +227,32 @@ class BWCharacterSheet extends ActorSheet {
 
         // Initialize spells if they don't exist
         if (!actor.system.spells) {
-            actor.system.spells = {};
+            await actor.update({
+                "system.spells": {}
+            });
         }
         // Ensure 20 spells exist
         for (let i = 0; i < 20; i++) {
             if (!actor.system.spells[i]) {
-                actor.system.spells[i] = {
-                    name: "",
-                    effect: "",
-                    ob: 0,
-                    timesCast: 0,
-                    woven: false,
-                    incantation: ""
-                };
+                await actor.update({
+                    [`system.spells.${i}`]: {
+                        name: "",
+                        effect: "",
+                        ob: 0,
+                        woven: false,
+                        incantation: false,
+                        timesCast: 0
+                    }
+                });
             }
         }
-
-        // Initialize gear if it doesn't exist
-        if (!actor.system.gear) {
-            actor.system.gear = {
-                weapons: {},
-                rangedWeapons: {},
-                armor: {},
-                equipmentNotes: "",
-                possessionNotes: ""
-            };
-        }
-
-        // Initialize weapons if they don't exist
-        if (!actor.system.gear.weapons) {
-            actor.system.gear.weapons = {};
-        }
-
-        // Initialize ranged weapons if they don't exist
-        if (!actor.system.gear.rangedWeapons) {
-            actor.system.gear.rangedWeapons = {};
-        }
-
-        // Initialize 5 weapon slots
-        for (let i = 0; i < 5; i++) {
-            if (!actor.system.gear.weapons[i]) {
-                actor.system.gear.weapons[i] = {
-                    name: i === 0 ? "Bare Fist" : "",
-                    i: 0,
-                    m: 0,
-                    s: 0,
-                    add: 0,
-                    va: 0,
-                    ws: 0,
-                    length: "",
-                    pow: 0
-                };
-            }
-        }
-
-        // Initialize 5 ranged weapon slots
-        for (let i = 0; i < 5; i++) {
-            if (!actor.system.gear.rangedWeapons[i]) {
-                actor.system.gear.rangedWeapons[i] = {
-                    name: "",
-                    i: 0,
-                    m: 0,
-                    s: 0,
-                    pow: 0,
-                    dofI: "",
-                    dofM: "",
-                    dofS: "",
-                    optimalRange: "",
-                    extremeRange: ""
-                };
-            }
-        }
-
-        // Initialize armor if it doesn't exist
-        if (!actor.system.gear.armor) {
-            actor.system.gear.armor = {
-                head: { dice: [false, false, false, false, false, false], type: "" },
-                torso: { dice: [false, false, false, false, false, false, false], type: "" },
-                rightArm: { dice: [false, false, false, false, false, false], type: "" },
-                leftArm: { dice: [false, false, false, false, false, false], type: "" },
-                rightLeg: { dice: [false, false, false, false, false, false], type: "" },
-                leftLeg: { dice: [false, false, false, false, false, false], type: "" },
-                shield: { dice: [false, false, false, false, false, false], type: "" }
-            };
-        }
-
-        // Update the actor with the initialized data
-        await actor.update({
-            "system.gear": actor.system.gear
-        });
 
         // Ensure we have valid data objects before merging
-        const actorData = {
-            actor: this.actor,
-            system: this.actor.system || {}
-        };
-
-        // Ensure both data and actorData are objects
-        const baseData = typeof data === 'object' ? data : {};
-        const mergedData = foundry.utils.mergeObject(baseData, actorData);
-
-        // Return the merged data
-        return mergedData;
+        return foundry.utils.mergeObject(data, {
+            system: actor.system,
+            editable: this.isEditable,
+            config: CONFIG.BW
+        });
     }
 
     async _onResetInjuries(event) {
