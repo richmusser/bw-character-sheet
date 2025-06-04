@@ -247,9 +247,89 @@ class BWCharacterSheet extends ActorSheet {
             }
         }
 
+        // Ensure gear object exists
+        if (!actor.system.gear) {
+            await actor.update({
+                "system.gear": {
+                    weapons: {},
+                    rangedWeapons: {},
+                    armor: {
+                        head: { dice: [false, false, false, false, false, false], type: "" },
+                        torso: { dice: [false, false, false, false, false, false, false], type: "" },
+                        rightArm: { dice: [false, false, false, false, false, false], type: "" },
+                        leftArm: { dice: [false, false, false, false, false, false], type: "" },
+                        rightLeg: { dice: [false, false, false, false, false, false], type: "" },
+                        leftLeg: { dice: [false, false, false, false, false, false], type: "" },
+                        shield: { dice: [false, false, false, false, false], type: "" },
+                        clumsyWeight: {
+                            stealthy: "",
+                            clumsy: ""
+                        }
+                    }
+                }
+            });
+        }
+
+        // Initialize weapons if they don't exist
+        if (!actor.system.gear.weapons) {
+            await actor.update({
+                "system.gear.weapons": {}
+            });
+        }
+
+        // Ensure 5 melee weapons exist
+        for (let i = 0; i < 5; i++) {
+            if (!actor.system.gear.weapons[i]) {
+                const defaultWeapon = i === 0 ? {
+                    name: "Fist",
+                    add: 2,
+                    va: 0,
+                    ws: 3,
+                    length: "Shortest",
+                    pow: 0
+                } : {
+                    name: "",
+                    add: 0,
+                    va: 0,
+                    ws: 0,
+                    length: "",
+                    pow: 0
+                };
+                
+                await actor.update({
+                    [`system.gear.weapons.${i}`]: defaultWeapon
+                });
+            }
+        }
+
+        // Initialize ranged weapons if they don't exist
+        if (!actor.system.gear.rangedWeapons) {
+            await actor.update({
+                "system.gear.rangedWeapons": {}
+            });
+        }
+
+        // Ensure 3 ranged weapons exist
+        for (let i = 0; i < 3; i++) {
+            if (!actor.system.gear.rangedWeapons[i]) {
+                await actor.update({
+                    [`system.gear.rangedWeapons.${i}`]: {
+                        name: "",
+                        pow: 0,
+                        dofI: "",
+                        dofM: "",
+                        dofS: "",
+                        optimalRange: "",
+                        extremeRange: ""
+                    }
+                });
+            }
+        }
+
         // Ensure we have valid data objects before merging
+        const systemData = actor.system || {};
         return foundry.utils.mergeObject(data, {
-            system: actor.system,
+            system: systemData,
             editable: this.isEditable,
             config: CONFIG.BW
         });

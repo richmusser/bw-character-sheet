@@ -1594,12 +1594,12 @@
                                 <tr>
                                     <td>
                                         <div class="dice-checkboxes">
-                                            <input type="checkbox" name="system.gear.armor.head.dice.0" {{#if system.gear.armor.head.dice.[0]}}checked{{/if}}/>
-                                            <input type="checkbox" name="system.gear.armor.head.dice.1" {{#if system.gear.armor.head.dice.[1]}}checked{{/if}}/>
-                                            <input type="checkbox" name="system.gear.armor.head.dice.2" {{#if system.gear.armor.head.dice.[2]}}checked{{/if}}/>
-                                            <input type="checkbox" name="system.gear.armor.head.dice.3" {{#if system.gear.armor.head.dice.[3]}}checked{{/if}}/>
-                                            <input type="checkbox" name="system.gear.armor.head.dice.4" {{#if system.gear.armor.head.dice.[4]}}checked{{/if}}/>
-                                            <input type="checkbox" name="system.gear.armor.head.dice.5" {{#if system.gear.armor.head.dice.[5]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.head.dice.0" {{#if (lookup system.gear.armor.head.dice 0)}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.head.dice.1" {{#if (lookup system.gear.armor.head.dice 1)}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.head.dice.2" {{#if (lookup system.gear.armor.head.dice 2)}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.head.dice.3" {{#if (lookup system.gear.armor.head.dice 3)}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.head.dice.4" {{#if (lookup system.gear.armor.head.dice 4)}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.head.dice.5" {{#if (lookup system.gear.armor.head.dice 5)}}checked{{/if}}/>
                                         </div>
                                     </td>
                                     <td>Head</td>
@@ -1608,13 +1608,13 @@
                                 <tr>
                                     <td>
                                         <div class="dice-checkboxes">
-                                            <input type="checkbox" name="system.gear.armor.torso.dice.0" {{#if system.gear.armor.torso.dice.[0]}}checked{{/if}}/>
-                                            <input type="checkbox" name="system.gear.armor.torso.dice.1" {{#if system.gear.armor.torso.dice.[1]}}checked{{/if}}/>
-                                            <input type="checkbox" name="system.gear.armor.torso.dice.2" {{#if system.gear.armor.torso.dice.[2]}}checked{{/if}}/>
-                                            <input type="checkbox" name="system.gear.armor.torso.dice.3" {{#if system.gear.armor.torso.dice.[3]}}checked{{/if}}/>
-                                            <input type="checkbox" name="system.gear.armor.torso.dice.4" {{#if system.gear.armor.torso.dice.[4]}}checked{{/if}}/>
-                                            <input type="checkbox" name="system.gear.armor.torso.dice.5" {{#if system.gear.armor.torso.dice.[5]}}checked{{/if}}/>
-                                            <input type="checkbox" name="system.gear.armor.torso.dice.6" {{#if system.gear.armor.torso.dice.[6]}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.torso.dice.0" {{#if (lookup system.gear.armor.torso.dice 0)}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.torso.dice.1" {{#if (lookup system.gear.armor.torso.dice 1)}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.torso.dice.2" {{#if (lookup system.gear.armor.torso.dice 2)}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.torso.dice.3" {{#if (lookup system.gear.armor.torso.dice 3)}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.torso.dice.4" {{#if (lookup system.gear.armor.torso.dice 4)}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.torso.dice.5" {{#if (lookup system.gear.armor.torso.dice 5)}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.torso.dice.6" {{#if (lookup system.gear.armor.torso.dice 6)}}checked{{/if}}/>
                                         </div>
                                     </td>
                                     <td>Torso</td>
@@ -1623,6 +1623,10 @@
                                 <tr>
                                     <td>
                                         <div class="dice-checkboxes">
+                                            <input type="checkbox" name="system.gear.armor.rightArm.dice.0" {{#if (lookup system.gear.armor.rightArm.dice 0)}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.rightArm.dice.1" {{#if (lookup system.gear.armor.rightArm.dice 1)}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.rightArm.dice.2" {{#if (lookup system.gear.armor.rightArm.dice 2)}}checked{{/if}}/>
+                                            <input type="checkbox" name="system.gear.armor.rightArm.dice.3" {{#if (lookup system.gear.armor.rightArm.dice 3)}}checked{{/if}}/>
                                             <input type="checkbox" name="system.gear.armor.rightArm.dice.0" {{#if system.gear.armor.rightArm.dice.[0]}}checked{{/if}}/>
                                             <input type="checkbox" name="system.gear.armor.rightArm.dice.1" {{#if system.gear.armor.rightArm.dice.[1]}}checked{{/if}}/>
                                             <input type="checkbox" name="system.gear.armor.rightArm.dice.2" {{#if system.gear.armor.rightArm.dice.[2]}}checked{{/if}}/>
