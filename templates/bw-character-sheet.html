@@ -1380,10 +1380,7 @@
                             <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th>I</th>
-                                    <th>M</th>
-                                    <th>S</th>
-                                    <th>Pow</th>
+                                    <th>VA</th>
                                     <th>DOF: I</th>
                                     <th>DOF: M</th>
                                     <th>DOF: S</th>
@@ -1395,10 +1392,7 @@
                                 {{#each system.gear.rangedWeapons as |weapon key|}}
                                 <tr>
                                     <td><input type="text" name="system.gear.rangedWeapons.{{key}}.name" value="{{weapon.name}}" /></td>
-                                    <td>{{#if (and weapon.pow (gt weapon.pow 0))}}<div class="calculated-value">{{ceil (divide (add ../system.stats.power.exponent weapon.pow) 2)}}</div>{{/if}}</td>
-                                    <td>{{#if (and weapon.pow (gt weapon.pow 0))}}<div class="calculated-value">{{add ../system.stats.power.exponent weapon.pow}}</div>{{/if}}</td>
-                                    <td>{{#if (and weapon.pow (gt weapon.pow 0))}}<div class="calculated-value">{{floor (multiply (add ../system.stats.power.exponent weapon.pow) 1.5)}}</div>{{/if}}</td>
-                                    <td><input type="number" name="system.gear.rangedWeapons.{{key}}.pow" value="{{weapon.pow}}" data-dtype="Number"/></td>
+                                    <td><input type="number" name="system.gear.rangedWeapons.{{key}}.va" value="{{weapon.va}}" data-dtype="Number"/></td>
                                     <td><input type="text" name="system.gear.rangedWeapons.{{key}}.dofI" value="{{weapon.dofI}}" /></td>
                                     <td><input type="text" name="system.gear.rangedWeapons.{{key}}.dofM" value="{{weapon.dofM}}" /></td>
                                     <td><input type="text" name="system.gear.rangedWeapons.{{key}}.dofS" value="{{weapon.dofS}}" /></td>

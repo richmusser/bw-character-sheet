@@ -323,7 +323,7 @@ class BWCharacterSheet extends ActorSheet {
                 await actor.update({
                     [`system.gear.rangedWeapons.${i}`]: {
                         name: "",
-                        pow: 0,
+                        va: 0,
                         dofI: "",
                         dofM: "",
                         dofS: "",
