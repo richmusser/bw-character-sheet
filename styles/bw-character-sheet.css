@@ -617,25 +617,47 @@
 
 .bw-character-sheet .stride-inputs {
     display: flex;
-    gap: 20px;
-    margin: 5px 0;
-    padding-left: 10px;
+    justify-content: space-between;
+    margin: 4px 0;
+    padding: 0 4px;
 }
 
-.bw-character-sheet .stride {
+.bw-character-sheet .stride-input {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: 8px;
 }
 
-.bw-character-sheet .stride label {
-    font-size: 0.9em;
-    white-space: nowrap;
+.bw-character-sheet .stride-input label {
+    font-size: 0.8em;
+    margin-bottom: 2px;
 }
 
-.bw-character-sheet .stride input {
-    width: 50px;
+.bw-character-sheet .stride-input input {
+    width: 40px;
+    height: 20px;
+    border: none;
+    border-bottom: 1px solid #7a7971;
+    background: transparent;
     text-align: center;
+    padding: 0;
+}
+
+.bw-character-sheet .stride-input input:focus {
+    outline: none;
+    border-bottom-color: #ff6400;
+    box-shadow: 0 1px 0 0 #ff6400;
+}
+
+/* Remove spinner buttons for number inputs */
+.bw-character-sheet .stride-input input[type="number"]::-webkit-inner-spin-button,
+.bw-character-sheet .stride-input input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.bw-character-sheet .stride-input input[type="number"] {
+    -moz-appearance: textfield;
 }
 
 .bw-character-sheet .attribute-content textarea {

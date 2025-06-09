@@ -148,13 +148,21 @@ class BWCharacterSheet extends ActorSheet {
         const stats = ['will', 'power', 'agility', 'perception', 'forte', 'speed'];
         for (const stat of stats) {
             if (!actor.system.stats[stat]) {
+                const defaultValues = {
+                    shade: 'B',
+                    exponent: 0,
+                    difficult: [false, false, false, false],
+                    challenge: [false, false, false]
+                };
+
+                // Add stride and mountedStride for speed stat
+                if (stat === 'speed') {
+                    defaultValues.stride = 0;
+                    defaultValues.mountedStride = 0;
+                }
+
                 await actor.update({
-                    [`system.stats.${stat}`]: {
-                        shade: 'B',
-                        exponent: 0,
-                        difficult: [false, false, false, false],
-                        challenge: [false, false, false]
-                    }
+                    [`system.stats.${stat}`]: defaultValues
                 });
             }
         }
