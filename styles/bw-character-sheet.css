@@ -530,7 +530,7 @@
 
 .bw-character-sheet .skill {
     display: grid;
-    grid-template-columns: 3fr .5fr .5fr 1fr 1fr;
+    grid-template-columns: 3fr .25fr .25fr .751fr 1.5fr;
     gap: 1rem;
     padding: 0.5rem;
     border-radius: 4px;
@@ -552,67 +552,27 @@
 }
 
 .bw-character-sheet .skill-inputs select {
-    width: 100%;
+    width: 40px;
     text-align: center;
 }
 
 .bw-character-sheet .skill-inputs input {
-    width: 100%;
+    width: 25px;
     text-align: center;
 }
 
 .bw-character-sheet .skill-checks {
-    display: contents;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 5px;
+    width: 100%;
 }
 
 .skill-checks .difficulty-checks {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-}
-
-.skill-checks .artha-inputs {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 4px;
-    padding: 2px;
-    border-radius: 4px;
-}
-
-.skill-checks .artha-input {
-    display: row;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-}
-
-.skill-checks .artha-input label {
-    font-size: 0.8em;
-    margin-bottom: 2px;
-    font-weight: normal;    
-}
-
-.skill-checks .artha-input input {
-    height: 21px;
-    width: 21px;
-    text-align: center;
-    border: 1px solid #7a7971;
-    border-radius: 50%;
-}
-
-.skill-checks .artha-input input:focus {
-    box-shadow: 0 0 5px #ff6400;
-    outline: none;
-}
-
-.skill-checks .artha-input input::-webkit-outer-spin-button,
-.skill-checks .artha-input input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-.skill-checks .artha-input input[type=number] {
-    -moz-appearance: textfield;
 }
 
 .bw-character-sheet .stride-inputs {
@@ -997,7 +957,7 @@
 .bw-character-sheet .wound-value .readonly-value {
     width: 40px;
     text-align: center;
-    background: white;
+  
     border: 1px solid #7a7971;
     border-radius: 3px;
     padding: 2px 5px;
@@ -1567,5 +1527,48 @@
 }
 
 .bw-character-sheet .attribute-checks .artha-input input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.bw-character-sheet .skill .artha-inputs {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px;
+
+}
+
+.bw-character-sheet .skill .artha-input {
+    display: row;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.bw-character-sheet .skill .artha-input label {
+    font-size: 0.8em;
+    margin-bottom: 2px;
+    font-weight: normal;    
+}
+
+.bw-character-sheet .skill .artha-input input {
+    height: 21px;
+    width: 21px;
+    text-align: center;
+    border: 1px solid #7a7971;
+    border-radius: 50%;
+}
+
+.bw-character-sheet .skill .artha-input input:focus {
+    box-shadow: 0 0 5px #ff6400;
+    outline: none;
+}
+
+.bw-character-sheet .skill .artha-input input::-webkit-outer-spin-button,
+.bw-character-sheet .skill .artha-input input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.bw-character-sheet .skill .artha-input input[type=number] {
     -moz-appearance: textfield;
 } 
