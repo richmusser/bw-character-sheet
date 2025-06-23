@@ -112,7 +112,10 @@ class BWCharacterSheet extends ActorSheet {
                         exponent: 0,
                         routine: [false, false, false, false],
                         difficult: [false, false, false, false],
-                        challenge: [false, false, false]
+                        challenge: [false, false, false],
+                        fate: 0,
+                        persona: 0,
+                        deeds: 0
                     },
                     custom2: {
                         name: "",
@@ -120,7 +123,10 @@ class BWCharacterSheet extends ActorSheet {
                         exponent: 0,
                         routine: [false, false, false, false],
                         difficult: [false, false, false, false],
-                        challenge: [false, false, false]
+                        challenge: [false, false, false],
+                        fate: 0,
+                        persona: 0,
+                        deeds: 0
                     }
                 }
             });
@@ -163,6 +169,22 @@ class BWCharacterSheet extends ActorSheet {
 
                 await actor.update({
                     [`system.stats.${stat}`]: defaultValues
+                });
+            }
+        }
+
+        // Initialize custom stats if they don't exist
+        const customStats = ['custom1', 'custom2'];
+        for (const stat of customStats) {
+            if (!actor.system.stats[stat]) {
+                await actor.update({
+                    [`system.stats.${stat}`]: {
+                        name: "",
+                        shade: 'B',
+                        exponent: 0,
+                        difficult: [false, false, false, false],
+                        challenge: [false, false, false]
+                    }
                 });
             }
         }
