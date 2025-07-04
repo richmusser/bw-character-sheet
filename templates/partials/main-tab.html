@@ -1,0 +1,52 @@
+<div class="beliefs-instincts">
+    <div class="beliefs">
+        <h3>Beliefs</h3>
+        <div class="beliefs-list">
+            {{#each system.beliefs as |belief key|}}
+            {{#if (lt key 4)}}
+            <div class="belief">
+                <textarea name="system.beliefs.{{key}}.text" rows="2">{{belief.text}}</textarea>
+            </div>
+            {{/if}}
+            {{/each}}
+        </div>
+    </div>
+    <div class="instincts">
+        <h3>Instincts</h3>
+        <div class="instincts-list">
+            <div class="instinct">
+                <textarea name="system.instincts.text" rows="8">{{system.instincts.text}}</textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="traits-section">
+    <h3>Traits</h3>
+    <div class="traits-grid">
+        <div class="trait-category">
+            <h4>Character Traits</h4>
+            <div class="traits-list">
+                <div class="trait">
+                    <textarea name="system.traits.character.text" rows="6" placeholder="Enter character traits here...">{{system.traits.character.text}}</textarea>
+                </div>
+            </div>
+        </div>
+        <div class="trait-category">
+            <h4>Die Traits</h4>
+            <div class="traits-list">
+                <div class="trait">
+                    <textarea name="system.traits.die.text" rows="6" placeholder="Enter die traits here...">{{system.traits.die.text}}</textarea>
+                </div>
+            </div>
+        </div>
+        <div class="trait-category">
+            <h4>Call On Traits</h4>
+            <div class="traits-list">
+                <div class="trait">
+                    <textarea name="system.traits.callOn.text" rows="6" placeholder="Enter call on traits here...">{{system.traits.callOn.text}}</textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

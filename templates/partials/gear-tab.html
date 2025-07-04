@@ -1,0 +1,220 @@
+<div class="gear-content">
+    <div class="gear-grid">
+        <div class="gear-section">
+            <h4>Melee Weapons</h4>
+            <table class="weapons-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>I</th>
+                        <th>M</th>
+                        <th>S</th>
+                        <th>Add</th>
+                        <th>VA</th>
+                        <th>WS</th>
+                        <th>Length</th>
+                        <th>Pow</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each system.gear.weapons as |weapon key|}}
+                    <tr>
+                        <td><input type="text" name="system.gear.weapons.{{key}}.name" value="{{weapon.name}}" /></td>
+                        <td><div class="calculated-value">{{ceil (divide (add ../system.stats.power.exponent weapon.pow) 2)}}</div></td>
+                        <td><div class="calculated-value">{{add ../system.stats.power.exponent weapon.pow}}</div></td>
+                        <td><div class="calculated-value">{{floor (multiply (add ../system.stats.power.exponent weapon.pow) 1.5)}}</div></td>
+                        <td><input type="number" name="system.gear.weapons.{{key}}.add" value="{{weapon.add}}" data-dtype="Number"/></td>
+                        <td><input type="number" name="system.gear.weapons.{{key}}.va" value="{{weapon.va}}" data-dtype="Number"/></td>
+                        <td><input type="number" name="system.gear.weapons.{{key}}.ws" value="{{weapon.ws}}" data-dtype="Number"/></td>
+                        <td>
+                            <select name="system.gear.weapons.{{key}}.length" data-dtype="String">
+                                <option value=""></option>
+                                <option value="Shortest" {{#if (eq weapon.length "Shortest")}}selected{{/if}}>Shortest</option>
+                                <option value="Short" {{#if (eq weapon.length "Short")}}selected{{/if}}>Short</option>
+                                <option value="Long" {{#if (eq weapon.length "Long")}}selected{{/if}}>Long</option>
+                                <option value="Longer" {{#if (eq weapon.length "Longer")}}selected{{/if}}>Longer</option>
+                                <option value="Longest" {{#if (eq weapon.length "Longest")}}selected{{/if}}>Longest</option>
+                            </select>
+                        </td>
+                        <td><input type="number" name="system.gear.weapons.{{key}}.pow" value="{{weapon.pow}}" data-dtype="Number"/></td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <div class="gear-section">
+            <h4>Ranged Weapons</h4>
+            <table class="weapons-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>VA</th>
+                        <th>DOF: I</th>
+                        <th>DOF: M</th>
+                        <th>DOF: S</th>
+                        <th>Optimal Range</th>
+                        <th>Extreme Range</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each system.gear.rangedWeapons as |weapon key|}}
+                    <tr>
+                        <td><input type="text" name="system.gear.rangedWeapons.{{key}}.name" value="{{weapon.name}}" /></td>
+                        <td><input type="number" name="system.gear.rangedWeapons.{{key}}.va" value="{{weapon.va}}" data-dtype="Number"/></td>
+                        <td><input type="text" name="system.gear.rangedWeapons.{{key}}.dofI" value="{{weapon.dofI}}" /></td>
+                        <td><input type="text" name="system.gear.rangedWeapons.{{key}}.dofM" value="{{weapon.dofM}}" /></td>
+                        <td><input type="text" name="system.gear.rangedWeapons.{{key}}.dofS" value="{{weapon.dofS}}" /></td>
+                        <td><input type="text" name="system.gear.rangedWeapons.{{key}}.optimalRange" value="{{weapon.optimalRange}}" /></td>
+                        <td><input type="text" name="system.gear.rangedWeapons.{{key}}.extremeRange" value="{{weapon.extremeRange}}" /></td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <div class="gear-section">
+            <h4>Armor</h4>
+            <table class="armor-table">
+                <thead>
+                    <tr>
+                        <th>Dice</th>
+                        <th>Location</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="dice-checkboxes">
+                                <input type="checkbox" name="system.gear.armor.head.dice.0" {{#if (lookup system.gear.armor.head.dice 0)}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.head.dice.1" {{#if (lookup system.gear.armor.head.dice 1)}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.head.dice.2" {{#if (lookup system.gear.armor.head.dice 2)}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.head.dice.3" {{#if (lookup system.gear.armor.head.dice 3)}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.head.dice.4" {{#if (lookup system.gear.armor.head.dice 4)}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.head.dice.5" {{#if (lookup system.gear.armor.head.dice 5)}}checked{{/if}}/>
+                            </div>
+                        </td>
+                        <td>Head</td>
+                        <td><input type="text" name="system.gear.armor.head.type" value="{{system.gear.armor.head.type}}" /></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="dice-checkboxes">
+                                <input type="checkbox" name="system.gear.armor.torso.dice.0" {{#if (lookup system.gear.armor.torso.dice 0)}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.torso.dice.1" {{#if (lookup system.gear.armor.torso.dice 1)}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.torso.dice.2" {{#if (lookup system.gear.armor.torso.dice 2)}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.torso.dice.3" {{#if (lookup system.gear.armor.torso.dice 3)}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.torso.dice.4" {{#if (lookup system.gear.armor.torso.dice 4)}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.torso.dice.5" {{#if (lookup system.gear.armor.torso.dice 5)}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.torso.dice.6" {{#if (lookup system.gear.armor.torso.dice 6)}}checked{{/if}}/>
+                            </div>
+                        </td>
+                        <td>Torso</td>
+                        <td><input type="text" name="system.gear.armor.torso.type" value="{{system.gear.armor.torso.type}}"/></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="dice-checkboxes">
+                                <input type="checkbox" name="system.gear.armor.rightArm.dice.0" {{#if (lookup system.gear.armor.rightArm.dice 0)}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.rightArm.dice.1" {{#if (lookup system.gear.armor.rightArm.dice 1)}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.rightArm.dice.2" {{#if (lookup system.gear.armor.rightArm.dice 2)}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.rightArm.dice.3" {{#if (lookup system.gear.armor.rightArm.dice 3)}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.rightArm.dice.4" {{#if (lookup system.gear.armor.rightArm.dice 4)}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.rightArm.dice.5" {{#if (lookup system.gear.armor.rightArm.dice 5)}}checked{{/if}}/>
+                            </div>
+                        </td>
+                        <td>Right Arm</td>
+                        <td><input type="text" name="system.gear.armor.rightArm.type" value="{{system.gear.armor.rightArm.type}}" /></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="dice-checkboxes">
+                                <input type="checkbox" name="system.gear.armor.leftArm.dice.0" {{#if system.gear.armor.leftArm.dice.[0]}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.leftArm.dice.1" {{#if system.gear.armor.leftArm.dice.[1]}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.leftArm.dice.2" {{#if system.gear.armor.leftArm.dice.[2]}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.leftArm.dice.3" {{#if system.gear.armor.leftArm.dice.[3]}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.leftArm.dice.4" {{#if system.gear.armor.leftArm.dice.[4]}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.leftArm.dice.5" {{#if system.gear.armor.leftArm.dice.[5]}}checked{{/if}}/>
+                            </div>
+                        </td>
+                        <td>Left Arm</td>
+                        <td><input type="text" name="system.gear.armor.leftArm.type" value="{{system.gear.armor.leftArm.type}}" /></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="dice-checkboxes">
+                                <input type="checkbox" name="system.gear.armor.rightLeg.dice.0" {{#if system.gear.armor.rightLeg.dice.[0]}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.rightLeg.dice.1" {{#if system.gear.armor.rightLeg.dice.[1]}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.rightLeg.dice.2" {{#if system.gear.armor.rightLeg.dice.[2]}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.rightLeg.dice.3" {{#if system.gear.armor.rightLeg.dice.[3]}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.rightLeg.dice.4" {{#if system.gear.armor.rightLeg.dice.[4]}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.rightLeg.dice.5" {{#if system.gear.armor.rightLeg.dice.[5]}}checked{{/if}}/>
+                            </div>
+                        </td>
+                        <td>Right Leg</td>
+                        <td><input type="text" name="system.gear.armor.rightLeg.type" value="{{system.gear.armor.rightLeg.type}}"/></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="dice-checkboxes">
+                                <input type="checkbox" name="system.gear.armor.leftLeg.dice.0" {{#if system.gear.armor.leftLeg.dice.[0]}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.leftLeg.dice.1" {{#if system.gear.armor.leftLeg.dice.[1]}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.leftLeg.dice.2" {{#if system.gear.armor.leftLeg.dice.[2]}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.leftLeg.dice.3" {{#if system.gear.armor.leftLeg.dice.[3]}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.leftLeg.dice.4" {{#if system.gear.armor.leftLeg.dice.[4]}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.leftLeg.dice.5" {{#if system.gear.armor.leftLeg.dice.[5]}}checked{{/if}}/>
+                            </div>
+                        </td>
+                        <td>Left Leg</td>
+                        <td><input type="text" name="system.gear.armor.leftLeg.type" value="{{system.gear.armor.leftLeg.type}}" /></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="dice-checkboxes">
+                                <input type="checkbox" name="system.gear.armor.shield.dice.0" {{#if system.gear.armor.shield.dice.[0]}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.shield.dice.1" {{#if system.gear.armor.shield.dice.[1]}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.shield.dice.2" {{#if system.gear.armor.shield.dice.[2]}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.shield.dice.3" {{#if system.gear.armor.shield.dice.[3]}}checked{{/if}}/>
+                                <input type="checkbox" name="system.gear.armor.shield.dice.4" {{#if system.gear.armor.shield.dice.[4]}}checked{{/if}}/>
+                            </div>
+                        </td>
+                        <td>Shield</td>
+                        <td><input type="text" name="system.gear.armor.shield.type" value="{{system.gear.armor.shield.type}}" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="gear-section">
+            <h4>Clumsy Weight</h4>
+            <div class="clumsy-weight-grid">
+                <div class="clumsy-weight-input">
+                    <label>Stealthy</label>
+                    <input type="text" name="system.gear.armor.clumsyWeight.stealthy" value="{{system.gear.armor.clumsyWeight.stealthy}}" />
+                </div>
+                <div class="clumsy-weight-input">
+                    <label>Speed</label>
+                    <input type="text" name="system.gear.armor.clumsyWeight.speed" value="{{system.gear.armor.clumsyWeight.speed}}" />
+                </div>
+                <div class="clumsy-weight-input">
+                    <label>Perception</label>
+                    <input type="text" name="system.gear.armor.clumsyWeight.perception" value="{{system.gear.armor.clumsyWeight.perception}}" />
+                </div>
+                <div class="clumsy-weight-input">
+                    <label>Agility</label>
+                    <input type="text" name="system.gear.armor.clumsyWeight.agility" value="{{system.gear.armor.clumsyWeight.agility}}" />
+                </div>
+            </div>
+        </div>
+        <div class="gear-section">
+            <h4>Equipment</h4>
+            <div class="gear-notes">
+                <textarea name="system.gear.equipmentNotes" rows="6" placeholder="Enter equipment notes here...">{{system.gear.equipmentNotes}}</textarea>
+            </div>
+        </div>
+        <div class="gear-section">
+            <h4>Possessions</h4>
+            <div class="gear-notes">
+                <textarea name="system.gear.possessionNotes" rows="6" placeholder="Enter possession notes here...">{{system.gear.possessionNotes}}</textarea>
+            </div>
+        </div>
+    </div>
+</div>

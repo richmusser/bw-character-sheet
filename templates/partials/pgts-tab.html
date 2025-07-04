@@ -1,0 +1,321 @@
+<div class="pgts-content">
+    <div class="pgts-grid">
+        <div class="pgts-inputs">
+            <div class="pgts-input">
+                <label>Obstacle Penalties: +</label>
+                <input type="number" name="system.pgts.obstaclePenalties" value="{{system.pgts.obstaclePenalties}}" data-dtype="Number"/>
+                <span class="unit">Ob</span>
+            </div>
+            <div class="pgts-input">
+                <label>Wounded Dice: -</label>
+                <input type="number" name="system.pgts.woundedDice" value="{{system.pgts.woundedDice}}" data-dtype="Number"/>
+                <span class="unit">D</span>
+            </div>
+            <div class="pgts-reset">
+                <button type="button" class="reset-injuries">Reset Injuries</button>
+            </div>
+
+        </div>
+        <div class="pgts-table">
+            <table>
+               
+                <tr>
+                    <td>Tolerance</td>
+                    <td><select name="system.pgts.tolerance.1">
+                        <option value=""></option>
+                        <option value="Su" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "1") "Su"))}}selected{{/if}}>Su</option>
+                        <option value="Li" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "1") "Li"))}}selected{{/if}}>Li</option>
+                        <option value="Mi" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "1") "Mi"))}}selected{{/if}}>Mi</option>
+                        <option value="Se" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "1") "Se"))}}selected{{/if}}>Se</option>
+                        <option value="Tr" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "1") "Tr"))}}selected{{/if}}>Tr</option>
+                        <option value="Mo" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "1") "Mo"))}}selected{{/if}}>Mo</option>
+                    </select></td>
+                    <td><select name="system.pgts.tolerance.2">
+                        <option value=""></option>
+                        <option value="Su" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "2") "Su"))}}selected{{/if}}>Su</option>
+                        <option value="Li" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "2") "Li"))}}selected{{/if}}>Li</option>
+                        <option value="Mi" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "2") "Mi"))}}selected{{/if}}>Mi</option>
+                        <option value="Se" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "2") "Se"))}}selected{{/if}}>Se</option>
+                        <option value="Tr" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "2") "Tr"))}}selected{{/if}}>Tr</option>
+                        <option value="Mo" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "2") "Mo"))}}selected{{/if}}>Mo</option>
+                    </select></td>
+                    <td><select name="system.pgts.tolerance.3">
+                        <option value=""></option>
+                        <option value="Su" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "3") "Su"))}}selected{{/if}}>Su</option>
+                        <option value="Li" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "3") "Li"))}}selected{{/if}}>Li</option>
+                        <option value="Mi" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "3") "Mi"))}}selected{{/if}}>Mi</option>
+                        <option value="Se" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "3") "Se"))}}selected{{/if}}>Se</option>
+                        <option value="Tr" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "3") "Tr"))}}selected{{/if}}>Tr</option>
+                        <option value="Mo" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "3") "Mo"))}}selected{{/if}}>Mo</option>
+                    </select></td>
+                    <td><select name="system.pgts.tolerance.4">
+                        <option value=""></option>
+                        <option value="Su" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "4") "Su"))}}selected{{/if}}>Su</option>
+                        <option value="Li" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "4") "Li"))}}selected{{/if}}>Li</option>
+                        <option value="Mi" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "4") "Mi"))}}selected{{/if}}>Mi</option>
+                        <option value="Se" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "4") "Se"))}}selected{{/if}}>Se</option>
+                        <option value="Tr" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "4") "Tr"))}}selected{{/if}}>Tr</option>
+                        <option value="Mo" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "4") "Mo"))}}selected{{/if}}>Mo</option>
+                    </select></td>
+                    <td><select name="system.pgts.tolerance.5">
+                        <option value=""></option>
+                        <option value="Su" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "5") "Su"))}}selected{{/if}}>Su</option>
+                        <option value="Li" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "5") "Li"))}}selected{{/if}}>Li</option>
+                        <option value="Mi" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "5") "Mi"))}}selected{{/if}}>Mi</option>
+                        <option value="Se" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "5") "Se"))}}selected{{/if}}>Se</option>
+                        <option value="Tr" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "5") "Tr"))}}selected{{/if}}>Tr</option>
+                        <option value="Mo" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "5") "Mo"))}}selected{{/if}}>Mo</option>
+                    </select></td>
+                    <td><select name="system.pgts.tolerance.6">
+                        <option value=""></option>
+                        <option value="Su" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "6") "Su"))}}selected{{/if}}>Su</option>
+                        <option value="Li" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "6") "Li"))}}selected{{/if}}>Li</option>
+                        <option value="Mi" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "6") "Mi"))}}selected{{/if}}>Mi</option>
+                        <option value="Se" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "6") "Se"))}}selected{{/if}}>Se</option>
+                        <option value="Tr" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "6") "Tr"))}}selected{{/if}}>Tr</option>
+                        <option value="Mo" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "6") "Mo"))}}selected{{/if}}>Mo</option>
+                    </select></td>
+                    <td><select name="system.pgts.tolerance.7">
+                        <option value=""></option>
+                        <option value="Su" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "7") "Su"))}}selected{{/if}}>Su</option>
+                        <option value="Li" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "7") "Li"))}}selected{{/if}}>Li</option>
+                        <option value="Mi" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "7") "Mi"))}}selected{{/if}}>Mi</option>
+                        <option value="Se" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "7") "Se"))}}selected{{/if}}>Se</option>
+                        <option value="Tr" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "7") "Tr"))}}selected{{/if}}>Tr</option>
+                        <option value="Mo" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "7") "Mo"))}}selected{{/if}}>Mo</option>
+                    </select></td>
+                    <td><select name="system.pgts.tolerance.8">
+                        <option value=""></option>
+                        <option value="Su" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "8") "Su"))}}selected{{/if}}>Su</option>
+                        <option value="Li" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "8") "Li"))}}selected{{/if}}>Li</option>
+                        <option value="Mi" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "8") "Mi"))}}selected{{/if}}>Mi</option>
+                        <option value="Se" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "8") "Se"))}}selected{{/if}}>Se</option>
+                        <option value="Tr" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "8") "Tr"))}}selected{{/if}}>Tr</option>
+                        <option value="Mo" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "8") "Mo"))}}selected{{/if}}>Mo</option>
+                    </select></td>
+                    <td><select name="system.pgts.tolerance.9">
+                        <option value=""></option>
+                        <option value="Su" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "9") "Su"))}}selected{{/if}}>Su</option>
+                        <option value="Li" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "9") "Li"))}}selected{{/if}}>Li</option>
+                        <option value="Mi" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "9") "Mi"))}}selected{{/if}}>Mi</option>
+                        <option value="Se" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "9") "Se"))}}selected{{/if}}>Se</option>
+                        <option value="Tr" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "9") "Tr"))}}selected{{/if}}>Tr</option>
+                        <option value="Mo" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "9") "Mo"))}}selected{{/if}}>Mo</option>
+                    </select></td>
+                    <td><select name="system.pgts.tolerance.10">
+                        <option value=""></option>
+                        <option value="Su" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "10") "Su"))}}selected{{/if}}>Su</option>
+                        <option value="Li" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "10") "Li"))}}selected{{/if}}>Li</option>
+                        <option value="Mi" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "10") "Mi"))}}selected{{/if}}>Mi</option>
+                        <option value="Se" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "10") "Se"))}}selected{{/if}}>Se</option>
+                        <option value="Tr" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "10") "Tr"))}}selected{{/if}}>Tr</option>
+                        <option value="Mo" {{#if (and system.pgts.tolerance (eq (lookup system.pgts.tolerance "10") "Mo"))}}selected{{/if}}>Mo</option>
+                    </select></td>
+                    <td><select name="system.pgts.tolerance.11">
+                        <option value=""></option>
+                        <option value="Su" {{#if (eq (lookup system.pgts.tolerance "11") "Su")}}selected{{/if}}>Su</option>
+                        <option value="Li" {{#if (eq (lookup system.pgts.tolerance "11") "Li")}}selected{{/if}}>Li</option>
+                        <option value="Mi" {{#if (eq (lookup system.pgts.tolerance "11") "Mi")}}selected{{/if}}>Mi</option>
+                        <option value="Se" {{#if (eq (lookup system.pgts.tolerance "11") "Se")}}selected{{/if}}>Se</option>
+                        <option value="Tr" {{#if (eq (lookup system.pgts.tolerance "11") "Tr")}}selected{{/if}}>Tr</option>
+                        <option value="Mo" {{#if (eq (lookup system.pgts.tolerance "11") "Mo")}}selected{{/if}}>Mo</option>
+                    </select></td>
+                    <td><select name="system.pgts.tolerance.12">
+                        <option value=""></option>
+                        <option value="Su" {{#if (eq (lookup system.pgts.tolerance "12") "Su")}}selected{{/if}}>Su</option>
+                        <option value="Li" {{#if (eq (lookup system.pgts.tolerance "12") "Li")}}selected{{/if}}>Li</option>
+                        <option value="Mi" {{#if (eq (lookup system.pgts.tolerance "12") "Mi")}}selected{{/if}}>Mi</option>
+                        <option value="Se" {{#if (eq (lookup system.pgts.tolerance "12") "Se")}}selected{{/if}}>Se</option>
+                        <option value="Tr" {{#if (eq (lookup system.pgts.tolerance "12") "Tr")}}selected{{/if}}>Tr</option>
+                        <option value="Mo" {{#if (eq (lookup system.pgts.tolerance "12") "Mo")}}selected{{/if}}>Mo</option>
+                    </select></td>
+                    <td><select name="system.pgts.tolerance.13">
+                        <option value=""></option>
+                        <option value="Su" {{#if (eq (lookup system.pgts.tolerance "13") "Su")}}selected{{/if}}>Su</option>
+                        <option value="Li" {{#if (eq (lookup system.pgts.tolerance "13") "Li")}}selected{{/if}}>Li</option>
+                        <option value="Mi" {{#if (eq (lookup system.pgts.tolerance "13") "Mi")}}selected{{/if}}>Mi</option>
+                        <option value="Se" {{#if (eq (lookup system.pgts.tolerance "13") "Se")}}selected{{/if}}>Se</option>
+                        <option value="Tr" {{#if (eq (lookup system.pgts.tolerance "13") "Tr")}}selected{{/if}}>Tr</option>
+                        <option value="Mo" {{#if (eq (lookup system.pgts.tolerance "13") "Mo")}}selected{{/if}}>Mo</option>
+                    </select></td>
+                    <td><select name="system.pgts.tolerance.14">
+                        <option value=""></option>
+                        <option value="Su" {{#if (eq (lookup system.pgts.tolerance "14") "Su")}}selected{{/if}}>Su</option>
+                        <option value="Li" {{#if (eq (lookup system.pgts.tolerance "14") "Li")}}selected{{/if}}>Li</option>
+                        <option value="Mi" {{#if (eq (lookup system.pgts.tolerance "14") "Mi")}}selected{{/if}}>Mi</option>
+                        <option value="Se" {{#if (eq (lookup system.pgts.tolerance "14") "Se")}}selected{{/if}}>Se</option>
+                        <option value="Tr" {{#if (eq (lookup system.pgts.tolerance "14") "Tr")}}selected{{/if}}>Tr</option>
+                        <option value="Mo" {{#if (eq (lookup system.pgts.tolerance "14") "Mo")}}selected{{/if}}>Mo</option>
+                    </select></td>
+                    <td><select name="system.pgts.tolerance.15">
+                        <option value=""></option>
+                        <option value="Su" {{#if (eq (lookup system.pgts.tolerance "15") "Su")}}selected{{/if}}>Su</option>
+                        <option value="Li" {{#if (eq (lookup system.pgts.tolerance "15") "Li")}}selected{{/if}}>Li</option>
+                        <option value="Mi" {{#if (eq (lookup system.pgts.tolerance "15") "Mi")}}selected{{/if}}>Mi</option>
+                        <option value="Se" {{#if (eq (lookup system.pgts.tolerance "15") "Se")}}selected{{/if}}>Se</option>
+                        <option value="Tr" {{#if (eq (lookup system.pgts.tolerance "15") "Tr")}}selected{{/if}}>Tr</option>
+                        <option value="Mo" {{#if (eq (lookup system.pgts.tolerance "15") "Mo")}}selected{{/if}}>Mo</option>
+                    </select></td>
+                    <td><select name="system.pgts.tolerance.16">
+                        <option value=""></option>
+                        <option value="Su" {{#if (eq (lookup system.pgts.tolerance "16") "Su")}}selected{{/if}}>Su</option>
+                        <option value="Li" {{#if (eq (lookup system.pgts.tolerance "16") "Li")}}selected{{/if}}>Li</option>
+                        <option value="Mi" {{#if (eq (lookup system.pgts.tolerance "16") "Mi")}}selected{{/if}}>Mi</option>
+                        <option value="Se" {{#if (eq (lookup system.pgts.tolerance "16") "Se")}}selected{{/if}}>Se</option>
+                        <option value="Tr" {{#if (eq (lookup system.pgts.tolerance "16") "Tr")}}selected{{/if}}>Tr</option>
+                        <option value="Mo" {{#if (eq (lookup system.pgts.tolerance "16") "Mo")}}selected{{/if}}>Mo</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td>Coordinate</td>
+                    <td>B1</td>
+                    <td>B2</td>
+                    <td>B3</td>
+                    <td>B4</td>
+                    <td>B5</td>
+                    <td>B6</td>
+                    <td>B7</td>
+                    <td>B8</td>
+                    <td>B9</td>
+                    <td>B10</td>
+                    <td>B11</td>
+                    <td>B12</td>
+                    <td>B13</td>
+                    <td>B14</td>
+                    <td>B15</td>
+                    <td>B16</td>
+                </tr>
+                <tr>
+                    <td>Injury</td>
+                    <td>
+                        <div class="injury-checkboxes">
+                            <input type="checkbox" name="system.pgts.injury.1.0" {{#if (lookup (lookup system.pgts.injury "1") "0")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.1.1" {{#if (lookup (lookup system.pgts.injury "1") "1")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.1.2" {{#if (lookup (lookup system.pgts.injury "1") "2")}}checked{{/if}}/>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="injury-checkboxes">
+                            <input type="checkbox" name="system.pgts.injury.2.0" {{#if (lookup (lookup system.pgts.injury "2") "0")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.2.1" {{#if (lookup (lookup system.pgts.injury "2") "1")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.2.2" {{#if (lookup (lookup system.pgts.injury "2") "2")}}checked{{/if}}/>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="injury-checkboxes">
+                            <input type="checkbox" name="system.pgts.injury.3.0" {{#if (lookup (lookup system.pgts.injury "3") "0")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.3.1" {{#if (lookup (lookup system.pgts.injury "3") "1")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.3.2" {{#if (lookup (lookup system.pgts.injury "3") "2")}}checked{{/if}}/>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="injury-checkboxes">
+                            <input type="checkbox" name="system.pgts.injury.4.0" {{#if (lookup (lookup system.pgts.injury "4") "0")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.4.1" {{#if (lookup (lookup system.pgts.injury "4") "1")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.4.2" {{#if (lookup (lookup system.pgts.injury "4") "2")}}checked{{/if}}/>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="injury-checkboxes">
+                            <input type="checkbox" name="system.pgts.injury.5.0" {{#if (lookup (lookup system.pgts.injury "5") "0")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.5.1" {{#if (lookup (lookup system.pgts.injury "5") "1")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.5.2" {{#if (lookup (lookup system.pgts.injury "5") "2")}}checked{{/if}}/>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="injury-checkboxes">
+                            <input type="checkbox" name="system.pgts.injury.6.0" {{#if (lookup (lookup system.pgts.injury "6") "0")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.6.1" {{#if (lookup (lookup system.pgts.injury "6") "1")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.6.2" {{#if (lookup (lookup system.pgts.injury "6") "2")}}checked{{/if}}/>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="injury-checkboxes">
+                            <input type="checkbox" name="system.pgts.injury.7.0" {{#if (lookup (lookup system.pgts.injury "7") "0")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.7.1" {{#if (lookup (lookup system.pgts.injury "7") "1")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.7.2" {{#if (lookup (lookup system.pgts.injury "7") "2")}}checked{{/if}}/>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="injury-checkboxes">
+                            <input type="checkbox" name="system.pgts.injury.8.0" {{#if (lookup (lookup system.pgts.injury "8") "0")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.8.1" {{#if (lookup (lookup system.pgts.injury "8") "1")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.8.2" {{#if (lookup (lookup system.pgts.injury "8") "2")}}checked{{/if}}/>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="injury-checkboxes">
+                            <input type="checkbox" name="system.pgts.injury.9.0" {{#if (lookup (lookup system.pgts.injury "9") "0")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.9.1" {{#if (lookup (lookup system.pgts.injury "9") "1")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.9.2" {{#if (lookup (lookup system.pgts.injury "9") "2")}}checked{{/if}}/>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="injury-checkboxes">
+                            <input type="checkbox" name="system.pgts.injury.10.0" {{#if (lookup (lookup system.pgts.injury "10") "0")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.10.1" {{#if (lookup (lookup system.pgts.injury "10") "1")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.10.2" {{#if (lookup (lookup system.pgts.injury "10") "2")}}checked{{/if}}/>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="injury-checkboxes">
+                            <input type="checkbox" name="system.pgts.injury.11.0" {{#if (lookup (lookup system.pgts.injury "11") "0")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.11.1" {{#if (lookup (lookup system.pgts.injury "11") "1")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.11.2" {{#if (lookup (lookup system.pgts.injury "11") "2")}}checked{{/if}}/>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="injury-checkboxes">
+                            <input type="checkbox" name="system.pgts.injury.12.0" {{#if (lookup (lookup system.pgts.injury "12") "0")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.12.1" {{#if (lookup (lookup system.pgts.injury "12") "1")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.12.2" {{#if (lookup (lookup system.pgts.injury "12") "2")}}checked{{/if}}/>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="injury-checkboxes">
+                            <input type="checkbox" name="system.pgts.injury.13.0" {{#if (lookup (lookup system.pgts.injury "13") "0")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.13.1" {{#if (lookup (lookup system.pgts.injury "13") "1")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.13.2" {{#if (lookup (lookup system.pgts.injury "13") "2")}}checked{{/if}}/>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="injury-checkboxes">
+                            <input type="checkbox" name="system.pgts.injury.14.0" {{#if (lookup (lookup system.pgts.injury "14") "0")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.14.1" {{#if (lookup (lookup system.pgts.injury "14") "1")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.14.2" {{#if (lookup (lookup system.pgts.injury "14") "2")}}checked{{/if}}/>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="injury-checkboxes">
+                            <input type="checkbox" name="system.pgts.injury.15.0" {{#if (lookup (lookup system.pgts.injury "15") "0")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.15.1" {{#if (lookup (lookup system.pgts.injury "15") "1")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.15.2" {{#if (lookup (lookup system.pgts.injury "15") "2")}}checked{{/if}}/>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="injury-checkboxes">
+                            <input type="checkbox" name="system.pgts.injury.16.0" {{#if (lookup (lookup system.pgts.injury "16") "0")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.16.1" {{#if (lookup (lookup system.pgts.injury "16") "1")}}checked{{/if}}/>
+                            <input type="checkbox" name="system.pgts.injury.16.2" {{#if (lookup (lookup system.pgts.injury "16") "2")}}checked{{/if}}/>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="injury-reference">
+        <div class="injury-effect">Superficial +1 Ob/2, -1D/3</div>
+        <div class="injury-effect">Light -1D</div>
+        <div class="injury-effect">Midi -2D</div>
+        <div class="injury-effect">Severe -3D</div>
+        <div class="injury-effect">Traumatic -4D</div>
+        <div class="injury-effect">Mortal: Incapacitated</div>
+    </div>
+    <div class="injury-note">
+        The first Superficial wound gives a +1 Ob penalty. The second does not give another +1 Ob. If a third Superficial wound is suffered, the obstacle penalty is replaced with a -1D penalty.
+    </div>
+    <div class="injury-recovery">
+        <h4>Injury Recovery</h4>
+        <textarea name="system.pgts.injuryRecovery" rows="8" placeholder="Enter injury recovery notes here...">{{system.pgts.injuryRecovery}}</textarea>
+    </div>
+</div>ß

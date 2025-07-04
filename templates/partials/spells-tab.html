@@ -1,0 +1,33 @@
+<div class="named-spells-content">
+    <h3>Spells</h3>
+    <table class="spells-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Effect</th>
+                <th>Ob</th>
+                <th colspan="3">Art Magic</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>Woven</th>
+                <th>Incantation</th>
+                <th>Times Cast</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each system.spells as |spell key|}}
+            <tr>
+                <td><input type="text" name="system.spells.{{key}}.name" value="{{spell.name}}"  class="underline-input"/></td>
+                <td><input type="text" name="system.spells.{{key}}.effect" value="{{spell.effect}}" class="underline-input"/></td>
+                <td><input type="number" name="system.spells.{{key}}.ob" value="{{spell.ob}}" data-dtype="Number" class="underline-input"/></td>
+                <td><input type="checkbox" name="system.spells.{{key}}.woven" {{#if spell.woven}}checked{{/if}} class="circle-checkbox"/></td>
+                <td><input type="checkbox" name="system.spells.{{key}}.incantation" {{#if spell.incantation}}checked{{/if}} class="circle-checkbox"/></td>
+                <td><input type="number" name="system.spells.{{key}}.timesCast" value="{{spell.timesCast}}" data-dtype="Number" class="underline-input"/></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

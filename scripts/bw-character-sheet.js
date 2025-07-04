@@ -476,6 +476,31 @@ Hooks.once('init', async function() {
     Handlebars.registerHelper('calculateReflexes', function(perception, agility, speed) {
         return Math.floor((perception + agility + speed) / 3);
     });
+
+    // Register Handlebars partials from array of file paths
+    const partialPaths = [
+        'modules/bw-character-sheet/templates/partials/main-tab.html',
+        'modules/bw-character-sheet/templates/partials/stats-attributes-tab.html',
+        'modules/bw-character-sheet/templates/partials/skills-tab.html',
+        'modules/bw-character-sheet/templates/partials/relationships-tab.html',
+        'modules/bw-character-sheet/templates/partials/pgts-tab.html',
+        'modules/bw-character-sheet/templates/partials/gear-tab.html',
+        'modules/bw-character-sheet/templates/partials/spells-tab.html',
+        'modules/bw-character-sheet/templates/partials/notes-tab.html',
+        'modules/bw-character-sheet/templates/partials/learning-tab.html'
+        
+        // Add more partial paths here as tabs are moved to separate files
+    ];
+
+    for (const partialPath of partialPaths) {
+        try {
+            const partialTemplate = await fetch(partialPath).then(r => r.text());
+            Handlebars.registerPartial(partialPath, partialTemplate);
+            console.log(`Registered partial: ${partialPath}`);
+        } catch (error) {
+            console.error(`Failed to register partial ${partialPath}:`, error);
+        }
+    }
 });
 
 // When the module is ready
