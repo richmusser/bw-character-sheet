@@ -479,6 +479,7 @@ Hooks.once('init', async function() {
 
     // Register Handlebars partials from array of file paths
     const partialPaths = [
+        'modules/bw-character-sheet/templates/partials/header.html',
         'modules/bw-character-sheet/templates/partials/main-tab.html',
         'modules/bw-character-sheet/templates/partials/stats-attributes-tab.html',
         'modules/bw-character-sheet/templates/partials/skills-tab.html',
