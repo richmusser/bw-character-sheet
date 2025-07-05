@@ -158,7 +158,10 @@ class BWCharacterSheet extends ActorSheet {
                     shade: 'B',
                     exponent: 0,
                     difficult: [false, false, false, false],
-                    challenge: [false, false, false]
+                    challenge: [false, false, false],
+                    fate: 0,
+                    persona: 0,
+                    deeds: 0
                 };
 
                 // Add stride and mountedStride for speed stat
@@ -183,7 +186,10 @@ class BWCharacterSheet extends ActorSheet {
                         shade: 'B',
                         exponent: 0,
                         difficult: [false, false, false, false],
-                        challenge: [false, false, false]
+                        challenge: [false, false, false],
+                        fate: 0,
+                        persona: 0,
+                        deeds: 0
                     }
                 });
             }
@@ -406,13 +412,16 @@ class BWCharacterSheet extends ActorSheet {
             const property = parts[3];
             const index = parts[4];
             
-            // Get the current stats data
-            const currentStats = this.actor.system.stats || {};
-            const currentStat = currentStats[stat] || { shade: 'B', exponent: 0 };
-            
             // Create the update object
             const updateData = {};
-            updateData[`system.stats.${stat}.${property}.${index}`] = value;
+            
+            if (index !== undefined) {
+                // Handle indexed properties (like difficult.0, challenge.1)
+                updateData[`system.stats.${stat}.${property}.${index}`] = value;
+            } else {
+                // Handle direct properties (like exponent, shade, name)
+                updateData[`system.stats.${stat}.${property}`] = value;
+            }
             
             // Update the actor
             await this.actor.update(updateData);
@@ -482,6 +491,8 @@ Hooks.once('init', async function() {
         'modules/bw-character-sheet/templates/partials/header.html',
         'modules/bw-character-sheet/templates/partials/main-tab.html',
         'modules/bw-character-sheet/templates/partials/stats-attributes-tab.html',
+        'modules/bw-character-sheet/templates/partials/stat-block.html',
+        'modules/bw-character-sheet/templates/partials/custom-stat-block.html',
         'modules/bw-character-sheet/templates/partials/skills-tab.html',
         'modules/bw-character-sheet/templates/partials/relationships-tab.html',
         'modules/bw-character-sheet/templates/partials/pgts-tab.html',

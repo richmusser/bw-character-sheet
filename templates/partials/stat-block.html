@@ -1,0 +1,63 @@
+{{!-- Normal Stat Block Partial
+Parameters:
+- statName: The name of the stat (e.g., "will", "power", "agility")
+- displayName: The display label (e.g., "Will", "Power", "Agility")
+- statShade: The shade value (B, G, W)
+- statExponent: The exponent value (number)
+- statDifficult: Array of difficult checkboxes
+- statChallenge: Array of challenge checkboxes
+- statFate: Fate artha value
+- statPersona: Persona artha value
+- statDeeds: Deeds artha value
+--}}
+
+<div class="stat">
+    <div class="stat-header">
+        <label>{{displayName}}</label>
+        <div class="stat-inputs">
+            <select name="system.stats.{{statName}}.shade" data-dtype="String">
+                <option value="B" {{#if (eq statShade "B")}}selected{{/if}}>B</option>
+                <option value="G" {{#if (eq statShade "G")}}selected{{/if}}>G</option>
+                <option value="W" {{#if (eq statShade "W")}}selected{{/if}}>W</option>
+            </select>
+            <input type="number" name="system.stats.{{statName}}.exponent" value="{{statExponent}}" data-dtype="Number"/>
+        </div>
+    </div>
+    
+    <div class="stat-checks">
+        <div class="difficulty-checks">
+            <div class="difficult">
+                <label>Difficult</label>
+                <div class="checkboxes">
+                    <input type="checkbox" name="system.stats.{{statName}}.difficult.0" {{#if statDifficult.[0]}}checked{{/if}}/>
+                    <input type="checkbox" name="system.stats.{{statName}}.difficult.1" {{#if statDifficult.[1]}}checked{{/if}}/>
+                    <input type="checkbox" name="system.stats.{{statName}}.difficult.2" {{#if statDifficult.[2]}}checked{{/if}}/>
+                    <input type="checkbox" name="system.stats.{{statName}}.difficult.3" {{#if statDifficult.[3]}}checked{{/if}}/>
+                </div>
+            </div>
+            <div class="challenge">
+                <label>Challenge</label>
+                <div class="checkboxes">
+                    <input type="checkbox" name="system.stats.{{statName}}.challenge.0" {{#if statChallenge.[0]}}checked{{/if}}/>
+                    <input type="checkbox" name="system.stats.{{statName}}.challenge.1" {{#if statChallenge.[1]}}checked{{/if}}/>
+                    <input type="checkbox" name="system.stats.{{statName}}.challenge.2" {{#if statChallenge.[2]}}checked{{/if}}/>
+                </div>
+            </div>
+        </div>
+        
+        <div class="artha-inputs">
+            <div class="artha-input">
+                <label>Fate</label>
+                <input type="number" name="system.stats.{{statName}}.fate" value="{{statFate}}" min="0" max="99" data-dtype="Number"/>
+            </div>
+            <div class="artha-input">
+                <label>Persona</label>
+                <input type="number" name="system.stats.{{statName}}.persona" value="{{statPersona}}" min="0" max="99" data-dtype="Number"/>
+            </div>
+            <div class="artha-input">
+                <label>Deeds</label>
+                <input type="number" name="system.stats.{{statName}}.deeds" value="{{statDeeds}}" min="0" max="99" data-dtype="Number"/>
+            </div>
+        </div>
+    </div>
+</div> 
