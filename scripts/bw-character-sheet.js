@@ -428,6 +428,29 @@ class BWCharacterSheet extends ActorSheet {
             
             // Force a re-render of the sheet
             this.render(true);
+        } else if (name.startsWith('system.attributes.')) {
+            // Handle nested updates for attributes
+            const parts = name.split('.');
+            const attr = parts[2];
+            const property = parts[3];
+            const index = parts[4];
+            
+            // Create the update object
+            const updateData = {};
+            
+            if (index !== undefined) {
+                // Handle indexed properties (like routine.0, difficult.1)
+                updateData[`system.attributes.${attr}.${property}.${index}`] = value;
+            } else {
+                // Handle direct properties (like exponent, shade, name)
+                updateData[`system.attributes.${attr}.${property}`] = value;
+            }
+            
+            // Update the actor
+            await this.actor.update(updateData);
+            
+            // Force a re-render of the sheet
+            this.render(true);
         } else {
             // Handle regular updates
             await this.actor.update({
@@ -492,7 +515,9 @@ Hooks.once('init', async function() {
         'modules/bw-character-sheet/templates/partials/main-tab.html',
         'modules/bw-character-sheet/templates/partials/stats-attributes-tab.html',
         'modules/bw-character-sheet/templates/partials/stat-block.html',
-        'modules/bw-character-sheet/templates/partials/custom-stat-block.html',
+        'modules/bw-character-sheet/templates/partials/stat-custom-block.html',
+        'modules/bw-character-sheet/templates/partials/attribute-block.html',
+        'modules/bw-character-sheet/templates/partials/attribute-custom-block.html',
         'modules/bw-character-sheet/templates/partials/skills-tab.html',
         'modules/bw-character-sheet/templates/partials/relationships-tab.html',
         'modules/bw-character-sheet/templates/partials/pgts-tab.html',

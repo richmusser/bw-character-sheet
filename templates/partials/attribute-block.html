@@ -1,0 +1,69 @@
+{{!-- Normal Attribute Block Partial
+Parameters:
+- attrName: The name of the attribute (e.g., "health", "circles", "resources")
+- displayName: The display label (e.g., "Health", "Circles", "Resources")
+- attrShade: The shade value (B, G, W)
+- attrExponent: The exponent value (number)
+- attrRoutine: Array of routine checkboxes
+- attrDifficult: Array of difficult checkboxes
+- attrChallenge: Array of challenge checkboxes
+- attrFate: Fate artha value
+- attrPersona: Persona artha value
+- attrDeeds: Deeds artha value
+--}}
+
+<div class="attribute">
+    <div class="attribute-header">
+        <label>{{displayName}}</label>
+        <div class="attribute-inputs">
+            <select name="system.attributes.{{attrName}}.shade" data-dtype="String">
+                <option value="B" {{#if (eq attrShade "B")}}selected{{/if}}>B</option>
+                <option value="G" {{#if (eq attrShade "G")}}selected{{/if}}>G</option>
+                <option value="W" {{#if (eq attrShade "W")}}selected{{/if}}>W</option>
+            </select>
+            <input type="number" name="system.attributes.{{attrName}}.exponent" value="{{attrExponent}}" data-dtype="Number"/>
+        </div>
+    </div>
+    <div class="attribute-checks">
+        <div class="routine">
+            <label>Routine</label>
+            <div class="checkboxes">
+                <input type="checkbox" name="system.attributes.{{attrName}}.routine.0" {{#if attrRoutine.[0]}}checked{{/if}}/>
+                <input type="checkbox" name="system.attributes.{{attrName}}.routine.1" {{#if attrRoutine.[1]}}checked{{/if}}/>
+                <input type="checkbox" name="system.attributes.{{attrName}}.routine.2" {{#if attrRoutine.[2]}}checked{{/if}}/>
+                <input type="checkbox" name="system.attributes.{{attrName}}.routine.3" {{#if attrRoutine.[3]}}checked{{/if}}/>
+            </div>
+        </div>
+        <div class="difficult">
+            <label>Difficult</label>
+            <div class="checkboxes">
+                <input type="checkbox" name="system.attributes.{{attrName}}.difficult.0" {{#if attrDifficult.[0]}}checked{{/if}}/>
+                <input type="checkbox" name="system.attributes.{{attrName}}.difficult.1" {{#if attrDifficult.[1]}}checked{{/if}}/>
+                <input type="checkbox" name="system.attributes.{{attrName}}.difficult.2" {{#if attrDifficult.[2]}}checked{{/if}}/>
+                <input type="checkbox" name="system.attributes.{{attrName}}.difficult.3" {{#if attrDifficult.[3]}}checked{{/if}}/>
+            </div>
+        </div>
+        <div class="challenge">
+            <label>Challenge</label>
+            <div class="checkboxes">
+                <input type="checkbox" name="system.attributes.{{attrName}}.challenge.0" {{#if attrChallenge.[0]}}checked{{/if}}/>
+                <input type="checkbox" name="system.attributes.{{attrName}}.challenge.1" {{#if attrChallenge.[1]}}checked{{/if}}/>
+                <input type="checkbox" name="system.attributes.{{attrName}}.challenge.2" {{#if attrChallenge.[2]}}checked{{/if}}/>
+            </div>
+        </div>
+        <div class="artha-inputs">
+            <div class="artha-input">
+                <label>Fate</label>
+                <input type="number" name="system.attributes.{{attrName}}.fate" value="{{attrFate}}" min="0" max="99" data-dtype="Number"/>
+            </div>
+            <div class="artha-input">
+                <label>Persona</label>
+                <input type="number" name="system.attributes.{{attrName}}.persona" value="{{attrPersona}}" min="0" max="99" data-dtype="Number"/>
+            </div>
+            <div class="artha-input">
+                <label>Deeds</label>
+                <input type="number" name="system.attributes.{{attrName}}.deeds" value="{{attrDeeds}}" min="0" max="99" data-dtype="Number"/>
+            </div>
+        </div>
+    </div>
+</div> 

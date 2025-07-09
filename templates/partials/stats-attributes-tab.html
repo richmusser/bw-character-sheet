@@ -23,128 +23,24 @@
         </div>
 
 
-        {{> "modules/bw-character-sheet/templates/partials/custom-stat-block.html" statName="custom1" statNameValue=system.stats.custom1.name statShade=system.stats.custom1.shade statExponent=system.stats.custom1.exponent statDifficult=system.stats.custom1.difficult statChallenge=system.stats.custom1.challenge statFate=system.stats.custom1.fate statPersona=system.stats.custom1.persona statDeeds=system.stats.custom1.deeds}}
-        {{> "modules/bw-character-sheet/templates/partials/custom-stat-block.html" statName="custom2" statNameValue=system.stats.custom2.name statShade=system.stats.custom2.shade statExponent=system.stats.custom2.exponent statDifficult=system.stats.custom2.difficult statChallenge=system.stats.custom2.challenge statFate=system.stats.custom2.fate statPersona=system.stats.custom2.persona statDeeds=system.stats.custom2.deeds}}
+        {{> "modules/bw-character-sheet/templates/partials/stat-custom-block.html" statName="custom1" statNameValue=system.stats.custom1.name statShade=system.stats.custom1.shade statExponent=system.stats.custom1.exponent statDifficult=system.stats.custom1.difficult statChallenge=system.stats.custom1.challenge statFate=system.stats.custom1.fate statPersona=system.stats.custom1.persona statDeeds=system.stats.custom1.deeds}}
+        {{> "modules/bw-character-sheet/templates/partials/stat-custom-block.html" statName="custom2" statNameValue=system.stats.custom2.name statShade=system.stats.custom2.shade statExponent=system.stats.custom2.exponent statDifficult=system.stats.custom2.difficult statChallenge=system.stats.custom2.challenge statFate=system.stats.custom2.fate statPersona=system.stats.custom2.persona statDeeds=system.stats.custom2.deeds}}
     </div>
 </div>
 
 <div class="attributes">
     <h3>Attributes</h3>
     <div class="attributes-grid">
-        <div class="attribute">
-            <div class="attribute-header">
-            <label>Health</label>
-                <div class="attribute-inputs">
-                    <select name="system.attributes.health.shade" data-dtype="String">
-                        <option value="B" {{#if (eq system.attributes.health.shade "B")}}selected{{/if}}>B</option>
-                        <option value="G" {{#if (eq system.attributes.health.shade "G")}}selected{{/if}}>G</option>
-                        <option value="W" {{#if (eq system.attributes.health.shade "W")}}selected{{/if}}>W</option>
-                    </select>
-                    <input type="number" name="system.attributes.health.exponent" value="{{system.attributes.health.exponent}}" data-dtype="Number"/>
-                </div>
-            </div>
-            <div class="attribute-checks">
-                <div class="routine">
-                    <label>Routine</label>
-                    <div class="checkboxes">
-                        <input type="checkbox" name="system.attributes.health.routine.0" {{#if system.attributes.health.routine.[0]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.health.routine.1" {{#if system.attributes.health.routine.[1]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.health.routine.2" {{#if system.attributes.health.routine.[2]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.health.routine.3" {{#if system.attributes.health.routine.[3]}}checked{{/if}}/>
-                    </div>
-                </div>
-                <div class="difficult">
-                    <label>Difficult</label>
-                    <div class="checkboxes">
-                        <input type="checkbox" name="system.attributes.health.difficult.0" {{#if system.attributes.health.difficult.[0]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.health.difficult.1" {{#if system.attributes.health.difficult.[1]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.health.difficult.2" {{#if system.attributes.health.difficult.[2]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.health.difficult.3" {{#if system.attributes.health.difficult.[3]}}checked{{/if}}/>
-                    </div>
-                </div>
-                <div class="challenge">
-                    <label>Challenge</label>
-                    <div class="checkboxes">
-                        <input type="checkbox" name="system.attributes.health.challenge.0" {{#if system.attributes.health.challenge.[0]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.health.challenge.1" {{#if system.attributes.health.challenge.[1]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.health.challenge.2" {{#if system.attributes.health.challenge.[2]}}checked{{/if}}/>
-                    </div>
-                </div>
-                <div class="artha-inputs">
-                    <div class="artha-input">
-                        <label>Fate</label>
-                        <input type="number" name="system.attributes.health.fate" value="{{system.attributes.health.fate}}" min="0" max="99" data-dtype="Number"/>
-                    </div>
-                    <div class="artha-input">
-                        <label>Persona</label>
-                        <input type="number" name="system.attributes.health.persona" value="{{system.attributes.health.persona}}" min="0" max="99" data-dtype="Number"/>
-                    </div>
-                    <div class="artha-input">
-                        <label>Deeds</label>
-                        <input type="number" name="system.attributes.health.deeds" value="{{system.attributes.health.deeds}}" min="0" max="99" data-dtype="Number"/>
-                    </div>
-                </div>
+        {{> "modules/bw-character-sheet/templates/partials/attribute-block.html" attrName="health" displayName="Health" attrShade=system.attributes.health.shade attrExponent=system.attributes.health.exponent attrRoutine=system.attributes.health.routine attrDifficult=system.attributes.health.difficult attrChallenge=system.attributes.health.challenge attrFate=system.attributes.health.fate attrPersona=system.attributes.health.persona attrDeeds=system.attributes.health.deeds}}
+        
+        <div class="steel-block">
+            {{> "modules/bw-character-sheet/templates/partials/attribute-block.html" attrName="steel" displayName="Steel" attrShade=system.attributes.steel.shade attrExponent=system.attributes.steel.exponent attrRoutine=system.attributes.steel.routine attrDifficult=system.attributes.steel.difficult attrChallenge=system.attributes.steel.challenge attrFate=system.attributes.steel.fate attrPersona=system.attributes.steel.persona attrDeeds=system.attributes.steel.deeds}}
+            <div class="hesitation">
+                <label>Hesitation</label>
+                <div class="hesitation-value">{{subtract 10 system.attributes.steel.exponent}}</div>
             </div>
         </div>
-        <div class="attribute">
-            <div class="attribute-header">
-            <label>Steel</label>
-                <div class="attribute-inputs">
-                    <select name="system.attributes.steel.shade" data-dtype="String">
-                        <option value="B" {{#if (eq system.attributes.steel.shade "B")}}selected{{/if}}>B</option>
-                        <option value="G" {{#if (eq system.attributes.steel.shade "G")}}selected{{/if}}>G</option>
-                        <option value="W" {{#if (eq system.attributes.steel.shade "W")}}selected{{/if}}>W</option>
-                    </select>
-                    <input type="number" name="system.attributes.steel.exponent" value="{{system.attributes.steel.exponent}}" data-dtype="Number"/>
-                </div>
-            </div>
-            <div class="attribute-checks">
-                <div class="routine">
-                    <label>Routine</label>
-                    <div class="checkboxes">
-                        <input type="checkbox" name="system.attributes.steel.routine.0" {{#if system.attributes.steel.routine.[0]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.steel.routine.1" {{#if system.attributes.steel.routine.[1]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.steel.routine.2" {{#if system.attributes.steel.routine.[2]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.steel.routine.3" {{#if system.attributes.steel.routine.[3]}}checked{{/if}}/>
-                    </div>
-                </div>
-                <div class="difficult">
-                    <label>Difficult</label>
-                    <div class="checkboxes">
-                        <input type="checkbox" name="system.attributes.steel.difficult.0" {{#if system.attributes.steel.difficult.[0]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.steel.difficult.1" {{#if system.attributes.steel.difficult.[1]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.steel.difficult.2" {{#if system.attributes.steel.difficult.[2]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.steel.difficult.3" {{#if system.attributes.steel.difficult.[3]}}checked{{/if}}/>
-                    </div>
-                </div>
-                <div class="challenge">
-                    <label>Challenge</label>
-                    <div class="checkboxes">
-                        <input type="checkbox" name="system.attributes.steel.challenge.0" {{#if system.attributes.steel.challenge.[0]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.steel.challenge.1" {{#if system.attributes.steel.challenge.[1]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.steel.challenge.2" {{#if system.attributes.steel.challenge.[2]}}checked{{/if}}/>
-                    </div>
-                </div>
-                <div class="hesitation">
-                    <label>Hesitation</label>
-                    <div class="hesitation-value">{{subtract 10 system.attributes.steel.exponent}}</div>
-                </div>
-                <div class="artha-inputs">
-                    <div class="artha-input">
-                        <label>Fate</label>
-                        <input type="number" name="system.attributes.steel.fate" value="{{system.attributes.steel.fate}}" min="0" max="99" data-dtype="Number"/>
-                    </div>
-                    <div class="artha-input">
-                        <label>Persona</label>
-                        <input type="number" name="system.attributes.steel.persona" value="{{system.attributes.steel.persona}}" min="0" max="99" data-dtype="Number"/>
-                    </div>
-                    <div class="artha-input">
-                        <label>Deeds</label>
-                        <input type="number" name="system.attributes.steel.deeds" value="{{system.attributes.steel.deeds}}" min="0" max="99" data-dtype="Number"/>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <div class="attribute">
             <div class="attribute-header">
                 <label>Reflexes</label>
@@ -171,159 +67,13 @@
                 </div>
             </div>
         </div>
-        <div class="attribute">
-            <div class="attribute-header">
-                <input type="text" name="system.attributes.custom1.name" value="{{system.attributes.custom1.name}}" />
-                <div class="attribute-inputs">
-                    <select name="system.attributes.custom1.shade" data-dtype="String">
-                        <option value="B" {{#if (eq system.attributes.custom1.shade "B")}}selected{{/if}}>B</option>
-                        <option value="G" {{#if (eq system.attributes.custom1.shade "G")}}selected{{/if}}>G</option>
-                        <option value="W" {{#if (eq system.attributes.custom1.shade "W")}}selected{{/if}}>W</option>
-                    </select>
-                    <input type="number" name="system.attributes.custom1.exponent" value="{{system.attributes.custom1.exponent}}" data-dtype="Number"/>
-                </div>
-            </div>
-            <div class="attribute-checks">
-                <div class="routine">
-                    <label>Routine</label>
-                    <div class="checkboxes">
-                        <input type="checkbox" name="system.attributes.custom1.routine.0" {{#if system.attributes.custom1.routine.[0]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.custom1.routine.1" {{#if system.attributes.custom1.routine.[1]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.custom1.routine.2" {{#if system.attributes.custom1.routine.[2]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.custom1.routine.3" {{#if system.attributes.custom1.routine.[3]}}checked{{/if}}/>
-                    </div>
-                </div>
-                <div class="difficult">
-                    <label>Difficult</label>
-                    <div class="checkboxes">
-                        <input type="checkbox" name="system.attributes.custom1.difficult.0" {{#if system.attributes.custom1.difficult.[0]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.custom1.difficult.1" {{#if system.attributes.custom1.difficult.[1]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.custom1.difficult.2" {{#if system.attributes.custom1.difficult.[2]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.custom1.difficult.3" {{#if system.attributes.custom1.difficult.[3]}}checked{{/if}}/>
-                    </div>
-                </div>
-                <div class="challenge">
-                    <label>Challenge</label>
-                    <div class="checkboxes">
-                        <input type="checkbox" name="system.attributes.custom1.challenge.0" {{#if system.attributes.custom1.challenge.[0]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.custom1.challenge.1" {{#if system.attributes.custom1.challenge.[1]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.custom1.challenge.2" {{#if system.attributes.custom1.challenge.[2]}}checked{{/if}}/>
-                    </div>
-                </div>
-                <div class="artha-inputs">
-                    <div class="artha-input">
-                        <label>Fate</label>
-                        <input type="number" name="system.attributes.custom1.fate" value="{{system.attributes.custom1.fate}}" min="0" max="99" data-dtype="Number"/>
-                    </div>
-                    <div class="artha-input">
-                        <label>Persona</label>
-                        <input type="number" name="system.attributes.custom1.persona" value="{{system.attributes.custom1.persona}}" min="0" max="99" data-dtype="Number"/>
-                    </div>
-                    <div class="artha-input">
-                        <label>Deeds</label>
-                        <input type="number" name="system.attributes.custom1.deeds" value="{{system.attributes.custom1.deeds}}" min="0" max="99" data-dtype="Number"/>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="attribute">
-            <div class="attribute-header">
-                <input type="text" name="system.attributes.custom2.name" value="{{system.attributes.custom2.name}}" placeholder=""/>
-                <div class="attribute-inputs">
-                    <select name="system.attributes.custom2.shade" data-dtype="String">
-                        <option value="B" {{#if (eq system.attributes.custom2.shade "B")}}selected{{/if}}>B</option>
-                        <option value="G" {{#if (eq system.attributes.custom2.shade "G")}}selected{{/if}}>G</option>
-                        <option value="W" {{#if (eq system.attributes.custom2.shade "W")}}selected{{/if}}>W</option>
-                    </select>
-                    <input type="number" name="system.attributes.custom2.exponent" value="{{system.attributes.custom2.exponent}}" data-dtype="Number"/>
-                </div>
-            </div>
-            <div class="attribute-checks">
-                <div class="routine">
-                    <label>Routine</label>
-                    <div class="checkboxes">
-                        <input type="checkbox" name="system.attributes.custom2.routine.0" {{#if system.attributes.custom2.routine.[0]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.custom2.routine.1" {{#if system.attributes.custom2.routine.[1]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.custom2.routine.2" {{#if system.attributes.custom2.routine.[2]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.custom2.routine.3" {{#if system.attributes.custom2.routine.[3]}}checked{{/if}}/>
-                    </div>
-                </div>
-                <div class="difficult">
-                    <label>Difficult</label>
-                    <div class="checkboxes">
-                        <input type="checkbox" name="system.attributes.custom2.difficult.0" {{#if system.attributes.custom2.difficult.[0]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.custom2.difficult.1" {{#if system.attributes.custom2.difficult.[1]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.custom2.difficult.2" {{#if system.attributes.custom2.difficult.[2]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.custom2.difficult.3" {{#if system.attributes.custom2.difficult.[3]}}checked{{/if}}/>
-                    </div>
-                </div>
-                <div class="challenge">
-                    <label>Challenge</label>
-                    <div class="checkboxes">
-                        <input type="checkbox" name="system.attributes.custom2.challenge.0" {{#if system.attributes.custom2.challenge.[0]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.custom2.challenge.1" {{#if system.attributes.custom2.challenge.[1]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.custom2.challenge.2" {{#if system.attributes.custom2.challenge.[2]}}checked{{/if}}/>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
+        {{> "modules/bw-character-sheet/templates/partials/attribute-custom-block.html" attrName="custom1" attrNameValue=system.attributes.custom1.name attrShade=system.attributes.custom1.shade attrExponent=system.attributes.custom1.exponent attrRoutine=system.attributes.custom1.routine attrDifficult=system.attributes.custom1.difficult attrChallenge=system.attributes.custom1.challenge attrFate=system.attributes.custom1.fate attrPersona=system.attributes.custom1.persona attrDeeds=system.attributes.custom1.deeds}}
+        
+        {{> "modules/bw-character-sheet/templates/partials/attribute-custom-block.html" attrName="custom2" attrNameValue=system.attributes.custom2.name attrShade=system.attributes.custom2.shade attrExponent=system.attributes.custom2.exponent attrRoutine=system.attributes.custom2.routine attrDifficult=system.attributes.custom2.difficult attrChallenge=system.attributes.custom2.challenge attrFate=system.attributes.custom2.fate attrPersona=system.attributes.custom2.persona attrDeeds=system.attributes.custom2.deeds}}
     </div>
     <div class="attributes-grid">
-        <div class="attribute">
-            <div class="attribute-header">
-            <label>Circles</label>
-                <div class="attribute-inputs">
-                    <select name="system.attributes.circles.shade" data-dtype="String">
-                        <option value="B" {{#if (eq system.attributes.circles.shade "B")}}selected{{/if}}>B</option>
-                        <option value="G" {{#if (eq system.attributes.circles.shade "G")}}selected{{/if}}>G</option>
-                        <option value="W" {{#if (eq system.attributes.circles.shade "W")}}selected{{/if}}>W</option>
-                    </select>
-                    <input type="number" name="system.attributes.circles.exponent" value="{{system.attributes.circles.exponent}}" data-dtype="Number"/>
-                </div>
-            </div>
-            <div class="attribute-checks">
-                <div class="routine">
-                    <label>Routine</label>
-                    <div class="checkboxes">
-                        <input type="checkbox" name="system.attributes.circles.routine.0" {{#if system.attributes.circles.routine.[0]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.circles.routine.1" {{#if system.attributes.circles.routine.[1]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.circles.routine.2" {{#if system.attributes.circles.routine.[2]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.circles.routine.3" {{#if system.attributes.circles.routine.[3]}}checked{{/if}}/>
-                    </div>
-                </div>
-                <div class="difficult">
-                    <label>Difficult</label>
-                    <div class="checkboxes">
-                        <input type="checkbox" name="system.attributes.circles.difficult.0" {{#if system.attributes.circles.difficult.[0]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.circles.difficult.1" {{#if system.attributes.circles.difficult.[1]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.circles.difficult.2" {{#if system.attributes.circles.difficult.[2]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.circles.difficult.3" {{#if system.attributes.circles.difficult.[3]}}checked{{/if}}/>
-                    </div>
-                </div>
-                <div class="challenge">
-                    <label>Challenge</label>
-                    <div class="checkboxes">
-                        <input type="checkbox" name="system.attributes.circles.challenge.0" {{#if system.attributes.circles.challenge.[0]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.circles.challenge.1" {{#if system.attributes.circles.challenge.[1]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.circles.challenge.2" {{#if system.attributes.circles.challenge.[2]}}checked{{/if}}/>
-                    </div>
-                </div>
-                <div class="artha-inputs">
-                    <div class="artha-input">
-                        <label>Fate</label>
-                        <input type="number" name="system.attributes.circles.fate" value="{{system.attributes.circles.fate}}" min="0" max="99" data-dtype="Number"/>
-                    </div>
-                    <div class="artha-input">
-                        <label>Persona</label>
-                        <input type="number" name="system.attributes.circles.persona" value="{{system.attributes.circles.persona}}" min="0" max="99" data-dtype="Number"/>
-                    </div>
-                    <div class="artha-input">
-                        <label>Deeds</label>
-                        <input type="number" name="system.attributes.circles.deeds" value="{{system.attributes.circles.deeds}}" min="0" max="99" data-dtype="Number"/>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {{> "modules/bw-character-sheet/templates/partials/attribute-block.html" attrName="circles" displayName="Circles" attrShade=system.attributes.circles.shade attrExponent=system.attributes.circles.exponent attrRoutine=system.attributes.circles.routine attrDifficult=system.attributes.circles.difficult attrChallenge=system.attributes.circles.challenge attrFate=system.attributes.circles.fate attrPersona=system.attributes.circles.persona attrDeeds=system.attributes.circles.deeds}}
         <div class="attribute" data-type="reputations">
             <div class="attribute-header">
                 <label>Reputations and Affiliations</label>
@@ -334,65 +84,12 @@
         </div>
     </div>
     <div class="attributes-grid">
-        <div class="attribute">
-            <div class="attribute-header">
-                <label>Resources</label>
-                <div class="attribute-inputs">
-                    <select name="system.attributes.resources.shade" data-dtype="String">
-                        <option value="B" {{#if (eq system.attributes.resources.shade "B")}}selected{{/if}}>B</option>
-                        <option value="G" {{#if (eq system.attributes.resources.shade "G")}}selected{{/if}}>G</option>
-                        <option value="W" {{#if (eq system.attributes.resources.shade "W")}}selected{{/if}}>W</option>
-                    </select>
-                    <input type="number" name="system.attributes.resources.exponent" value="{{system.attributes.resources.exponent}}" data-dtype="Number"/>
-                </div>
-            </div>
-            <div class="attribute-checks">
-                <div class="tax-input">
-                    <label>Tax</label>
-                    <div class="circle-input">
-                        <input type="number" name="system.attributes.resources.tax" value="{{system.attributes.resources.tax}}" data-dtype="Number"/>
-                    </div>
-                </div>
-                <div class="routine">
-                    <label>Routine</label>
-                    <div class="checkboxes">
-                        <input type="checkbox" name="system.attributes.resources.routine.0" {{#if system.attributes.resources.routine.[0]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.resources.routine.1" {{#if system.attributes.resources.routine.[1]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.resources.routine.2" {{#if system.attributes.resources.routine.[2]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.resources.routine.3" {{#if system.attributes.resources.routine.[3]}}checked{{/if}}/>
-                    </div>
-                </div>
-                <div class="difficult">
-                    <label>Difficult</label>
-                    <div class="checkboxes">
-                        <input type="checkbox" name="system.attributes.resources.difficult.0" {{#if system.attributes.resources.difficult.[0]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.resources.difficult.1" {{#if system.attributes.resources.difficult.[1]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.resources.difficult.2" {{#if system.attributes.resources.difficult.[2]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.resources.difficult.3" {{#if system.attributes.resources.difficult.[3]}}checked{{/if}}/>
-                    </div>
-                </div>
-                <div class="challenge">
-                    <label>Challenge</label>
-                    <div class="checkboxes">
-                        <input type="checkbox" name="system.attributes.resources.challenge.0" {{#if system.attributes.resources.challenge.[0]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.resources.challenge.1" {{#if system.attributes.resources.challenge.[1]}}checked{{/if}}/>
-                        <input type="checkbox" name="system.attributes.resources.challenge.2" {{#if system.attributes.resources.challenge.[2]}}checked{{/if}}/>
-                    </div>
-                </div>
-            
-                <div class="artha-inputs">
-                    <div class="artha-input">
-                        <label>Fate</label>
-                        <input type="number" name="system.attributes.resources.fate" value="{{system.attributes.resources.fate}}" min="0" max="99" data-dtype="Number"/>
-                    </div>
-                    <div class="artha-input">
-                        <label>Persona</label>
-                        <input type="number" name="system.attributes.resources.persona" value="{{system.attributes.resources.persona}}" min="0" max="99" data-dtype="Number"/>
-                    </div>
-                    <div class="artha-input">
-                        <label>Deeds</label>
-                        <input type="number" name="system.attributes.resources.deeds" value="{{system.attributes.resources.deeds}}" min="0" max="99" data-dtype="Number"/>
-                    </div>
+        <div class="resources-block">
+            {{> "modules/bw-character-sheet/templates/partials/attribute-block.html" attrName="resources" displayName="Resources" attrShade=system.attributes.resources.shade attrExponent=system.attributes.resources.exponent attrRoutine=system.attributes.resources.routine attrDifficult=system.attributes.resources.difficult attrChallenge=system.attributes.resources.challenge attrFate=system.attributes.resources.fate attrPersona=system.attributes.resources.persona attrDeeds=system.attributes.resources.deeds}}
+            <div class="tax-input">
+                <label>Tax</label>
+                <div class="circle-input">
+                    <input type="number" name="system.attributes.resources.tax" value="{{system.attributes.resources.tax}}" data-dtype="Number"/>
                 </div>
             </div>
         </div>
