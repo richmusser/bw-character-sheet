@@ -5,7 +5,7 @@ class BWCharacterSheet extends ActorSheet {
             template: "modules/bw-character-sheet/templates/bw-character-sheet.html",
             width: 1000,
             height: 900,
-            tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "main" }]
+            tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "summary" }]
         });
     }
 
@@ -491,7 +491,8 @@ Hooks.once('init', async function() {
         'modules/bw-character-sheet/templates/partials/gear-tab.html',
         'modules/bw-character-sheet/templates/partials/spells-tab.html',
         'modules/bw-character-sheet/templates/partials/notes-tab.html',
-        'modules/bw-character-sheet/templates/partials/learning-tab.html'
+        'modules/bw-character-sheet/templates/partials/learning-tab.html',
+        'modules/bw-character-sheet/templates/partials/summary-tab.html'
         
         // Add more partial paths here as tabs are moved to separate files
     ];
