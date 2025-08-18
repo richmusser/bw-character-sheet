@@ -316,14 +316,16 @@ class BWCharacterSheet extends ActorSheet {
                     va: 0,
                     ws: 3,
                     length: "Shortest",
-                    pow: 0
+                    pow: 0,
+                    shade: "B"
                 } : {
                     name: "",
                     add: 0,
                     va: 0,
                     ws: 0,
                     length: "",
-                    pow: 0
+                    pow: 0,
+                    shade: "B"
                 };
                 
                 await actor.update({
@@ -346,11 +348,12 @@ class BWCharacterSheet extends ActorSheet {
                     [`system.gear.rangedWeapons.${i}`]: {
                         name: "",
                         va: 0,
-                        dofI: "",
-                        dofM: "",
-                        dofS: "",
+                        dofI: 1,
+                        dofM: 1,
+                        dofS: 1,
                         optimalRange: "",
-                        extremeRange: ""
+                        extremeRange: "",
+                        shade: "B"
                     }
                 });
             }
