@@ -483,6 +483,27 @@ class BWCharacterSheet extends ActorSheet {
                 }
             });
 
+              Object.values(system.gear.rangedWeapons).forEach(weapon => {
+                if(weapon.name.trim()) {
+
+                    let baseDmg = weapon.pow + system.stats.power.exponent;
+
+                    let w = {
+                        name: weapon.name || "",
+                        add: '',
+                        va: weapon.va || 0,
+                        ws: '',
+                        length:`${weapon.optimalRange} / ${weapon.extremeRange}`,
+                        pow: weapon.pow || 0,
+                        shade: weapon.shade || "B",
+                        i: weapon.dofI || 1,
+                        m: weapon.dofM || 1,        
+                        s: weapon.dofS || 1
+                    };
+                    weapons.push(w);
+                }
+            });
+
             summaryData.weapons = weapons;
 
 
