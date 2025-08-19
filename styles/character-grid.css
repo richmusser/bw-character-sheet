@@ -1,0 +1,62 @@
+.character-table {
+    display: grid;
+
+    grid-template-columns: repeat(12, 1fr) /* 12 equal columns */;    
+
+    border: 2px solid black;
+
+    margin: 20px;
+
+}
+
+.character-table div {
+    padding: 0.5em;
+    border: 1px solid #b5b3a4;
+    font-style: italic;
+    text-align: center;;
+}
+
+.character-table .cth {
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;;
+}
+
+.character-table .trait-data {
+     grid-column: 3 / span 10; /* Span from column 3 to 12 */
+     text-align: left;
+}
+
+.character-table .traits {
+    grid-row-start: 6;
+    grid-row-end: 9;
+}
+
+.character-table .summary-skills {
+    text-align: left;
+    grid-column: 2 / span 11; 
+}
+
+.character-table .summary-armor {
+    text-align: left;
+    grid-column: 2 / span 11; 
+}
+
+
+.character-table .med-bottom {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.character-table .med-right {
+    border-right: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+
+
+.character-table .weapon-header {
+    background: rgba(0, 0, 0, 0.1)
+}
+
+
+
+

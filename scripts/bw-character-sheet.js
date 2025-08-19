@@ -361,11 +361,145 @@ class BWCharacterSheet extends ActorSheet {
 
         // Ensure we have valid data objects before merging
         const systemData = actor.system || {};
+
+        systemData.summaryData = this.getSummaryData(actor.system);
+
         return foundry.utils.mergeObject(data, {
             system: systemData,
             editable: this.isEditable,
             config: CONFIG.BW
         });
+    }
+
+    getSummaryData(system) {
+
+        console.log("System", system);
+
+        //additional data for summary tab
+
+        let summaryData = {
+            pgts:{su:0, li:0, mi:0, se:0, tr:0, mo:0},
+
+            traits: {
+                character: "",
+                die: "",    
+                callOn: ""
+            },
+          
+            skills: [],
+            armor: [],
+            weapons: []
+
+        }
+
+        if(system?.pgts?.tolerance) {
+            //swap keys and values
+            Object.keys(system.pgts.tolerance).forEach(key => {
+                const value = system.pgts.tolerance[key];
+                if(value) {
+                    summaryData.pgts[value.toLowerCase()] = key;
+                }
+            })
+        }
+
+        if(system?.traits?.character) {
+            summaryData.traits.character = system.traits.character.text || "";
+        }
+
+        if(system?.traits?.die) {
+            summaryData.traits.die = system.traits.die.text || "";
+        }
+
+        if(system?.traits?.callOn) {
+            summaryData.traits.die = system.traits.callOn.text || "";
+        }
+
+        if(system?.skills) {
+            // Convert skills object to array
+            let skills = []
+             Object.values(system.skills).forEach(skill => {
+
+                if(skill.name.trim()) {
+                    let s = {
+                        name: skill.name || "",
+                        shade: skill.shade || "B",
+                        exponent: skill.exponent || 0
+                    };
+                    skills.push(s);
+                }
+            });
+
+            summaryData.skills = skills;
+        }
+
+        if(system?.gear?.armor) {
+            // Convert armor object to array
+            let armor = [];
+            const armorTypes = ['head', 'torso', 'rightArm', 'leftArm', 'rightLeg', 'leftLeg', 'shield'];
+            armorTypes.forEach(type => {
+                if(system.gear.armor[type] && system.gear.armor[type].type) {
+
+                    let diceArray = system.gear.armor[type].dice || {};
+                    let diceCount = 0;
+                    Object.values(diceArray).forEach(value => {
+                        if(value) {
+                            diceCount++;
+                        }
+                    })
+
+                    let a = {
+                        type: `${type}`,
+                        name: `${this.pascalToText(type)}`,
+                        dice: diceCount
+                    };
+                    armor.push(a);
+                }
+            });
+
+            summaryData.armor = armor;
+        }
+
+        if(system?.gear?.weapons) {
+            // Convert weapons object to array
+            let weapons = [];
+            Object.values(system.gear.weapons).forEach(weapon => {
+                if(weapon.name.trim()) {
+
+                    let baseDmg = weapon.pow + system.stats.power.exponent;
+
+                    let w = {
+                        name: weapon.name || "",
+                        add: weapon.add || 0,
+                        va: weapon.va || 0,
+                        ws: weapon.ws || 0,
+                        length: weapon.length || "",
+                        pow: weapon.pow || 0,
+                        shade: weapon.shade || "B",
+                        i: Math.ceil(baseDmg/2),
+                        m: baseDmg,
+                        s: Math.floor(baseDmg * 1.5)
+                    };
+                    weapons.push(w);
+                }
+            });
+
+            summaryData.weapons = weapons;
+
+
+        }
+
+        console.log("******* Summary Data **********", summaryData);
+
+        return summaryData;
+
+    }
+
+    pascalToText(name) {
+        // Convert the name to a more readable format
+        let capitalized =  name.charAt(0).toUpperCase() + name.slice(1).replace(/_/g, ' ');
+
+        return capitalized.replace(/([a-z0-9])([A-Z])/g, '$1 $2') // Split camelCase or PascalCase
+            .replace(/([A-Z])([A-Z][a-z])/g, '$1 $2').trim() // Handle acronyms       
     }
 
     async _onResetInjuries(event) {

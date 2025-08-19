@@ -17,7 +17,8 @@
         "scripts/bw-character-sheet.js"
     ],
     "styles": [
-        "styles/bw-character-sheet.css"
+        "styles/bw-character-sheet.css",
+        "styles/character-grid.css"
     ],
     "languages": [
         {
