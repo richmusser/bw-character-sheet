@@ -490,7 +490,7 @@ class BWCharacterSheet extends ActorSheet {
 
                     let w = {
                         name: weapon.name || "",
-                        add: '',
+                        add: '1/2',
                         va: weapon.va || 0,
                         ws: '',
                         length:`${weapon.optimalRange} / ${weapon.extremeRange}`,
