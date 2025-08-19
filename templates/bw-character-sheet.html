@@ -2,6 +2,7 @@
     {{> "modules/bw-character-sheet/templates/partials/header.html"}}
 
     <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="summary">Summary</a>
         <a class="item" data-tab="main">BITs</a>
         <a class="item" data-tab="attributes">Stats & Attributes</a>
         <a class="item" data-tab="skills">Skills</a>
@@ -14,6 +15,10 @@
     </nav>
 
     <section class="sheet-body">
+        <div class="tab summary" data-group="primary" data-tab="summary">
+            {{> "modules/bw-character-sheet/templates/partials/summary-tab.html"}}
+        </div>
+        
         <div class="tab main" data-group="primary" data-tab="main">
             {{> "modules/bw-character-sheet/templates/partials/main-tab.html"}}
         </div>

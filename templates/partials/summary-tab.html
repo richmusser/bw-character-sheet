@@ -1,0 +1,201 @@
+<div class="learning-content">
+
+
+    <div class="character-table">
+
+        <div class="cth med-bottom">Willpower</div>
+        <div class="cth med-bottom">Percecption</div>
+        <div class="cth med-bottom">Agility</div>
+        <div class="cth med-bottom">Speed</div>
+        <div class="cth med-bottom">Power</div>
+        <div class="cth med-bottom">Forte</div>
+        <div class="cth med-bottom">Health</div>
+        <div class="cth med-bottom">Reflexes</div>
+        <div class="cth med-bottom">Steel</div>
+        <div class="cth med-bottom" style="white-space: nowrap">Mortal Wounds</div>
+        <div class="cth med-bottom">Resources</div>
+        <div class="cth med-bottom">Circles</div>
+
+        <div>{{system.stats.will.shade}}{{system.stats.will.exponent}}</div>
+        <div>{{system.stats.perception.shade}}{{system.stats.perception.exponent}}</div>
+        <div>{{system.stats.agility.shade}}{{system.stats.agility.exponent}}</div>
+        <div>{{system.stats.speed.shade}}{{system.stats.speed.exponent}}</div>
+        <div>{{system.stats.power.shade}}{{system.stats.power.exponent}}</div>
+        <div>{{system.stats.forte.shade}}{{system.stats.forte.exponent}}</div>
+        <div>{{system.attributes.health.shade}}{{system.attributes.health.exponent}}</div>
+        <div>{{system.attributes.steel.shade}}{{system.attributes.steel.exponent}}</div>
+        <div>{{system.attributes.reflexes.shade}}{{system.attributes.reflexes.exponent}}</div>
+        <div>{{system.attributes.mortalWounds.shade}}{{system.attributes.mortalWounds.exponent}}</div>
+        <div>{{system.attributes.resources.shade}}{{system.attributes.resources.exponent}}</div>
+        <div>{{system.attributes.circles.shade}}{{system.attributes.circles.exponent}}</div>
+
+        <div class="med-bottom"></div>
+        <div class="med-bottom"></div>
+        <div class="cth med-bottom">Stride</div>
+        <div class="med-bottom">{{system.stats.speed.stride}}</div>
+        <div class="med-bottom"></div>
+        <div class="med-bottom"></div>
+        <div class="med-bottom"></div>
+        <div class="cth med-bottom">Hesitation</div>
+        <div class="med-bottom">{{subtract 10 system.stats.will.exponent}}</div>
+        <div class="med-bottom"></div>
+        <div class="med-bottom"></div>
+        <div class="med-bottom"></div>
+
+        <div class="cth">Su</div>
+        <div class="cth">Li</div>
+        <div class="cth">Mi</div>
+        <div class="cth">Se</div>
+        <div class="cth">Tr</div>
+        <div class="cth">Mo</div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <div class="med-bottom">B{{system.summaryData.pgts.su}}</div>
+        <div class="med-bottom">B{{system.summaryData.pgts.li}}</div>
+        <div class="med-bottom">B{{system.summaryData.pgts.mi}}</div>
+        <div class="med-bottom">B{{system.summaryData.pgts.se}}</div>
+        <div class="med-bottom">B{{system.summaryData.pgts.tr}}</div>
+        <div class="med-bottom">B{{system.summaryData.pgts.mo}}</div>
+        <div class="med-bottom"></div>
+        <div class="med-bottom"></div>
+        <div class="med-bottom"></div>
+        <div class="med-bottom"></div>
+        <div class="med-bottom"></div>
+        <div class="med-bottom"></div>
+
+        <div class="cth traits med-bottom">Traits</div>
+        <div class="cth">Char</div>
+        <div class="trait-data">{{system.summaryData.traits.character}}</div>
+
+        
+        <div class="cth">Die</div>
+        <div class="trait-data">{{system.summaryData.traits.die}}</div>
+
+
+        <div class="cth med-bottom">Call-On</div>
+        <div class="trait-data med-bottom">{{system.summaryData.traits.callOn}}</div>
+
+        <div class="cth med-bottom">Skills</div>
+        <div class="summary-skills med-bottom">
+            {{#each system.summaryData.skills}}
+                <span class="summary-skill">{{this.name}} {{this.shade}}{{this.exponent}}, </span>
+            {{/each}}
+        </div>
+
+        <div class="cth med-bottom">Armor</div>
+        <div class="summary-armor med-bottom">
+            {{#each system.summaryData.armor}}
+                <span class="summary-armor">{{this.name}}: {{this.dice}}D, </span>
+            {{/each}}
+        </div>
+
+        <div class="cth" style="border-bottom: 0">Weapons</div>
+        <div class="cth med-bottom weapon-header" >Name</div>
+        <div class="cth med-bottom weapon-header" >I</div>
+        <div class="cth med-bottom weapon-header" >M</div>
+        <div class="cth med-bottom weapon-header" >S</div>
+        <div class="cth med-bottom weapon-header" >Length</div>
+        <div class="cth med-bottom weapon-header" >VA</div>
+        <div class="cth med-bottom weapon-header" >WS</div>
+        <div class="cth med-bottom weapon-header" >Add</div>
+        <div class="med-bottom" style="grid-column: 10 / span 3"></div>
+     
+
+   
+        {{#each system.summaryData.weapons}}
+        <div style="border-top:0; border-bottom:0"></div>
+        <div class="summary-weapon-name" >{{this.name}}</div>
+        <div class="summary-weapon-i" >{{this.shade}}{{this.i}}</div>
+        <div class="summary-weapon-m" >{{this.shade}}{{this.m}}</div>
+        <div class="summary-weapon-s" >{{this.shade}}{{this.s}}</div>
+        <div class="summary-weapon-length" >{{this.length}}</div>
+        <div class="summary-weapon-va" >{{this.va}}</div>
+        <div class="summary-weapon-ws" >{{this.ws}}</div>
+        <div class="summary-weapon-add" >{{this.add}}</div>
+        <div style="grid-column: 10 / span 3"></div>
+     
+        {{/each}}
+       
+        
+
+
+    </div>
+<!-- 
+    <table>
+        <tr>
+            <td>Wi</td>
+            <td>Pe</td>
+            <td>Ag</td>
+            <td>Sp</td>
+            <td>Po</td>
+            <td>Fo</td>
+            <td>He</td>
+            <td>Re</td>
+            <td>Ste</td>
+            <td>Res</td>
+            <td>Cir</td>
+        </tr>
+        <tr>
+            <td>{{system.stats.will.shade}}{{system.stats.will.exponent}}</td>
+            <td>{{system.stats.perception.shade}}{{system.stats.perception.exponent}}</td>
+            <td>{{system.stats.agility.shade}}{{system.stats.agility.exponent}}</td>
+            <td>{{system.stats.speed.shade}}{{system.stats.speed.exponent}}</td>
+            <td>{{system.stats.power.shade}}{{system.stats.power.exponent}}</td>
+            <td>{{system.stats.forte.shade}}{{system.stats.forte.exponent}}</td>
+            <td>{{system.attributes.health.shade}}{{system.attributes.health.exponent}}</td>
+            <td>{{system.attributes.steel.shade}}{{system.attributes.steel.exponent}}</td>
+            <td>{{system.attributes.reflexes.shade}}{{system.attributes.reflexes.exponent}}</td>
+            <td>{{system.attributes.resources.shade}}{{system.attributes.resources.exponent}}</td>
+            <td>{{system.attributes.circles.shade}}{{system.attributes.circles.exponent}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>Stride</td>
+            <td>{{system.stats.speed.stride}}</td>
+            <td></td>
+            <td></td>
+            <td>Hesitation</td>
+            <td>{{subtract 10 system.stats.will.exponent}}</td>
+        </tr>
+        <tr>
+            <td>Su</td>
+            <td>Li</td>
+            <td>Mi</td>
+            <td>Se</td>
+            <td>Tr</td>
+            <td>Mo</td>
+        </tr>
+        <tr>
+            <td>B3?</td>
+            <td>B4?</td>
+            <td>B6?</td>
+            <td>B7?</td>
+            <td>B8?</td>
+            <td>B9?</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Char</td>
+            <td>{{system.traits.character.text}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Dt</td>
+            <td>{{system.traits.die.text}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Call On</td>
+            <td>{{system.traits.callOn.text}}</td>
+        </tr>
+
+
+    </table> -->
+
+</div>
