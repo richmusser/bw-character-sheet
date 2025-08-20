@@ -307,8 +307,8 @@ class BWCharacterSheet extends ActorSheet {
             });
         }
 
-        // Ensure 5 melee weapons exist
-        for (let i = 0; i < 5; i++) {
+        // Ensure 10 melee weapons exist
+        for (let i = 0; i < 10; i++) {
             if (!actor.system.gear.weapons[i]) {
                 const defaultWeapon = i === 0 ? {
                     name: "Fist",
