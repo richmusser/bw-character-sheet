@@ -411,7 +411,7 @@ class BWCharacterSheet extends ActorSheet {
         }
 
         if(system?.traits?.callOn) {
-            summaryData.traits.die = system.traits.callOn.text || "";
+            summaryData.traits.callOn = system.traits.callOn.text || "";
         }
 
         if(system?.skills) {
