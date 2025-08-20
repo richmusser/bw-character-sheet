@@ -588,7 +588,7 @@ class BWCharacterSheet extends ActorSheet {
 
 // Register the sheet
 Actors.registerSheet("bw-sheets", BWCharacterSheet, {
-    types: ["character"],
+    types: ["character", "npc"],
     makeDefault: true
 });
 
